@@ -31,6 +31,33 @@ snaptr('track', 'PAGE_VIEW');
 <body>
 
 
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDm5pN2ODE7bzOfJSs1bMATXn3rWs95D2U",
+    authDomain: "epicerie-oldest.firebaseapp.com",
+    projectId: "epicerie-oldest",
+    storageBucket: "epicerie-oldest.appspot.com",
+    messagingSenderId: "294125094624",
+    appId: "1:294125094624:web:78ca2647631b419cdc7285",
+    measurementId: "G-TV50V4SQJD"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
+
+
+
 <div class="header">
   <h1>Amazon By OLDEST Store</h1>
 </div>
