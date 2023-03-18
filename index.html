@@ -2,6 +2,27 @@
 <html lang="fr">
 
 <head>
+
+
+<title>Ma carte en temps réel</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+
+  
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-3yQI2YQ0+0zq3iGwEf6I7M6a1U6E0UkR+U6s0lB95NbO6OvFzJw1BZ+mtGZCgX9kOg8xjN1Jp8iMwJNzjY6yFg==" crossorigin="anonymous" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-8CgJl1e+H6jIv5L7+xzDw1hSk5ch5J5aXV7e3qW0nV7ziu2ojzBv4LQbWJsaSE7ALY0h9SvK8/cx+GZt95hZtA==" crossorigin="anonymous"></script>
+
+
+
+
+  
+
+  
+
 <script src="https://kit.fontawesome.com/90a4d1138d.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,13 +36,15 @@
 <body>
 	
 
-<h1 class="vibrant">PLAGE FOOD 🍧🥞🥪🍹</h1>
 
+
+<h1 class="vibrant">PLAGE FOOD 🍧🥞🥪🍹</h1>
 
 
 <div class="container">
 		
-		
+
+
 
 
 <hr>
@@ -73,6 +96,12 @@ Enfin, le soleil montre le bout de son nez, la saison des barbecues est lancée,
 <hr>
 
 
+
+
+<br>
+
+  
+<hr>
 
 
 <div class="item">
@@ -156,6 +185,67 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
+
+
+  
+
+  
+
+
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6415a9ac4247f20fefe6a425/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+
+
+
+<hr>
+  
+<div class="map-container">
+<div id="mapid" style="height: 500px;"></div>  
+
+</div>
+  
+
+<script>
+		var mymap = L.map('mapid').setView([48.8566, 2.3522], 13); // Initialiser la carte avec une vue centrée sur Paris
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { // Ajouter une couche OSM à la carte
+			maxZoom: 19,
+			attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+		}).addTo(mymap);
+
+		var marker = L.marker([48.8566, 2.3522]).addTo(mymap); // Ajouter un marqueur à la position initiale
+
+		function onLocationFound(e) {
+			marker.setLatLng(e.latlng); // Mettre à jour la position du marqueur
+			mymap.setView(e.latlng, 16); // Centrer la carte sur la position
+		}
+
+		function onLocationError(e) {
+			alert("La géolocalisation a échoué : " + e.message);
+		}
+
+		mymap.on('locationfound', onLocationFound); // Ecouter l'événement de localisation réussie
+		mymap.on('locationerror', onLocationError); // Ecouter l'événement de localisation en erreur
+
+		mymap.locate({setView: true, maxZoom: 16}); // Lancer la géolocalisation
+
+	</script>
+
+
+<hr>
+  <hr>
+
+
+  
 
 </body>
 </html>
