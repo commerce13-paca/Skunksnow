@@ -8,3 +8,8 @@ function showPosition(position) {
   console.log("Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude);
 }
+
+
+setTimeout(function(){
+  document.querySelector('.notification').style.display = 'none';
+}, 2000);
