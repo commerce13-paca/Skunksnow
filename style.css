@@ -1,66 +1,78 @@
 .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.soon {
+  font-weight: bold;
+  color: red;
+  margin-top: 10px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.heart-container {
+  display: inline-block;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.heart-container i {
+  color: #ccc;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.heart-container i:hover {
+  color: red;
+}
+
+.like-count {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.item {
   position: relative;
   display: inline-block;
 }
 
 .item .soon {
   position: absolute;
-  top: 10px;
+  top: 5px;
   right: 10px;
   background-color: #ff0000;
   color: #fff;
   padding: 5px;
 }
-
-
-
-
-
-
-  .heart-container {
-    position: relative;
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    margin-left: 10px;
-  }
-
-  .heart-container:hover {
-    cursor: pointer;
-  }
-
-  .heart-container > .fas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: #ccc;
-    font-size: 24px;
-  }
-
-  .heart-container.favorite > .fas {
-    color: red;
-  }
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -140,10 +152,6 @@ header {
 
 
 
-
-
-
-
 h1 {
 color: white;
 }
@@ -158,15 +166,9 @@ h2 {
 }
 
 
-
-
-
-
 p {
   color: #261;
 }
-
-
 
 		body {
 			background-image: url("https://mcusercontent.com/a2ff368c04a45e94191314f2d/images/4eeaac5a-1f0e-8b3e-c952-a381fdb61e53.jpeg"); 
@@ -185,9 +187,6 @@ p {
 		}
 	
 	
-
-
-
 
 li {
   color: #333;
@@ -223,12 +222,7 @@ p:last-child {
   margin-bottom: 0;
 }
 
-
-
-
-
-
-		
+	
 
 .item {
   margin: 20px;
@@ -244,19 +238,6 @@ p:last-child {
   width: 100%;
   margin-bottom: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -294,11 +275,6 @@ p:last-child {
   display: block;
   color: #333;
 }
-
-
-
-
-
 
 
 footer {
