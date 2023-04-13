@@ -62,7 +62,9 @@ snaptr('track', 'VIEW_CONTENT', {
 <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script> 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-3yQI2YQ0+0zq3iGwEf6I7M6a1U6E0UkR+U6s0lB95NbO6OvFzJw1BZ+mtGZCgX9kOg8xjN1Jp8iMwJNzjY6yFg==" crossorigin="anonymous" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-8CgJl1e+H6jIv5L7+xzDw1hSk5ch5J5aXV7e3qW0nV7ziu2ojzBv4LQbWJsaSE7ALY0h9SvK8/cx+GZt95hZtA==" crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/90a4d1138d.js" crossorigin="anonymous"></script>
+
+  
+  <script src="https://kit.fontawesome.com/90a4d1138d.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&display=swap" rel="stylesheet">
@@ -101,49 +103,181 @@ snaptr('track', 'VIEW_CONTENT', {
 
    
 <hr>
+
+
 <div class="container"> 
   <div class="menu"> 
 
-<div class="menu">
+  <h1><a href="https://express.adobe.com/page/G4Aw5H2zhTmRS/">Nos grillades</a></h1>
 
 
 
-<h1><a href="https://express.adobe.com/page/G4Aw5H2zhTmRS/">Nos grillades</a></h1>
 
-
-<div class="item">
-				<img src="https://mcusercontent.com/a2ff368c04a45e94191314f2d/images/2c566be3-25e9-776a-990a-91b19f1f9122.jpeg" alt="Crêpe">
-				<h2>2/pers Salade de poulpe</h2>
-				
-				<h2>9.50€</h2>
-			</div>
-
-
-  
-<div class="item">
-				<img src="https://mcusercontent.com/ff9cc077c14d0a8a187e9644f/images/131650b4-8fdd-bf63-aa7f-620f89fd3c31.jpeg" alt="Aile poulette">
-				<h2>10 /Aile de poulet</h2>
-				<p> supplément: banane,Mohogo</p>
-				<h2>8.50€</h2>
-			</div>
-
-
-<div class="item">
-				<img src="https://mcusercontent.com/ff9cc077c14d0a8a187e9644f/images/79840ecd-5d3e-6394-1006-81cbe828b612.jpeg" alt="Crêpe">
-				<h2> brochettes</h2>			
-				<h2>12.00€</h2>
-  <div style="text-align:center">
-    <button style="background-color: white; color: blue; border:2px solid white; border-radius: 5px; padding: 10px 20px; font-size: 16px; font-weight: bold;" onclick="window.location.href='https://www.nomdusite.com'">Voir plus</button>
+<div class="item"> 
+  <a href="https://www.example.com">
+    <img src="https://mcusercontent.com/a2ff368c04a45e94191314f2d/images/2c566be3-25e9-776a-990a-91b19f1f9122.jpeg" alt="Crêpe" title="Salade de poulpe">
+  </a>
+  <div class="soon">Bientôt disponible</div>
+  <h2>2/pers Salade de poulpe</h2>
+  <div class="heart-container">
+    <i class="fas fa-heart" onclick="addLike(this)"></i>
+    <span class="like-count">0</span>
+  </div>
 </div>
-			</div>
 
-		</div>
-  
+<div class="item">
+  <a href="https://www.example.com">
+    <img src="https://mcusercontent.com/ff9cc077c14d0a8a187e9644f/images/131650b4-8fdd-bf63-aa7f-620f89fd3c31.jpeg" alt="Aile poulette" title="Aile de poulet">
+  </a>
+  <div class="soon">Bientôt disponible</div>
+  <h2>10 /Aile de poulet</h2>
+  <p> supplément: banane,Mohogo</p>
+  <div class="heart-container">
+    <i class="fas fa-heart" onclick="addLike(this)"></i>
+    <span class="like-count">0</span>
+  </div>
+</div>
+
+<div class="item">
+  <a href="https://www.example.com">
+    <img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/2d025986-73a5-e2e9-a2af-bced17c23517.jpeg" alt="brochette" title="Brochettes de poulpe">
+  </a>
+  <div class="soon">Bientôt disponible</div>
+  <h2>BROCHETTES DE POULPE </h2>
+  <p> </p>
+  <div class="heart-container">
+    <i class="fas fa-heart" onclick="addLike(this)"></i>
+    <span class="like-count">0</span>
+  </div>
+</div>
+
+
+<div class="item"> 
+  <a href="https://www.example.com">
+    <img src="https://mcusercontent.com/a2ff368c04a45e94191314f2d/images/2c566be3-25e9-776a-990a-91b19f1f9122.jpeg" alt="Crêpe" title="Salade de poulpe">
+  </a>
+  <div style="position: absolute; top: 10px; right: 10px; background-color: #ff0000; color: #fff; padding: 5px;">Bientôt disponible</div>
+  <h2>2/pers Salade de poulpe</h2>
+  <div class="heart-container">
+    <i class="fas fa-heart" onclick="addLike(this)"></i>
+    <span class="like-count">0</span>
+  </div>
+</div>
+
+<div class="item">
+  <a href="https://www.example.com">
+    <img src="https://mcusercontent.com/ff9cc077c14d0a8a187e9644f/images/131650b4-8fdd-bf63-aa7f-620f89fd3c31.jpeg" alt="Aile poulette" title="Aile de poulet">
+  </a>
+  <div style="position: absolute; top: 10px; right: 10px; background-color: #ff0000; color: #fff; padding: 5px;">Bientôt disponible</div>
+  <h2>10 /Aile de poulet</h2>
+  <p> supplément: banane,Mohogo</p>
+  <div class="heart-container">
+    <i class="fas fa-heart" onclick="addLike(this)"></i>
+    <span class="like-count">0</span>
+  </div>
+</div>
+
+<div class="item">
+  <a href="https://www.example.com">
+    <img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/2d025986-73a5-e2e9-a2af-bced17c23517.jpeg" alt="brochette" title="Brochettes de poulpe">
+  </a>
+  <div style="position: absolute; top: 10px; right: 10px; background-color: #ff0000; color: #fff; padding: 5px;">Bientôt disponible</div>
+  <h2>BROCHETTES DE POULPE </h2>
+  <p> </p>
+  <div class="heart-container">
+    <i class="fas fa-heart" onclick="addLike(this)"></i>
+    <span class="like-count">0</span>
+  </div>
+</div>
+
+    
+
+
+<div class="item"> 
+  <a href="https://www.example.com">
+    <img src="https://mcusercontent.com/a2ff368c04a45e94191314f2d/images/2c566be3-25e9-776a-990a-91b19f1f9122.jpeg" alt="Crêpe" title="Salade de poulpe">
+  </a>
+  <h2>2/pers Salade de poulpe</h2>
+  <div class="heart-container">
+    <i class="fas fa-heart" onclick="addLike(this)"></i>
+    <span class="like-count">0</span>
+  </div>
+</div>
+
+<div class="item">
+  <a href="https://www.example.com">
+    <img src="https://mcusercontent.com/ff9cc077c14d0a8a187e9644f/images/131650b4-8fdd-bf63-aa7f-620f89fd3c31.jpeg" alt="Aile poulette" title="Aile de poulet">
+  </a>
+  <h2>10 /Aile de poulet</h2>
+  <p> supplément: banane,Mohogo</p>
+  <div class="heart-container">
+    <i class="fas fa-heart" onclick="addLike(this)"></i>
+    <span class="like-count">0</span>
+  </div>
+</div>
+
+<div class="item">
+  <a href="https://www.example.com">
+    <img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/2d025986-73a5-e2e9-a2af-bced17c23517.jpeg" alt="brochette" title="Brochettes de poulpe">
+  </a>
+  <h2>BROCHETTES DE POULPE </h2>
+  <p> </p>
+  <div class="heart-container">
+    <i class="fas fa-heart" onclick="addLike(this)"></i>
+    <span class="like-count">0</span>
+  </div>
+</div>
+
+<script>
+  function addLike(heart) {
+    var countSpan = heart.parentNode.querySelector('.like-count');
+    var count = parseInt(countSpan.textContent);
+    heart.style.color = 'red';
+    countSpan.textContent = count + 1;
+  }
+</script>
+
+    
+
+
+    
+      
+
+      <div class="item">
+        <img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/5a339a4b-49e4-3e0a-c72b-7fb0bda30cf3.jpeg" alt="Crêpe">
+        <h2> MANIOC</h2>
+        <div style="text-align:center">
+          <button style="background-color: white; color: blue; border:2px solid white; border-radius: 5px; padding: 10px 20px; font-size: 16px; font-weight: bold;" onclick="window.location.href='https://www.nomdusite.com'">Voir plus</button>
+        </div>
+        
+      </div>
+
+     <div class="item">
+        <a href="https://www.example.com">
+          <img src="https://mcusercontent.com/ff9cc077c14d0a8a187e9644f/images/79840ecd-5d3e-6394-1006-81cbe828b612.jpeg" alt="brochette-halal">
+        </a>
+        <h2>BROCHETTES-boeuf-HALAL  </h2>
+        <p> supplément: banane </p>
+        <div class="heart-container">
+          <span class="heart">&#10084;</span>
+        </div>
+      </div> 
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
 
 
 <script id="asp-embed-script" data-zindex="1000000" type="text/javascript" charset="utf-8" src="https://express.adobe.com/page-embed.js"></script><a class="asp-embed-link" href="https://express.adobe.com/page/SoFQHz9G1cM2I/" target="_blank"><img src="https://express.adobe.com/page/SoFQHz9G1cM2I/embed.jpg?buster=2" alt="NOS BOISONS" style="width:100%" border="0" /></a>
 
 
+
+<h1><span style="text-decoration: underline;">NOS DÉSERT ! </span></h1> 
 
 
 <div class="item">
@@ -163,7 +297,7 @@ snaptr('track', 'VIEW_CONTENT', {
 
 
 <br>
-
+<h1><span style="text-decoration: underline;">NOS MODE DE LIVRAISON ! </span></h1> 
   
 <div class="item">
   <a href="https://www.example.com"><img src="https://i.gifer.com/JON.gif" alt="image 1"></a>
@@ -171,7 +305,7 @@ snaptr('track', 'VIEW_CONTENT', {
 <a href="https://www.example.com"><img src="https://i.gifer.com/BTgd.gif" alt="image 2"></a>
 </div>
 
-
+<h1><span style="text-decoration: underline;">NOS  SAMOSSA Sandwich et autres !  </span></h1> 
 
 <div class="item">
 				<img src="https://mcusercontent.com/a2ff368c04a45e94191314f2d/images/0a60b5a4-11c8-bea5-aec7-9c9c6815b5dd.jpeg" alt="mi xao">
