@@ -17,17 +17,12 @@
 
 
 
-
-
 .soon {
   font-weight: bold;
   color: red;
   margin-top: 10px;
   
 }
-
-
-
 
 
 
@@ -45,6 +40,66 @@
   color: #ffffff;
   padding: 5px;
 }
+
+
+
+
+
+
+.gallery {
+  width: 100%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap; /* Empêche le retour à la ligne des éléments */
+}
+
+.images {
+  display: inline-block; /* Empêche le retour à la ligne des éléments */
+  animation: scroll 15s infinite linear; /* Animation de défilement */
+}
+
+.images img {
+  display: inline-block;
+  width:90px;
+  height: 85px;
+  object-fit: cover;
+  margin-right: 10px;
+  scroll-snap-align: start;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 10px)); /* -10px pour compenser la marge */
+  }
+}
+
+
+
+
+
+
+
+.carré {
+  width: 90px;
+  height: 60px;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bouton {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: orange;
+  font-size: 16px;
+  text-decoration: none;
+}
+
 
 
 
