@@ -344,3 +344,62 @@ footer {
 .fa-snapchat-ghost, .fa-instagram, .fa-facebook-square {
   transition: color 0.3s ease-in-out;
 }
+
+
+
+
+@keyframes blink {
+			0% {
+				opacity: 1;
+			}
+			50% {
+				opacity: 0.5;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+		.blinking-image {
+			animation: blink 1s ease-in-out infinite;
+		}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+  width: 100%;
+  max-width: 360px;
+  margin: 5 auto;
+}
+
+.square {
+  position: relative;
+  width: 100%;
+  padding-bottom:18%;
+  background-color: #ccc;
+}
+
+.sponsor-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsor-icons img {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
