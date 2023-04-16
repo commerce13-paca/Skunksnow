@@ -31,3 +31,19 @@ setTimeout(function(){
 
 
 
+
+
+// Sélectionner toutes les images
+const images = document.querySelectorAll('.item img');
+
+// Parcourir toutes les images
+images.forEach(image => {
+  let viewCount = 0; // Initialiser le compteur de clics à 0
+  const viewCountElement = image.parentElement.nextElementSibling.querySelector('.view-count'); // Sélectionner l'élément du compteur de clics
+
+  // Ajouter un événement de clic à chaque image
+  image.addEventListener('click', function() {
+    viewCount++; // Incrémenter le compteur de clics
+    viewCountElement.textContent = viewCount; // Mettre à jour le texte du compteur de clics
+  });
+});
