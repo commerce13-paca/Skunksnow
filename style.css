@@ -270,7 +270,7 @@ p:last-child {
 
 
 
-#mc_embed_signup {
+#mc_embed_signup { 
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -287,12 +287,10 @@ p:last-child {
 }
 
 #mc-embedded-subscribe-form {
-  
   display: none;
 }
 
-#mc_embed_signup:hover {
-  
+#mc_embed_signup:hover { 
   width: 200px;
   height: 200px;
   cursor: pointer;
@@ -303,6 +301,18 @@ p:last-child {
   color: #333;
 }
 
+#mc_embed_signup:before {
+  content: "Abonné";
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  top: 50%;  
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 footer {
   background-color: #333;
