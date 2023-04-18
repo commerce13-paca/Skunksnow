@@ -6,16 +6,10 @@
   color: #982abc;
 }
 
-
-
-
-
 .item img {
   max-width: 100%;
   height: auto;
 }
-
-
 
 .soon {
   font-weight: bold;
@@ -24,13 +18,10 @@
   
 }
 
-
-
 .item {
   position: relative;
   display: inline-block;
 }
-
 
 .item .soon {
   position: absolute;
@@ -42,9 +33,42 @@
 }
 
 
+.emoji {
+  font-size: 5em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.emoji1 {
+  top: 900px;
+  left: 80%;
+}
+
+.emoji2 {
+  top:1510px;
+  left: 80%;
+}
+
+.emoji3 {
+  top: 2030px;
+  left: 80%;
+}
 
 
+.emoji4 {
+  top: 2510px;
+  left: 80%;
+}
 
+.emoji5 {
+  top: 3220px;
+  left: 80%;
+}
+
+.emoji6 {
+  top: 3730px;
+  left: 80%;
+}
 
 .gallery {
   width: 100%;
@@ -77,12 +101,6 @@
   }
 }
 
-
-
-
-
-
-
 .carré {
   width: 90px;
   height: 60px;
@@ -101,9 +119,6 @@
 }
 
 
-
-
-
 .owner-label {
   position: absolute;
   top:-1%;
@@ -113,8 +128,6 @@
   transform: rotate(-0deg) scale(0.5);
 }
 
-
-
 .logo-img {
   
   width: 167px;
@@ -123,8 +136,6 @@
   animation-duration: 0.3s;
   animation-delay: 0.3s;
 }
-
-
 
 header {
   background-image: url('https://i.gifer.com/3ck.gif');
@@ -138,35 +149,6 @@ header {
   background-color: #f2f2f2;
 }
 
-
-
-
-
-.phone-number {
-  background-image: url('https://mcusercontent.com/a2ff368c04a45e94191314f2d/images/4eeaac5a-1f0e-8b3e-c952-a381fdb61e53.jpeg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  border: 3px solid #111;
-  position: fixed;
-  top: 90%;
-  right: 230px;
-  transform: translateY(-50%); 
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-
-.phone-number a {
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  color: #f5ec00;
-}
-
-
-
-
-
 .annonce {
   background-color: #76bb40;
   padding: 20px;
@@ -175,9 +157,6 @@ header {
   font-family: Arial, sans-serif;
   color: white;
 }
-
-
-
 
 h1 {
 color: white;
@@ -212,8 +191,6 @@ p {
 			padding: 20px;
 			border-radius: 10px;
 		}
-	
-	
 
 li {
   color: #333;
@@ -249,8 +226,6 @@ p:last-child {
   margin-bottom: 0;
 }
 
-	
-
 .item {
   margin: 20px;
   padding: 20px;
@@ -267,13 +242,10 @@ p:last-child {
 }
 
 
-
-
-
-#mc_embed_signup { 
+#mc_embed_signup {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 70px;
+  left: 20px; /* positionné à gauche */
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -290,7 +262,7 @@ p:last-child {
   display: none;
 }
 
-#mc_embed_signup:hover { 
+#mc_embed_signup:hover {
   width: 200px;
   height: 200px;
   cursor: pointer;
@@ -301,18 +273,6 @@ p:last-child {
   color: #333;
 }
 
-#mc_embed_signup:before {
-  content: "Abonné";
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  line-height: 50px;
-  position: absolute;
-  top: 50%;  
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 footer {
   background-color: #333;
@@ -355,9 +315,6 @@ footer {
   transition: color 0.3s ease-in-out;
 }
 
-
-
-
 @keyframes blink {
 			0% {
 				opacity: 1;
@@ -373,43 +330,42 @@ footer {
 			animation: blink 1s ease-in-out infinite;
 		}
 	
-
-
-
-
-
-
-
-
-
-
-
-
-.container {
-  width: 100%;
-  max-width: 360px;
-  margin: 5 auto;
-}
-
-.square {
-  position: relative;
-  width: 100%;
-  padding-bottom:18%;
-  background-color: #ccc;
-}
-
-.sponsor-icons {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.sponsor-container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
+  margin: 0 auto;
+  max-width: 800px;
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 
-.sponsor-icons img {
-  width: 50px;
-  height: 50px;
+.sponsor-item {
+  flex-basis: calc(50% - 10px);
   margin: 5px;
+  text-align: center;
+}
+
+.sponsor-item img {
+  max-width: 100%;
+}
+
+.phone-number {
+background-image: url('https://mcusercontent.com/a2ff368c04a45e94191314f2d/images/4eeaac5a-1f0e-8b3e-c952-a381fdb61e53.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+    position: fixed;
+    bottom: 50px; /* faites afficher le numéro en dehors de la fenêtre visible */
+    right: 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size:20px;
+    transition: bottom 0.3s ease-in-out; /* ajoutez une transition pour une animation plus douce */
+}
+
+.phone-number.show {
+  
+    bottom: 0; /* affichez le numéro lorsque l'utilisateur s'arrête de défiler la page */
 }
