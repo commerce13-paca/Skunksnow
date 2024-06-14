@@ -1,516 +1,259 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-22K8XD07LC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chacha Mode</title>
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  gtag('config', 'G-22K8XD07LC');
-</script>
-<!-- Snap Pixel Code -->
-<script type='text/javascript'>
-(function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
-{a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
-a.queue=[];var s='script';r=t.createElement(s);r.async=!0;
-r.src=n;var u=t.getElementsByTagName(s)[0];
-u.parentNode.insertBefore(r,u);})(window,document,
-'https://sc-static.net/scevent.min.js');
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
 
-snaptr('init', '2c02b155-817f-46ec-9ef6-56f28ceacc25', {
-'user_email': 'foodplace13@gmail.com',
-'user_hashed_phone_number': '+33744591511'
-});
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
 
-snaptr('track', 'PAGE_VIEW');
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
 
-snaptr('track', 'VIEW_CONTENT', {
-  'content_ids': ['PROD001'],
-  'content_type': 'product',
-  'product_name': 'Brochettes',
-  'product_category': 'aliments',
-  'product_image_url': 'https://mcusercontent.com/ff9cc077c14d0a8a187e9644f/images/aa008387-ea24-bf72-eb43-7b0f7187cad9.jpeg',
-  'value': 7.50,
-  'currency': 'EUR'
-});
-</script>
-<!-- End Snap Pixel Code -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
- 
-<script src="https://kit.fontawesome.com/90a4d1138d.js" crossorigin="anonymous"></script>
-<script>
-  alert('Bienvenue sur notre site FOOD TRUCK PLAGE !');
-</script>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script> 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-3yQI2YQ0+0zq3iGwEf6I7M6a1U6E0UkR+U6s0lB95NbO6OvFzJw1BZ+mtGZCgX9kOg8xjN1Jp8iMwJNzjY6yFg==" crossorigin="anonymous" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-8CgJl1e+H6jIv5L7+xzDw1hSk5ch5J5aXV7e3qW0nV7ziu2ojzBv4LQbWJsaSE7ALY0h9SvK8/cx+GZt95hZtA==" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/90a4d1138d.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&display=swap" rel="stylesheet">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>FOOD TRUCK PLAGES </title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        #products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 220px;
+            text-align: center;
+            position: relative;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            position: absolute;
+            display: none;
+        }
+
+        .image-container img.active {
+            display: block;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+
+        .carousel-controls button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+
+        #cart {
+            position: fixed;
+            top: 50px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #cart.hidden {
+            display: none;
+        }
+
+        #cart h2 {
+            margin-top: 0;
+        }
+
+        #cart-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        #cart-items li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-<div class="owner-label">
-  <p>[OLD.EST]</p>
-</div>
-<header>
-  <div class="deaf">
-    <h1>FOOD PLACE</h1>
+    <header>
+        <h1>Chacha Mode!</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Produits</a></li>
+                <li><a href="#" id="cart-button">Panier (<span id="cart-count">0</span>)</a></li>
+                <li><a href="#">Mon Compte</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="products">
+            <!-- Les produits seront affichés ici -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Ma Boutique en Ligne ChachaMode..</p>
+    </footer>
+    <div id="cart" class="hidden">
+        <h2>Panier</h2>
+        <ul id="cart-items">
+            <!-- Les éléments du panier seront affichés ici -->
+        </ul>
+        <button onclick="toggleCart()">Fermer</button>
     </div>
- 
-  <div class="logo">
-    <img class="logo-img" src="https://i.gifer.com/SubV.gif" alt="Logo ">
-  </div>
-</header>
-<hr>  
-	<h3>MENU <br>
-    Brochette🍢#Poulet🍗#Riz MI XAO🍘#Sandwich🥪#Boisson🧃#Crêpes🥞Glacée🍦</h3>
-   
-<div class="container"> 
-  <div class="menu"> 
-
-  <h1><a href="https://express.adobe.com/page/G4Aw5H2zhTmRS/">Nos grillades</a></h1>
-
-<div class="gallery">
-  <div class="images">
-    <img src="https://mcusercontent.com/af7ccd2d5a4dcbc18080f78f7/images/6c8b2b3a-455b-d554-404e-ee41759bb672.jpeg" alt="image 1">
-    <img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/2d025986-73a5-e2e9-a2af-bced17c23517.jpeg" alt="image 2">
-    <img 
-      src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/d21948af-4d22-6b98-dfbb-0e2041bef9ea.jpeg" alt="image 3">
-    <img src="https://mcusercontent.com/af7ccd2d5a4dcbc18080f78f7/images/75dcc826-4744-0388-c2cf-8e1cd0f28002.jpeg" alt="image 4">    
-  <img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/5a339a4b-49e4-3e0a-c72b-7fb0bda30cf3.jpeg" alt="image 5">    
-    <img src="https://mcusercontent.com/af7ccd2d5a4dcbc18080f78f7/images/e430c9df-92e1-3024-00c5-54e855052d24.jpeg" alt="image 6">
-    <img src="https://mcusercontent.com/af7ccd2d5a4dcbc18080f78f7/images/30f35bbf-df91-fc0b-111d-c6d67db0621f.jpeg" alt="image 7">
-    <img src="https://mcusercontent.com/af7ccd2d5a4dcbc18080f78f7/images/47ecec7b-3c2e-4385-c952-32b85395aadf.jpeg" alt="image 8">
-    
-    <img src="https://mcusercontent.com/af7ccd2d5a4dcbc18080f78f7/images/e165cbb7-7185-2bf3-9bf9-44b1109b3f15.jpeg" alt="image 9">   
-<img src="https://mcusercontent.com/af7ccd2d5a4dcbc18080f78f7/images/34f6e75e-be1f-d072-2fe1-f249659367c3.jpeg" alt="image 10">   
-    <img src="https://mcusercontent.com/af7ccd2d5a4dcbc18080f78f7/images/683a1698-0fa1-4095-36de-b2fe980e375a.jpeg" alt="image 11">
- <img src="https://mcusercontent.com/af7ccd2d5a4dcbc18080f78f7/images/fec147b9-63ee-6401-f7b5-bb385978de9a.jpeg" alt="image 12">
-  </div>
-</div>  
-  
-<hr>
-
-    <div class="item">
-  <a href="">
-    <img src="https://mcusercontent.com/ff9cc077c14d0a8a187e9644f/images/131650b4-8fdd-bf63-aa7f-620f89fd3c31.jpeg" alt="Aile poulette" title="Aile de poulet">
-  </a>
-   <div class="soon" style="background-color: #76bb40;">Disponible</div>
-  <h2>10 /Aile de poulet</h2>
-  <p> supplément: banane,Mohogo</p>
-  <p>
-     <h3>6.50 €</h3>
-  </p>
-      
-  <div class="carré">
-  <a href="https://facebook.com/pg/102013489520988/menu/" class="bouton">Voir produit</a>
-</div>
-      <hr>
-  <div class="icons">
-    <i class="fas fa-heart" onclick="addLike(this)"></i>
-    <span class="like-count">6820</span>
-    <i class="far fa-eye"></i>
-    <span class="view-count">23812</span>
-  </div>
-</div>
-<div class="emoji emoji1">&#129321;</div>
-
-    <div class="item"> 
-  <a href="">
-    <img src="https://mcusercontent.com/a2ff368c04a45e94191314f2d/images/2c566be3-25e9-776a-990a-91b19f1f9122.jpeg" alt="salade-de-poulpe" title="Salade de poulpe">
-  </a>
-    <div class="soon">Bientôt disponible</div>
-  <h2>2/pers Salade de poulpe</h2>
-  <p>
-     <h3>6.50 €</h3>
-  </p>
-<div class="carré">
-  <a href="https://facebook.com/pg/102013489520988/menu/" class="bouton">Voir produit</a>
-</div>
-  <hr>
-  <div class="icons">
-    <i class="fas fa-heart" onclick="addLike(this)"></i>
-    <span class="like-count">4329</span>
-    <i class="far fa-eye"></i>
-    <span class="view-count">10093</span>
-  </div>
-</div>
-<div class="emoji emoji2">&#x1F60B;</div>
-
-
-    
-    
-    <div class="item">
-  <a href="">
-    <img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/2d025986-73a5-e2e9-a2af-bced17c23517.jpeg" alt="poulpes" title="poulpes">
-  </a>
-   <div class="soon" style="background-color: #76bb40;">Disponible</div>
-  <h2>POULPES </h2>
-  <p> supplément: banane,Mohogo</p>
-  <p>
-     <h3>6.50 €</h3>
-  </p>
-<div class="carré">
-  <a href="https://facebook.com/pg/102013489520988/menu/" class="bouton">Voir produit</a>
-</div>
-  <hr>
-  <div class="icons">
-    <i class="fas fa-heart" onclick="addLike(this)"></i>
-    <span class="like-count">4320</span>
-    <i class="far fa-eye"></i>
-    <span class="view-count">209142</span>
-  </div>
-</div>
-<div class="emoji emoji3">&#x1F60B;</div>
-
-
-    
-<div class="item"> 
-  <a href="">
-    <img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/ff83855c-7a92-55b4-d5f7-a4b4d078124d.jpeg" alt="matabac" title="matabac">
-  </a>
-   <div class="soon">Bientôt disponible</div>
-  <h2> MATABAC AU COCO RIZ </h2>
-  <p>
-     <h3>6.50 €</h3>
-  </p>
-<div class="carré">
-  <a href="https://facebook.com/pg/102013489520988/menu/" class="bouton">Voir produit</a>
-</div>
-  <hr>
-  <div class="icons">
-    <i class="fas fa-heart" onclick="addLike(this)"></i>
-    <span class="like-count">7366</span>
-    <i class="far fa-eye"></i>
-    <span class="view-count">72650</span>
-  </div>
-</div>
-<div class="emoji emoji4">&#129321;</div>
-    
-<div class="item">
-  <a href="">
-    <img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/9cd4d4bc-58d1-149b-f1ba-5f9c9844cb9d.jpeg" alt="Aile poulette" title="Aile de poulet">
-  </a>  
-  <div class="soon" style="background-color: #76bb40;">Disponible</div>
-  <h2>Mi Xao</h2>
-  <p>
-     <h3>6.00 €</h3>
-  </p> 
-<div class="carré">
-  <a href="https://facebook.com/pg/102013489520988/menu/" class="bouton">Voir produit</a>
-</div>
-  <hr>
-  <div class="icons">
-    <i class="fas fa-heart" onclick="addLike(this)"></i>
-    <span class="like-count">14239</span>
-    <i class="far fa-eye"></i>
-    <span class="view-count">4911482</span>
-  </div>
-</div>
-<div class="emoji emoji5">&#129321;</div>
-
-    
-
-
-    
-<div class="item"> 
-  <a href="">
-    <img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/d21948af-4d22-6b98-dfbb-0e2041bef9ea.jpeg" alt="crevettes" title="crevettes">
-  </a>
-  <div class="soon">Bientôt disponible</div>
-  <h2>CREVETTES</h2>
-  <p>
-     <h3>7.50 €</h3>
-  </p>
-<div class="carré">
-  <a href="https://facebook.com/pg/102013489520988/menu/" class="bouton">Voir produit</a>
-</div>
-  <hr>
-  <div class="icons">
-    <i class="fas fa-heart" onclick="addLike(this)"></i>
-    <span class="like-count">4300</span>
-    <i class="far fa-eye"></i>
-    <span class="view-count">183001</span>
-  </div>
-</div>
-<div class="emoji emoji6">&#129321;</div>
-
-
-    
-<script>
-  function addLike(heart) {
-    var countSpan = heart.parentNode.querySelector('.like-count');
-    var count = parseInt(countSpan.textContent);
-    heart.style.color = 'red';
-    countSpan.textContent = count + 1;
-  }
-</script> 
-
-      <div class="item">
-        <img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/5a339a4b-49e4-3e0a-c72b-7fb0bda30cf3.jpeg" alt="Crêpe">
-        <h2> MANIOC</h2>
-        <p>
-     <h3>3.50 €</h3>
-  </p>
-        <div style="text-align:center">
-          <button style="background-color: white; color: blue; border:2px solid white; border-radius: 5px; padding: 10px 20px; font-size: 16px; font-weight: bold;" onclick="window.location.href='https://express.adobe.com/page/lNEP3CWyUCMRK/'">Voir plus</button>
-        </div>        
-      </div>
+    <div id="payment-options" class="hidden">
+        <h2>Choisissez votre méthode de paiement</h2>
+        <button onclick="choosePayment('card')">Payer par carte</button>
+        <button onclick="choosePayment('physical')">Payer physiquement</button>
+        <button onclick="closePaymentOptions()">Annuler</button>
     </div>
+          
+        <script>
+    let products = [];
 
-  </div>
-</div>
-<script id="asp-embed-script" data-zindex="1000000" type="text/javascript" charset="utf-8" src="https://express.adobe.com/page-embed.js"></script><a class="asp-embed-link" href="https://express.adobe.com/page/SoFQHz9G1cM2I/" target="_blank"><img src="https://express.adobe.com/page/SoFQHz9G1cM2I/embed.jpg?buster=2" alt="NOS BOISONS" style="width:100%" border="0" /></a>
+    document.addEventListener('DOMContentLoaded', function() {
+        products = [
+            { id: 1, name: 'Produit 1', price: 10, stock: 5, images: ['https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/7b674728-3ab1-4862-f350-b192bb2558b9.jpeg', 'https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/55a82ca2-aa87-288b-511c-676bd0f15a50.jpeg'] },
+            { id: 2, name: 'Produit 2', price: 15, stock: 3, images: ['https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/bcffca54-af1f-cc16-e306-58df9a9a72b1.jpeg', 'https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/0a716f63-d729-51c7-2efa-49da00d6bfc1.jpeg'] },
+            { id: 3, name: 'Produit 3', price: 20, stock: 2, images: ['https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/7ce7ee66-0a7b-5d22-b6b8-109c8dc8a2ae.jpeg', 'https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/925aabb8-a436-d6cc-2bb6-953f70f82049.jpeg'] },
+            { id: 4, name: 'Produit 4', price: 25, stock: 6, images: ['https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/f5f95688-c9d0-d7b3-6208-2ba9fdc07f9d.jpeg', 'https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/4ed3c493-6471-10d6-b394-cdb731dc4025.jpeg'] },
+            { id: 5, name: 'Produit 5', price: 30, stock: 4, images: ['https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/20267224-0aa5-be92-3d72-c0f3861bebf6.jpeg', 'https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/20267224-0aa5-be92-3d72-c0f3861bebf6.jpeg'] }
+        ];
 
-<h1><span style="text-decoration: underline;">NOS DÉSERT ! </span></h1> 
-  
-<div class="item">
-  <a href="">
-    <img src="https://mcusercontent.com/af7ccd2d5a4dcbc18080f78f7/images/e32df9bf-381b-5ba3-12b5-f08d0deadfaa.jpeg" alt="Aile poulette" title="Aile de poulet">
-  </a>
-  <div class="soon" style="background-color: #76bb40;">Disponible</div>
-  <h2> TIRAMISU</h2>
-				<h4> caramel chocolat fraise framboise etc. </h4>
-  <hr>
-  <div class="icons">
-    <i class="fas fa-heart" onclick="addLike(this)"></i>
-    <span class="like-count">4327</span>
-    <i class="far fa-eye"></i>
-    <span class="view-count">87654</span>
-  </div>
-</div>
+        const productsContainer = document.getElementById('products');
 
-<div class="item">
-  <a href="">
-    <img src="https://mcusercontent.com/ff9cc077c14d0a8a187e9644f/images/8b6e057c-1d0e-9b22-9cf3-8e264435b391.jpeg" alt="Aile poulette" title="Aile de poulet">
-  </a>
-  
-  <div class="soon" style="background-color: #76bb40;">Disponible</div>
-  <h2>Glacés</h2>
-				<p>crèmes glacées et sorbets</p>
-				<h2>3€</h2>
-  <hr>
-  <div class="icons">
-    <i class="fas fa-heart" onclick="addLike(this)"></i>
-    <span class="like-count">392</span>
-    <i class="far fa-eye"></i>
-    <span class="view-count">703</span>
-  </div>
-</div>
-<br>
-<h1><span style="text-decoration: underline;">NOS MODE DE LIVRAISON ! </span></h1> 
-  
-<div class="item">
-  <a href=""><img src="https://i.gifer.com/JON.gif" alt="image 1"></a>
-  <a href=""><img src="https://i.gifer.com/8aBk.gif" alt="image 2"></a>
-<a href=""><img src="https://i.gifer.com/BTgd.gif" alt="image 2"></a>
-</div>
+        products.forEach(product => {
+            const productElement = document.createElement('div');
+            productElement.classList.add('product');
+            productElement.innerHTML = `
+                <div class="image-container" id="product-${product.id}">
+                    <img src="${product.images[0]}" alt="${product.name}" class="active">
+                    <img src="${product.images[1]}" alt="${product.name}">
+                </div>
+                <div class="carousel-controls">
+                    <button onclick="prevImage(${product.id})">←</button>
+                    <button onclick="nextImage(${product.id})">→</button>
+                </div>
+                <h2>${product.name}</h2>
+                <p>Prix: ${product.price}€</p>
+                <p>Stock: ${product.stock}</p>
+                <button onclick="addToCart(${product.id})">Ajouter au panier</button>
+            `;
+            productsContainer.appendChild(productElement);
+        });
 
-<h1><span style="text-decoration: underline;">NOS  SAMOSSA Sandwich et autres !  </span></h1> 
+        document.getElementById('cart-button').addEventListener('click', toggleCart);
+    });
 
-<div class="item">
-				<img src="https://mcusercontent.com/a2ff368c04a45e94191314f2d/images/0a60b5a4-11c8-bea5-aec7-9c9c6815b5dd.jpeg" alt="mi xao">
-				<h2>Mi xao</h2>
-				<h2>6.50€</h2>
-  
-  <hr>
-  <div class="icons">
-    <i class="fas fa-heart" onclick="addLike(this)"></i>
-    <span class="like-count">865</span>
-    <i class="far fa-eye"></i>
-    <span class="view-count">1206354</span>
-  </div>
-			</div>
-<div class="item">
-				<img src="https://mcusercontent.com/ff9cc077c14d0a8a187e9644f/images/3d5bab7d-adcf-fc02-9bb1-3ffd5bf24031.jpeg" alt="Crêpe">
-				<h2>Riz jaune</h2>
-				<p> Supplément: Rougail
-				<h2>4.50€</h2>
-<div class="carré">
-  <a href="https://facebook.com/pg/102013489520988/menu/" class="bouton">Voir produit</a>
-</div>
-          <hr>
-          <div class="icons">
-    <i class="fas fa-heart" onclick="addLike(this)"></i>
-    <span class="like-count">329</span>
-    <i class="far fa-eye"></i>
-    <span class="view-count">325640</span>
-  </div>
-			</div>
-<div class="item">
-				<img src="https://mcusercontent.com/a2ff368c04a45e94191314f2d/images/939a8f89-f526-f6f7-8e3b-ee247ee3c4e1.jpeg" alt="mi xao">
-				<h2>6/ Samossa  </h2>				
-				<h2>6.50€</h2>
-  <hr>
-  <div class="icons">
-    <i class="fas fa-heart" onclick="addLike(this)"></i>
-    <span class="like-count">931</span>
-    <i class="far fa-eye"></i>
-    <span class="view-count">63427</span>
-  </div>
-			</div>
-       
-<div class="item">
-				<img src="https://mcusercontent.com/a2ff368c04a45e94191314f2d/images/dc48b708-95d1-6744-5758-e8a3b2e72d1b.jpeg" alt="mi xao">
-				<h2>sandwich </h2>			
-				<h2>6.50€</h2>
-<div class="carré">
-  <a href="https://facebook.com/pg/102013489520988/menu/" class="bouton">Voir produit</a>
-</div>
-  <hr>
-  <div class="icons">
-    <i class="fas fa-heart" onclick="addLike(this)"></i>
-    <span class="like-count">423</span>
-    <i class="far fa-eye"></i>
-    <span class="view-count">93764</span>
-  </div>
-			</div>
+    let cart = [];
 
-<iframe style="border: 2px solid black; width: 360px; height: 270px;" src="https://www.youtube.com/embed/ErfRnM3u-ok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
- 
+    function addToCart(productId) {
+        const product = products.find(p => p.id === productId);
+        if (product) {
+            // Afficher le dialogue de choix
+            const paymentMethod = window.confirm(`Choisissez votre méthode de paiement pour ${product.name}: \n\nPayer par carte: OK \nPayer physiquement: Annuler`);
+            if (paymentMethod) {
+                cart.push(product);
+                updateCart();
+            } else {
+                // Traiter le paiement physique ici (numéro de téléphone, etc.)
+                alert(`Le produit ${product.name} sera réservé pour paiement physique. Merci de nous contacter.`);
+                // Implémenter la logique pour traiter le paiement physique ici
+            }
+        }
+    }
 
-<h1><span style="text-decoration: underline;">Découvrez nos spécialités en cuisine</span></h1>
+    function updateCart() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        cartItemsContainer.innerHTML = '';
+        cart.forEach((product, index) => {
+            const cartItem = document.createElement('li');
+            cartItem.textContent = `${product.name} - ${product.price}€`;
+            cartItemsContainer.appendChild(cartItem);
+        });
+        document.getElementById('cart-count').textContent = cart.length;
+    }
 
+    function toggleCart() {
+        const cartElement = document.getElementById('cart');
+        cartElement.classList.toggle('hidden');
+    }
 
-<script id="asp-embed-script" data-zindex="1000000" type="text/javascript" charset="utf-8" src="https://express.adobe.com/page-embed.js"></script><a class="asp-embed-link" href="https://express.adobe.com/page/G4Aw5H2zhTmRS/" target="_blank"><img src="https://express.adobe.com/page/G4Aw5H2zhTmRS/embed.jpg?buster=4" alt="NOS spécialité" style="width:100%" border="0" /></a>
+    function prevImage(productId) {
+        const productElement = document.getElementById(`product-${productId}`);
+        const images = productElement.querySelectorAll('img');
+        let activeIndex = Array.from(images).findIndex(image => image.classList.contains('active'));
 
-<h1><span style="text-decoration: underline;">Découvrez nos produits </span></h1>  
+        images[activeIndex].classList.remove('active');
+        activeIndex = (activeIndex - 1 + images.length) % images.length;
+        images[activeIndex].classList.add('active');
+    }
 
-  <div class="menu">
-	<div class="item"style="background-color: #F4C2C2;">
-		<img src="https://mcusercontent.com/661c3d03248f72505bcf3af0d/images/cc8d2eb6-1e4e-1c47-b35d-79202e4eb6ba.jpeg" alt="epicerie">
-		<h2><u>BAZAR</u></h2>
-		<h4> Découvrez notre épicerie en ligne offrant une variété de produits pour tous vos besoins.Visitez-nous maintenant !</h4>
-		<div style="text-align:center">
-			<button style="background-color: orange; color: blue; border:2px solid white; border-radius: 5px; padding: 10px 20px; font-size: 16px; font-weight: bold;" onclick="window.location.href='https://express.adobe.com/page/zGU4ICweVgt3A/'">Voir plus</button>
-		</div>
-	</div>
-</div>
-	
-<div class="annonce">
-  <h2>La camionnette du Commerce Ambulant Place FOOD vous attend !</h2>
-  <p>Nous sommes postés chaque été à des endroits précis :</p>
-  <ul>
-    <li>Lestaque</li>
-    <li>Prado</li>
-    <li>Vieux-Port</li>
-  </ul>
-  <p>Nos horaires de déplacement :</p>
-  <table>
-    <tr>
-      <th>Jours</th>
-      <th>Heures</th>
-    </tr>
-    <tr>
-      <td>Lundi - Vendredi</td>
-      <td>11h - 16h</td>
-    </tr>
-    <tr>
-      <td>Samedi - Dimanche</td>
-      <td>10h - 17h</td>
-    </tr>
-  </table>
-  <p>Plus de détails en bas de page. Et n'oubliez pas, vous pouvez également nous retrouver en direct grâce à notre géolocalisation !</p>
-</div>
-  <h1><u>Géolocalisation En direct!</u></h1>
-  <div>
-  <iframe src="https://www.google.com/maps/embed?pb=!4v1681038041572!6m8!1m7!1sbITJMGeYhXqLhqjwy2fFlg!2m2!1d43.3577980336694!2d5.287886183390332!3f104.12599495844101!4f-6.2941643418612045!5f0.7820868581430032" width="340" height="350" style="border: 2px solid black;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div> 
-  <br>
-<!-- Begin Mailchimp Signup Form -->
+    function nextImage(productId) {
+        const productElement = document.getElementById(`product-${productId}`);
+        const images = productElement.querySelectorAll('img');
+        let activeIndex = Array.from(images).findIndex(image => image.classList.contains('active'));
 
-<div id="mc_embed_signup">
-<div class="subscribe-text"><h4>S'abonner</h4></div>
-    <form action="https://github.us13.list-manage.com/subscribe/post?u=af7ccd2d5a4dcbc18080f78f7&amp;id=189614585e&amp;f_id=00d8ace2f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-        <div id="mc_embed_signup_scroll">
-        <h2>S'abonner à FOOD TRUCK</h2>
-        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-<div class="mc-field-group">
-	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-</label>
-	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
-	<span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-</div>
-<div class="mc-field-group">
-	<label for="mce-LNAME">Last Name </label>
-	<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
-	<span id="mce-LNAME-HELPERTEXT" class="helper_text"></span>
-</div>
-<div class="mc-field-group size1of2">
-	<label for="mce-PHONE">Phone Number </label>
-	<input type="text" name="PHONE" class="" value="" id="mce-PHONE">
-	<span id="mce-PHONE-HELPERTEXT" class="helper_text"></span>
-	
-</div>
-	<div id="mce-responses" class="clear foot">
-		<div class="response" id="mce-error-response" style="display:none"></div>
-		<div class="response" id="mce-success-response" style="display:none"></div>
-	</div>    
-          <div class="optionalParent">
-            <div class="clear foot">
-                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                <p class="brandingLogo"><a href="http://eepurl.com/ipdO0A" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_light_dtp.svg"></a></p>
-            </div>
-        </div>
-    </div>
-</form>
-</div>
-<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-<!--End mc_embed_signup-->
-
-<div class="phone-number">
-  <a href="tel:+33744591511">Appeler pour <br>commander</a>
-</div>
-
-<div class="sponsor-container">
-  <div class="sponsor-item">
-    <img src="https://mcusercontent.com/af7ccd2d5a4dcbc18080f78f7/images/3670e76a-5f52-34cb-2133-7ac09ebc8a01.jpeg" alt="sponsor logo">
-  </div>
-  <div class="sponsor-item">
-    <img src="https://mcusercontent.com/af7ccd2d5a4dcbc18080f78f7/images/83f2fcaf-6675-db36-4fac-c13c244124b3.jpeg" alt="sponsor logo">
-  </div>
-  <div class="sponsor-item">
-    <img src="https://mcusercontent.com/af7ccd2d5a4dcbc18080f78f7/images/020462a7-e703-75ec-0210-8b9a02d4f142.png" alt="sponsor logo">
-  </div>
-  <div class="sponsor-item">
-    <img src="https://mcusercontent.com/af7ccd2d5a4dcbc18080f78f7/images/18463ac3-9773-ded7-6e6e-90718cd0c629.jpeg" alt="sponsor logo">
-  </div>
-  <div class="sponsor-item">
-    <img src="" alt="sponsor logo">
-  </div>
-  <div class="sponsor-item">
-    <img src="" alt="sponsor logo">
-  </div>
-  <div class="sponsor-item">
-    <img src="" alt="sponsor logo">
-  </div>
-  <div class="sponsor-item">
-    <img src="" alt="sponsor logo">
-  </div>
-</div>
-
-<footer>
-  <div class="social-links">
-    <a href="https://www.snapchat.com/add/foodtruckplace" class="snapchat-link"><i class="fab fa-snapchat-ghost"></i></a>
-    <a href="https://instagram.com/foodtruckplage_13?igshid=YmMyMTA2M2Y=" class="instagram-link"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=100091287847547" class="facebook-link"><i class="fab fa-facebook-square"></i></a>
-  </div>
-</footer>
-
-<center>
-  <p style="font-size: 24px; color: red; font-weight: bold;">FOOD TRUCK</p>
-</center> 
-</body>
+        images[activeIndex].classList.remove('active');
+        activeIndex = (activeIndex + 1) % images.length;
+        images[activeIndex].classList.add('active');
+    }
+        </script>
+    </body>
 </html>
