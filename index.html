@@ -1,259 +1,507 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chacha Mode</title>
+    <title>ÇA M'IRA - Collecte de Fonds</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        /* styles.css */
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            position: relative;
+        body {
+            font-family: 'Roboto Slab', serif; /* Changement de police */
+            background-color: #f7f7f7;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alignement en haut */
+            flex-direction: column; /* Aligne les sections verticalement */
+            height: auto; /* Permet au corps de s'ajuster à la taille du contenu */
+            padding: 20px; /* Ajout de padding */
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        main {
+        .container {
+            width: 100%; /* S'adapte à la largeur de l'écran */
+            max-width: 500px; /* Limite la largeur maximale */
+            background: white;
+            border-radius: 10px;
             padding: 20px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px; /* Ajout de l'espace entre les conteneurs */
         }
 
-        #products {
+        .logo {
+            width: 100px;
+            height: auto; /* Assure que l'image garde ses proportions */
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin-top: 10px;
+            color: #e63946;
+        }
+
+        .fundraising h2,
+        .donation h3 {
+            margin: 20px 0 10px;
+            color: #333;
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            border-radius: 10px;
+            margin: 10px 0;
+            width: 100%;
+            height: 25px;
+        }
+
+        #progress-fill {
+            background: #e63946;
+            height: 100%;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            line-height: 25px;
+        }
+
+        .donation input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .donation button {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+            background: #e63946;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .donation button:hover {
+            background: #d62828;
+        }
+
+        /* Nouvelle section pour l'image */
+        .image-gallery {
+            margin: 20px 0; /* Ajout d'espacement supérieur et inférieur */
+        }
+
+        .featured-image {
+            width: 100%;
+            height: auto; /* Laisser l'image ajuster automatiquement */
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section pour les célébrités */
+        .celebrities {
+            margin: 20px 0; /* Ajout d'espacement supérieur et inférieur */
+        }
+
+        .celebrity-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+            justify-content: center; /* Centrer les célébrités */
+            margin-top: 10px;
         }
 
-        .product {
-            border: 1px solid #ddd;
+        .celebrity {
+            background: #f9f9f9;
+            border-radius: 10px;
             padding: 10px;
-            width: 220px;
+            margin: 10px;
             text-align: center;
-            position: relative;
+            width: calc(45% - 20px); /* Ajuste la taille des cartes */
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .image-container {
+        .celebrity-image {
+            width: 80px; /* Taille des images des célébrités */
+            border-radius: 50%; /* Forme ronde */
+        }
+
+        .celebrities a {
+            display: inline-block;
+            margin: 5px;
+            color: #e63946;
+        }
+
+        @media (max-width: 600px) {
+            .celebrity {
+                width: 100%; /* Sur les écrans plus petits, les célébrités occupent toute la largeur */
+            }
+        }
+
+ 
+       /* Styles pour la modale */
+        .modal {
+            display: none; /* Caché par défaut */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
             width: 100%;
-            height: 200px;
-            position: relative;
-            overflow: hidden;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px; /* Limite la largeur de la modale */
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .modal input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .modal button {
+            margin-top: 10px;
+            padding: 10px;
+            background: #e63946;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .modal button:hover {
+            background: #d62828;
+        }
+
+        .card-icons {
             display: flex;
             justify-content: center;
-            align-items: center;
-            background-color: #f9f9f9;
+            margin-top: 10px;
         }
-
-        .image-container img {
-            max-width: 100%;
-            max-height: 100%;
-            position: absolute;
-            display: none;
+       .card-icon {
+            width: 40px; /* Ajustez la taille de l'icône */
+            margin: 0 5px;
         }
+        
+        
 
-        .image-container img.active {
-            display: block;
-        }
 
-        .carousel-controls {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 5px;
-        }
+.fund-allocation {
+    margin: 20px 0;
+}
 
-        .carousel-controls button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            padding: 5px 10px;
-        }
+.fund-allocation h3 {
+    color: #e63946; /* Couleur du titre */
+}
 
-        #cart {
-            position: fixed;
-            top: 50px;
-            right: 20px;
-            width: 300px;
-            background-color: white;
-            border: 1px solid #ddd;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+.fund-allocation ul {
+    list-style-type: none; /* Retire les puces par défaut */
+    padding: 0; /* Retire le padding par défaut */
+}
 
-        #cart.hidden {
-            display: none;
-        }
+.fund-allocation li {
+    background: #f9f9f9; /* Couleur d'arrière-plan par défaut */
+    border-radius: 5px;
+    margin: 10px 0; /* Ajoute un espacement entre les éléments */
+    padding: 10px; /* Ajoute du padding */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Montre que l'élément est cliquable */
+    color: #333; /* Couleur du texte par défaut */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Effet de transition */
+}
 
-        #cart h2 {
-            margin-top: 0;
-        }
+/* Effet au survol */
+.fund-allocation li:hover {
+    background-color: #e0e0e0; /* Couleur d'arrière-plan au survol */
+    color: #e63946; /* Change la couleur du texte au survol */
+}
 
-        #cart-items {
-            list-style: none;
-            padding: 0;
-        }
 
-        #cart-items li {
-            margin-bottom: 10px;
-        }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+  .a2a_button_snapchat {
+            background-color: yellow;
         }
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>Chacha Mode!</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Produits</a></li>
-                <li><a href="#" id="cart-button">Panier (<span id="cart-count">0</span>)</a></li>
-                <li><a href="#">Mon Compte</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="products">
-            <!-- Les produits seront affichés ici -->
+    <div class="container">
+        <!-- Section Logo et titre -->
+        <header>
+            <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/9202b1a2-d6dd-66fe-7f5f-e19fd8465ab4.jpg" class="logo">
+            <h1>ÇA M'IRA - Association</h1>
+            <p>Ensemble pour soutenir les plus démunis</p>
+        </header>
+
+        <!-- Objectif et jauge de progression -->
+        <section class="fundraising">
+            <h2>Objectif : 5000 €</h2>
+            <div class="progress-bar">
+                <div id="progress-fill" style="width: 0%;">0%</div>
+            </div>
+            <p>Total collecté : <span id="totalCollected">0</span> €</p>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Ma Boutique en Ligne ChachaMode..</p>
-    </footer>
-    <div id="cart" class="hidden">
-        <h2>Panier</h2>
-        <ul id="cart-items">
-            <!-- Les éléments du panier seront affichés ici -->
+    </div>
+
+    <!-- Formulaire de don -->
+    <div class="container">
+        <section class="donation">
+            <h3>Faites un don</h3>
+            <input type="number" id="donationAmount" min="1" placeholder="Entrez le montant (€)">
+            <button onclick="openModal()">Fair un don  🤍</button>
+        </section>
+    </div>
+
+    <!-- Nouvelle section pour l'image -->
+    <div class="container">
+        <section class="image-gallery">
+            <h3>À propos de notre association</h3>
+            <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/9202b1a2-d6dd-66fe-7f5f-e19fd8465ab4.jpg" class="featured-image" alt="Image de l'association">
+        </section>
+    </div>
+
+<!-- Section sur l'utilisation des fonds -->
+<div class="container">
+    <section class="fund-allocation">
+        <h3>Où vont vos dons ?</h3>
+        <ul>
+            <li onclick="openFundModal('https://www.canva.com/design/DAGUY1LqpUY/xxlfOet-nQtqIeScKOJU6g/view?embed')"><strong>50%</strong> : Soutien alimentaire pour les familles en difficulté</li>
+            <li onclick="openFundModal('https://www.canva.com/design/DAGUY1LqpUY/xxlfOet-nQtqIeScKOJU6g/view?embed')"><strong>30%</strong> : Programmes éducatifs pour les enfants</li>
+            <li onclick="openFundModal('https://www.canva.com/design/DAGUY1LqpUY/xxlfOet-nQtqIeScKOJU6g/view?embed')"><strong>10%</strong> : Soins médicaux et aide d'urgence</li>
+            <li onclick="openFundModal('https://www.canva.com/design/DAGUY1LqpUY/xxlfOet-nQtqIeScKOJU6g/view?embed')"><strong>10%</strong> : Frais de fonctionnement de l'association</li>
         </ul>
-        <button onclick="toggleCart()">Fermer</button>
+    </section>
+</div>
+
+<!-- Modal pour les détails de l'utilisation des fonds -->
+<div id="fundModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeFundModal()">&times;</span>
+        <h3>Détails de l'utilisation des fonds</h3>
+        <div id="fundDetails"></div>
     </div>
-    <div id="payment-options" class="hidden">
-        <h2>Choisissez votre méthode de paiement</h2>
-        <button onclick="choosePayment('card')">Payer par carte</button>
-        <button onclick="choosePayment('physical')">Payer physiquement</button>
-        <button onclick="closePaymentOptions()">Annuler</button>
+</div>
+
+<script>
+    function openFundModal(videoUrl) {
+        const fundDetails = document.getElementById('fundDetails');
+        fundDetails.innerHTML = `
+            <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+                <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="${videoUrl}" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+            </div>
+        `;
+        document.getElementById('fundModal').style.display = "block";
+    }
+
+    function closeFundModal() {
+        document.getElementById('fundModal').style.display = "none";
+    }
+</script>
+
+<!-- Modal pour les détails de l'utilisation des fonds -->
+<div id="fundModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeFundModal()">&times;</span>
+        <h3>Détails de l'utilisation des fonds</h3>
+        <div id="fundDetails"></div>
     </div>
-          
-        <script>
-    let products = [];
+</div>
 
-    document.addEventListener('DOMContentLoaded', function() {
-        products = [
-            { id: 1, name: 'Produit 1', price: 10, stock: 5, images: ['https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/f626c114-5766-12a4-f067-8f65fa1ac13b.jpg', 'https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/6609647f-153f-f6f8-01b6-39a237bd14fd.jpg'] },
-            { id: 2, name: 'Produit 2', price: 15, stock: 3, images: ['https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/b07a671b-ad01-6efd-10fc-221faa5e4146.jpg', 'https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/63c05645-48cf-d65e-a8fa-c63872232e2f.jpg'] },
-            { id: 3, name: 'Produit 3', price: 20, stock: 2, images: ['https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/035b2a87-f8ce-fc6a-5d14-8812a6eef2a1.jpg', 'https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/e5a5014f-591b-261c-0339-eea000063391.jpg'] },
-            { id: 4, name: 'Produit 4', price: 25, stock: 6, images: ['https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/27e028e7-7aa9-0e7b-2d77-e7b594456c6a.jpg', 'https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/b5744719-2152-71dc-c2cc-2e4b734a15f1.jpg'] },
-            { id: 5, name: 'Produit 5', price: 30, stock: 4, images: ['https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/6609647f-153f-f6f8-01b6-39a237bd14fd.jpg', 'https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/d41fdbd8-8cd2-5077-b6b9-bcdfbc427d1f.jpg'] }
-        ];
-
-        const productsContainer = document.getElementById('products');
-
-        products.forEach(product => {
-            const productElement = document.createElement('div');
-            productElement.classList.add('product');
-            productElement.innerHTML = `
-                <div class="image-container" id="product-${product.id}">
-                    <img src="${product.images[0]}" alt="${product.name}" class="active">
-                    <img src="${product.images[1]}" alt="${product.name}">
+<!-- Section pour les célébrités -->
+<div class="container">
+    <section class="celebrities">
+        <h3>Nos Célébrités Ambassadrices</h3>
+        <div class="celebrity-list">
+            <div class="celebrity">
+                <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/9654620a-e49b-7d29-51f1-5b27a2642f88.jpeg" class="celebrity-image" alt="Célébrité 1">
+                <p>Célébrité 1 <span class="don-amount">💰 50%</span></p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank">Facebook</a>
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                    <a href="https://twitter.com" target="_blank">Twitter</a>
                 </div>
-                <div class="carousel-controls">
-                    <button onclick="prevImage(${product.id})">←</button>
-                    <button onclick="nextImage(${product.id})">→</button>
+            </div>
+            <div class="celebrity">
+                <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/b84d4fd3-2c02-43e6-3266-d38453923f42.jpeg" class="celebrity-image" alt="Célébrité 2">
+                <p>Célébrité 2 <span class="don-amount">💰 30%</span></p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank">Facebook</a>
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                    <a href="https://twitter.com" target="_blank">Twitter</a>
                 </div>
-                <h2>${product.name}</h2>
-                <p>Prix: ${product.price}€</p>
-                <p>Stock: ${product.stock}</p>
-                <button onclick="addToCart(${product.id})">Ajouter au panier</button>
-            `;
-            productsContainer.appendChild(productElement);
-        });
+            </div>
+            <div class="celebrity">
+                <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/9202b1a2-d6dd-66fe-7f5f-e19fd8465ab4.jpg" class="celebrity-image" alt="Célébrité 3">
+                <p>Ça M'ira  <span class="don-amount">💰 10%</span></p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank">Facebook</a>
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                    <a href="https://twitter.com" target="_blank">Twitter</a>
+                </div>
+            </div>
+            <div class="celebrity">
+                <img src="https://via.placeholder.com/80" class="celebrity-image" alt="Célébrité 4">
+                <p>Célébrité 4 <span class="don-amount">💰 10%</span></p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank">Facebook</a>
+                    <a href="https://instagram.com" target="_blank">Instagram</a>
+                    <a href="https://twitter.com" target="_blank">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
-        document.getElementById('cart-button').addEventListener('click', toggleCart);
-    });
 
-    let cart = [];
+<!-- Modal pour le don -->
+<div id="donationModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Confirmez votre don</h3>
+        <input type="email" id="email" placeholder="Votre email" required>
+        <button id="confirm-donation-button" onclick="processDonation()">Confirmer le don</button>
 
-    function addToCart(productId) {
-        const product = products.find(p => p.id === productId);
-        if (product) {
-            // Afficher le dialogue de choix
-            const paymentMethod = window.confirm(`Choisissez votre méthode de paiement pour ${product.name}: \n\nPayer par carte: OK \nPayer physiquement: Annuler`);
-            if (paymentMethod) {
-                cart.push(product);
-                updateCart();
+        <!-- Formulaire de carte de crédit (initialement caché) -->
+        <div id="credit-card-form" style="display: none; margin-top: 20px;">
+            <h4>Informations de Carte de Crédit</h4>
+            <form>
+                <label for="card-name">Nom du titulaire :</label>
+                <input type="text" id="card-name" required>
+
+                <label for="card-number">Numéro de carte :</label>
+                <input type="text" id="card-number" required>
+
+                <label for="expiry-date">Date d'expiration :</label>
+                <input type="text" id="expiry-date" placeholder="MM/AA" required>
+
+                <label for="cvv">CVV :</label>
+                <input type="text" id="cvv" required>
+
+                <div class="card-icons">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="card-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Mastercard_Logo.png" alt="Mastercard" class="card-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/American_Express_Logo.png" alt="American Express" class="card-icon">
+                </div>
+
+                <button type="submit">Payer</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+ <div id="social-sharing">
+        <div id="social-sharing" class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px; top:150px;">
+            <a class="a2a_button_snapchat" href=""></a>
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+        </div>
+    </div>
+
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+
+    <script>
+        var socialSharing = document.getElementById('social-sharing');
+        var lastScrollTop = 0;
+
+        window.addEventListener('scroll', function() {
+            var st = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (st > lastScrollTop) {
+                socialSharing.style.display = 'none'; // Masquer le code en descendant
             } else {
-                // Traiter le paiement physique ici (numéro de téléphone, etc.)
-                alert(`Le produit ${product.name} sera réservé pour paiement physique. Merci de nous contacter.`);
-                // Implémenter la logique pour traiter le paiement physique ici
+                socialSharing.style.display = 'block'; // Afficher le code en montant
             }
+            lastScrollTop = st;
+        });
+        </script>
+<script>
+    let totalCollected = 0;
+
+    function openModal() {
+        document.getElementById('donationModal').style.display = "block";
+        document.getElementById('credit-card-form').style.display = 'none'; // Cache le formulaire de carte de crédit au début
+    }
+
+    function closeModal() {
+        document.getElementById('donationModal').style.display = "none";
+    }
+
+    function processDonation() {
+        const email = document.getElementById('email').value;
+        const amount = parseInt(document.getElementById('donationAmount').value);
+        
+        // Vérifie si l'email est fourni
+        if (!email) {
+            alert("Veuillez entrer votre adresse email.");
+            return; // Ne continue pas si l'email n'est pas fourni
+        }
+
+        // Vérifie si le montant est valide
+        if (!isNaN(amount) && amount > 0) {
+            totalCollected += amount;
+            document.getElementById('totalCollected').innerText = totalCollected;
+            const progress = (totalCollected / 5000) * 100;
+            document.getElementById('progress-fill').style.width = progress + '%';
+            document.getElementById('progress-fill').innerText = Math.round(progress) + '%';
+            document.getElementById('credit-card-form').style.display = 'block'; // Affiche le formulaire de carte de crédit
+        } else {
+            alert("Veuillez entrer un montant valide.");
         }
     }
 
-    function updateCart() {
-        const cartItemsContainer = document.getElementById('cart-items');
-        cartItemsContainer.innerHTML = '';
-        cart.forEach((product, index) => {
-            const cartItem = document.createElement('li');
-            cartItem.textContent = `${product.name} - ${product.price}€`;
-            cartItemsContainer.appendChild(cartItem);
-        });
-        document.getElementById('cart-count').textContent = cart.length;
+    // Close the modal when clicking outside of it
+    window.onclick = function (event) {
+        const modal = document.getElementById('donationModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<style>
+    .card-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
     }
 
-    function toggleCart() {
-        const cartElement = document.getElementById('cart');
-        cartElement.classList.toggle('hidden');
+    .card-icon {
+        width: 40px; /* Ajustez la taille de l'icône */
+        margin: 0 10px; /* Espacement entre les icônes */
     }
+</style>
 
-    function prevImage(productId) {
-        const productElement = document.getElementById(`product-${productId}`);
-        const images = productElement.querySelectorAll('img');
-        let activeIndex = Array.from(images).findIndex(image => image.classList.contains('active'));
 
-        images[activeIndex].classList.remove('active');
-        activeIndex = (activeIndex - 1 + images.length) % images.length;
-        images[activeIndex].classList.add('active');
-    }
 
-    function nextImage(productId) {
-        const productElement = document.getElementById(`product-${productId}`);
-        const images = productElement.querySelectorAll('img');
-        let activeIndex = Array.from(images).findIndex(image => image.classList.contains('active'));
 
-        images[activeIndex].classList.remove('active');
-        activeIndex = (activeIndex + 1) % images.length;
-        images[activeIndex].classList.add('active');
-    }
-        </script>
-    </body>
-    </html>
+    </script>
+</body>
+
+                                                                                                                                     </html>
