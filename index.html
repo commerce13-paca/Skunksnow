@@ -1,510 +1,480 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-<meta property="og:image" content="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/9202b1a2-d6dd-66fe-7f5f-e19fd8465ab4.jpg" />
-    
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÇA M'IRA - Collecte de Fonds</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <title>Salon de Beauté - Lissage et Ongles Professionnels</title>
+    
+    <!-- Meta Description (SEO) -->
+    <meta name="description" content="Découvrez notre salon de beauté spécialisé dans le lissage et la pose d'ongles professionnels. Profitez d'un service de qualité pour sublimer votre beauté.">
+    
+    <!-- Meta Keywords (SEO) -->
+    <meta name="keywords" content="salon de beauté, lissage, ongles, pose d'ongles, manucure, beauté, soins esthétiques">
+    
+    <!-- Open Graph Meta Tags (Pour les réseaux sociaux) -->
+    <meta property="og:title" content="Salon de Beauté - Lissage et Ongles Professionnels">
+    <meta property="og:description" content="Notre salon de beauté vous propose des services professionnels de lissage et de pose d'ongles pour sublimer votre beauté.">
+    <meta property="og:image" content="URL_DE_VOTRE_IMAGE"> <!-- Remplacez par une URL d'image -->
+    <meta property="og:url" content="URL_DE_VOTRE_SITE"> <!-- Remplacez par l'URL de votre site -->
+    <meta property="og:type" content="website">
+    
+    <!-- Balises Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Salon de Beauté - Lissage et Ongles Professionnels">
+    <meta name="twitter:description" content="Découvrez notre salon de beauté spécialisé dans le lissage et la pose d'ongles professionnels.">
+    <meta name="twitter:image" content="URL_DE_VOTRE_IMAGE"> <!-- Remplacez par une URL d'image -->
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        * {
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Roboto Slab', serif; /* Changement de police */
-            background-color: #f7f7f7;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Alignement en haut */
-            flex-direction: column; /* Aligne les sections verticalement */
-            height: auto; /* Permet au corps de s'ajuster à la taille du contenu */
-            padding: 20px; /* Ajout de padding */
-        }
-
-        .container {
-            width: 100%; /* S'adapte à la largeur de l'écran */
-            max-width: 500px; /* Limite la largeur maximale */
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            margin-bottom: 20px; /* Ajout de l'espace entre les conteneurs */
-        }
-
-        .logo {
-            width: 100px;
-            height: auto; /* Assure que l'image garde ses proportions */
-        }
-
-        header h1 {
-            font-size: 24px;
-            margin-top: 10px;
-            color: #e63946;
-        }
-
-        .fundraising h2,
-        .donation h3 {
-            margin: 20px 0 10px;
-            color: #333;
-        }
-
-        .progress-bar {
-            background: #e0e0e0;
-            border-radius: 10px;
-            margin: 10px 0;
-            width: 100%;
-            height: 25px;
-        }
-
-        #progress-fill {
-            background: #e63946;
-            height: 100%;
-            border-radius: 10px;
-            text-align: center;
+        header {
+            background-color: #ff6f91;
             color: white;
-            font-weight: bold;
-            line-height: 25px;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Merriweather', serif;
         }
 
-        .donation input {
-            width: calc(100% - 20px);
+        nav {
+            text-align: center;
             padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
+            background-color: #ff4785;
+            font-family: 'Merriweather', serif;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav a:hover {
+            background-color: white;
+            color: #ff4785;
             border-radius: 5px;
         }
 
-        .donation button {
-            margin-top: 10px;
-            padding: 10px;
+        section {
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .service-card, .product-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .service-card img, .product-card img {
             width: 100%;
-            background: #e63946;
+            max-width: 300px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .service-info, .product-info {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .service-info h2, .product-info h2 {
+            color: #ff4785;
+            font-size: 24px;
+            font-family: 'Merriweather', serif;
+        }
+
+        .service-info p, .product-info p {
+            color: #555;
+            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn {
+            background-color: #ff4785;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn:hover {
+            background-color: #ff6f91;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        form input, form textarea, form select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #ff4785;
             color: white;
             border: none;
             border-radius: 5px;
+            font-size: 18px;
             cursor: pointer;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .donation button:hover {
-            background: #d62828;
+        form button:hover {
+            background-color: #ff6f91;
         }
 
-        /* Nouvelle section pour l'image */
-        .image-gallery {
-            margin: 20px 0; /* Ajout d'espacement supérieur et inférieur */
-        }
-
-        .featured-image {
-            width: 100%;
-            height: auto; /* Laisser l'image ajuster automatiquement */
-            border-radius: 10px;
-            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Section pour les célébrités */
-        .celebrities {
-            margin: 20px 0; /* Ajout d'espacement supérieur et inférieur */
-        }
-
-        .celebrity-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Centrer les célébrités */
-            margin-top: 10px;
-        }
-
-        .celebrity {
-            background: #f9f9f9;
-            border-radius: 10px;
-            padding: 10px;
-            margin: 10px;
+        footer {
             text-align: center;
-            width: calc(45% - 20px); /* Ajuste la taille des cartes */
-            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            background-color: #ff4785;
+            color: white;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .celebrity-image {
-            width: 80px; /* Taille des images des célébrités */
-            border-radius: 50%; /* Forme ronde */
-        }
-
-        .celebrities a {
-            display: inline-block;
-            margin: 5px;
-            color: #e63946;
-        }
-
-        @media (max-width: 600px) {
-            .celebrity {
-                width: 100%; /* Sur les écrans plus petits, les célébrités occupent toute la largeur */
-            }
-        }
-
- 
-       /* Styles pour la modale */
+        /* Modal Styles */
         .modal {
-            display: none; /* Caché par défaut */
-            position: fixed;
-            z-index: 1;
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-            padding-top: 60px;
+            background-color: rgba(0,0,0,0.4); 
         }
 
         .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
+            background-color: #fff;
+            margin: 15% auto;
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
-            max-width: 400px; /* Limite la largeur de la modale */
+            max-width: 500px;
             border-radius: 10px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .modal input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
         }
 
-        .modal button {
-            margin-top: 10px;
-            padding: 10px;
-            background: #e63946;
-            color: white;
-            border: none;
-            border-radius: 5px;
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #ff4785;
+            text-decoration: none;
             cursor: pointer;
-            width: 100%;
         }
 
-        .modal button:hover {
-            background: #d62828;
+        /* Panier Styles */
+        #cart {
+            display: none;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: #32cd32;
+            padding: 15px;
+            border-radius: 5px;
+            color: white;
         }
 
-        .card-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
+        .cart-items {
+            list-style: none;
+            padding: 0;
         }
-       .card-icon {
-            width: 40px; /* Ajustez la taille de l'icône */
-            margin: 0 5px;
+
+        .cart-items li {
+            margin-bottom: 5px;
         }
-        
-        
 
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .service-card, .product-card {
+                flex-direction: row;
+                text-align: left;
+            }
 
-.fund-allocation {
-    margin: 20px 0;
-}
+            .service-info, .product-info {
+                padding-left: 20px;
+            }
+        }
 
-.fund-allocation h3 {
-    color: #e63946; /* Couleur du titre */
-}
+        .about, .contact {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #fff;
+        }
 
-.fund-allocation ul {
-    list-style-type: none; /* Retire les puces par défaut */
-    padding: 0; /* Retire le padding par défaut */
-}
+        .about h2, .contact h2 {
+            color: #ff4785;
+            font-family: 'Merriweather', serif;
+        }
 
-.fund-allocation li {
-    background: #f9f9f9; /* Couleur d'arrière-plan par défaut */
-    border-radius: 5px;
-    margin: 10px 0; /* Ajoute un espacement entre les éléments */
-    padding: 10px; /* Ajoute du padding */
-    font-size: 16px; /* Taille de la police */
-    cursor: pointer; /* Montre que l'élément est cliquable */
-    color: #333; /* Couleur du texte par défaut */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Effet de transition */
-}
+        .opening-hours {
+            margin-top: 20px;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
 
-/* Effet au survol */
-.fund-allocation li:hover {
-    background-color: #e0e0e0; /* Couleur d'arrière-plan au survol */
-    color: #e63946; /* Change la couleur du texte au survol */
-}
+        .opening-hours h3 {
+            color: #ff4785;
+            font-family: 'Merriweather', serif;
+        }
 
-
-
-  .a2a_button_snapchat {
-            background-color: yellow;
+        .opening-hours p {
+            color: #555;
+            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
         }
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <!-- Section Logo et titre -->
-        <header>
-            <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/9202b1a2-d6dd-66fe-7f5f-e19fd8465ab4.jpg" class="logo">
-            <h1>ÇA M'IRA - Association</h1>
-            <p>Ensemble pour soutenir les plus démunis</p>
-        </header>
 
-        <!-- Objectif et jauge de progression -->
-        <section class="fundraising">
-            <h2>Objectif : 5000 €</h2>
-            <div class="progress-bar">
-                <div id="progress-fill" style="width: 0%;">0%</div>
-            </div>
-            <p>Total collecté : <span id="totalCollected">0</span> €</p>
-        </section>
-    </div>
+    <header>
+        <h1>Salon de Beauté - Lissage et Ongles Professionnels</h1>
+    </header>
 
-    <!-- Formulaire de don -->
-    <div class="container">
-        <section class="donation">
-            <h3>Faites un don</h3>
-            <input type="number" id="donationAmount" min="1" placeholder="Entrez le montant (€)">
-            <button onclick="openModal()">Fair un don  🤍</button>
-        </section>
-    </div>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#boutique" onclick="openBoutiqueModal()">Boutique</a>
+        <a href="#about" onclick="openAboutModal()">À propos</a>
+        <a href="#contact" onclick="openContactModal()">Contact</a>
+    </nav>
 
-    <!-- Nouvelle section pour l'image -->
-    <div class="container">
-        <section class="image-gallery">
-            <h3>À propos de notre association</h3>
-            <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/891e1d47-6811-d45e-ce29-3fccc59a1dd9.jpg" class="featured-image" alt="Image de l'association">
-        </section>
-    </div>
+    <section id="services">
+        <h2>Nos Services</h2>
 
-<!-- Section sur l'utilisation des fonds -->
-<div class="container">
-    <section class="fund-allocation">
-        <h3>Où vont vos dons ?</h3>
-        <ul>
-               <li onclick="openFundModal('https://www.canva.com/design/DAGUY1LqpUY/xxlfOet-nQtqIeScKOJU6g/view?embed')"><strong>50%</strong> : Soutien alimentaire pour les familles en difficulté</li>
-            
-     <li onclick="openFundModal('https://www.canva.com/design/DAGUY1LqpUY/xxlfOet-nQtqIeScKOJU6g/view?embed')"><strong>30%</strong> : Programmes éducatifs pour les enfants</li>
-            <li onclick="openFundModal('https://www.canva.com/design/DAGUY1LqpUY/xxlfOet-nQtqIeScKOJU6g/view?embed')"><strong>10%</strong> : Soins médicaux et aide d'urgence</li>
-            <li onclick="openFundModal('https://www.canva.com/design/DAGUY1LqpUY/xxlfOet-nQtqIeScKOJU6g/view?embed')"><strong>10%</strong> : Frais de fonctionnement de l'association</li>
-        </ul>
-    </section>
-</div>
-
-<!-- Modal pour les détails de l'utilisation des fonds -->
-<div id="fundModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeFundModal()">&times;</span>
-        <h3>Détails de l'utilisation des fonds</h3>
-        <div id="fundDetails"></div>
-    </div>
-</div>
-
-<script>
-    function openFundModal(videoUrl) {
-        const fundDetails = document.getElementById('fundDetails');
-        fundDetails.innerHTML = `
-            <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
-                <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="${videoUrl}" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
-            </div>
-        `;
-        document.getElementById('fundModal').style.display = "block";
-    }
-
-    function closeFundModal() {
-        document.getElementById('fundModal').style.display = "none";
-    }
-</script>
-
-<!-- Modal pour les détails de l'utilisation des fonds -->
-<div id="fundModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeFundModal()">&times;</span>
-        <h3>Détails de l'utilisation des fonds</h3>
-        <div id="fundDetails"></div>
-    </div>
-</div>
-
-<!-- Section pour les célébrités -->
-<div class="container">
-    <section class="celebrities">
-        <h3>Nos Célébrités Ambassadrices</h3>
-        <div class="celebrity-list">
-            <div class="celebrity">
-                <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/9654620a-e49b-7d29-51f1-5b27a2642f88.jpeg" class="celebrity-image" alt="Célébrité 1">
-                <p>Célébrité 1 <span class="don-amount">💰 50%</span></p>
-                <div class="social-links">
-                    <a href="https://facebook.com" target="_blank">Facebook</a>
-                    <a href="https://instagram.com" target="_blank">Instagram</a>
-                    <a href="https://twitter.com" target="_blank">Twitter</a>
-                </div>
-            </div>
-            <div class="celebrity">
-                <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/b84d4fd3-2c02-43e6-3266-d38453923f42.jpeg" class="celebrity-image" alt="Célébrité 2">
-                <p>Célébrité 2 <span class="don-amount">💰 30%</span></p>
-                <div class="social-links">
-                    <a href="https://facebook.com" target="_blank">Facebook</a>
-                    <a href="https://instagram.com" target="_blank">Instagram</a>
-                    <a href="https://twitter.com" target="_blank">Twitter</a>
-                </div>
-            </div>
-            <div class="celebrity">
-                <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/9202b1a2-d6dd-66fe-7f5f-e19fd8465ab4.jpg" class="celebrity-image" alt="Célébrité 3">
-                <p>Ça M'ira  <span class="don-amount">💰 10%</span></p>
-                <div class="social-links">
-                    <a href="https://facebook.com" target="_blank">Facebook</a>
-                    <a href="https://instagram.com" target="_blank">Instagram</a>
-                    <a href="https://twitter.com" target="_blank">Twitter</a>
-                </div>
-            </div>
-            <div class="celebrity">
-                <img src="https://via.placeholder.com/80" class="celebrity-image" alt="Célébrité 4">
-                <p>Célébrité 4 <span class="don-amount">💰 10%</span></p>
-                <div class="social-links">
-                    <a href="https://facebook.com" target="_blank">Facebook</a>
-                    <a href="https://instagram.com" target="_blank">Instagram</a>
-                    <a href="https://twitter.com" target="_blank">Twitter</a>
-                </div>
+        <div class="service-card">
+            <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/360d82bf-1858-8e3f-34c9-02cb772c5599.jpeg" alt="Tresse Basique">
+            <div class="service-info">
+                <h2>Tresse Basique</h2>
+                <p>Des tresses simples, élégantes et abordables pour tous les types de cheveux. Démêlage inclus si nécessaire.</p>
+                <p><strong>Prix : 13 € - 25 €</strong></p>
+                <button class="btn" onclick="openReservationModal('Tresse Basique', '13 € - 25 €')">Réserver</button>
             </div>
         </div>
+
+        <div class="service-card">
+            <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/3975ea6b-3a7b-606a-e304-c31ed93b6b78.jpeg" alt="Lissage Brésilien">
+            <div class="service-info">
+                <h2>Lissage Brésilien</h2>
+                <p>Profitez de notre lissage brésilien qui rend vos cheveux doux, soyeux et faciles à coiffer. Idéal pour des cheveux bouclés ou épais.</p>
+                <p><strong>Prix : 30 € - 45 €</strong></p>
+                <button class="btn" onclick="openReservationModal('Lissage Brésilien', '30 € - 45 €')">Réserver</button>
+            </div>
+        </div>
+
+        <!-- Ajouter d'autres services ici -->
+
     </section>
-</div>
 
+    <!-- Panier -->
+    <div id="cart">
+        <h3>Panier</h3>
+        <ul class="cart-items"></ul>
+        <button class="btn" onclick="checkout()">Commander</button>
+    </div>
 
-<!-- Modal pour le don -->
-<div id="donationModal" class="modal">
+    <!-- Modal de réservation -->
+    <div id="reservationModal" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h3>Confirmez votre don</h3>
-        <input type="email" id="email" placeholder="Votre email" required>
-        <button id="confirm-donation-button" onclick="processDonation()">Confirmer le don</button>
-
-        <!-- Formulaire de carte de crédit (initialement caché) -->
-        <div id="credit-card-form" style="display: none; margin-top: 20px;">
-            <h4>Informations de Carte de Crédit</h4>
-            <form>
-                <label for="card-name">Nom du titulaire :</label>
-                <input type="text" id="card-name" required>
-
-                <label for="card-number">Numéro de carte :</label>
-                <input type="text" id="card-number" required>
-
-                <label for="expiry-date">Date d'expiration :</label>
-                <input type="text" id="expiry-date" placeholder="MM/AA" required>
-
-                <label for="cvv">CVV :</label>
-                <input type="text" id="cvv" required>
-
-                <div class="card-icons">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Mastercard_Logo.png" alt="Mastercard" class="card-icon">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/American_Express_Logo.png" alt="American Express" class="card-icon">
-                </div>
-
-                <button type="submit">Payer</button>
+            <span class="close" onclick="closeReservationModal()">&times;</span>
+            <h2>Réserver un Service</h2>
+            <form id="reservationForm">
+                <input type="text" id="clientName" placeholder="Votre Nom" required>
+                <input type="email" id="clientEmail" placeholder="Votre Email" required>
+                <input type="text" id="clientPhone" placeholder="Votre Téléphone" required>
+                <input type="text" id="serviceName" readonly>
+                <input type="text" id="servicePrice" readonly>
+                <input type="datetime-local" id="appointmentDate" required>
+                <button type="submit">Confirmer la Réservation</button>
             </form>
         </div>
     </div>
-</div>
 
+    <!-- Modal de la boutique -->
+    <div id="boutiqueModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBoutiqueModal()">&times;</span>
+            <h2>Jenna Boutique</h2>
+            <div class="product-card">
+                <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/7ff13caf-727e-4434-ce2f-bcdf863770c7.jpeg" alt="Produit 1">
+                <div class="product-info">
+                    <h2>Shampoing Hydratant</h2>
+                    <p>Un shampoing doux et hydratant pour tous les types de cheveux.</p>
+                    <p><strong>Prix : 15 €</strong></p>
+                    <button class="btn" onclick="addToCart('Shampoing Hydratant', '15 €')">Ajouter au Panier</button>
+                </div>
+            </div>
 
- <div id="social-sharing">
-        <div id="social-sharing" class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px; top:150px;">
-            <a class="a2a_button_snapchat" href=""></a>
-            <a class="a2a_button_facebook"></a>
-            <a class="a2a_button_twitter"></a>
-            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+            <div class="product-card">
+                <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/0f718b22-b08f-7025-a167-970294e19be0.jpeg" alt="Produit 2">
+                <div class="product-info">
+                    <h2>Masque Nourrissant</h2>
+                    <p>Un masque profond pour nourrir vos cheveux et leur redonner de l'éclat.</p>
+                    <p><strong>Prix : 20 €</strong></p>
+                    <button class="btn" onclick="addToCart('Masque Nourrissant', '20 €')">Ajouter au Panier</button>
+                </div>
+            </div>
+
+            <!-- Ajouter d'autres produits ici -->
+
         </div>
     </div>
 
-    <script async src="https://static.addtoany.com/menu/page.js"></script>
+    <!-- Modal À propos -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAboutModal()">&times;</span>
+            <h2>À propos de nous</h2>
+            <div class="about">
+                <p>Bienvenue au Salon de Beauté, votre destination pour des services de lissage et de manucure de qualité. Notre équipe est composée de professionnels passionnés par la beauté et le bien-être.</p>
+                <p>Nous nous engageons à fournir un service exceptionnel et à utiliser des produits de haute qualité pour garantir la satisfaction de nos clients.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Contact -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h2>Contactez-nous</h2>
+            <form id="contactForm">
+                <input type="text" id="contactName" placeholder="Votre Nom" required>
+                <input type="email" id="contactEmail" placeholder="Votre Email" required>
+                <textarea id="contactMessage" placeholder="Votre Message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="opening-hours">
+        <h3>Heures d'Ouverture</h3>
+        <p>Lundi - Vendredi : 9h00 - 19h00</p>
+        <p>Samedi : 10h00 - 18h00</p>
+        <p>Dimanche : Fermé</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Salon de Beauté. Tous droits réservés.</p>
+    </footer>
 
     <script>
-        var socialSharing = document.getElementById('social-sharing');
-        var lastScrollTop = 0;
-
-        window.addEventListener('scroll', function() {
-            var st = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (st > lastScrollTop) {
-                socialSharing.style.display = 'none'; // Masquer le code en descendant
-            } else {
-                socialSharing.style.display = 'block'; // Afficher le code en montant
-            }
-            lastScrollTop = st;
-        });
-        </script>
-<script>
-    let totalCollected = 0;
-
-    function openModal() {
-        document.getElementById('donationModal').style.display = "block";
-        document.getElementById('credit-card-form').style.display = 'none'; // Cache le formulaire de carte de crédit au début
-    }
-
-    function closeModal() {
-        document.getElementById('donationModal').style.display = "none";
-    }
-
-    function processDonation() {
-        const email = document.getElementById('email').value;
-        const amount = parseInt(document.getElementById('donationAmount').value);
-        
-        // Vérifie si l'email est fourni
-        if (!email) {
-            alert("Veuillez entrer votre adresse email.");
-            return; // Ne continue pas si l'email n'est pas fourni
+        function openReservationModal(serviceName, servicePrice) {
+            document.getElementById("serviceName").value = serviceName;
+            document.getElementById("servicePrice").value = servicePrice;
+            document.getElementById("reservationModal").style.display = "block";
         }
 
-        // Vérifie si le montant est valide
-        if (!isNaN(amount) && amount > 0) {
-            totalCollected += amount;
-            document.getElementById('totalCollected').innerText = totalCollected;
-            const progress = (totalCollected / 5000) * 100;
-            document.getElementById('progress-fill').style.width = progress + '%';
-            document.getElementById('progress-fill').innerText = Math.round(progress) + '%';
-            document.getElementById('credit-card-form').style.display = 'block'; // Affiche le formulaire de carte de crédit
-        } else {
-            alert("Veuillez entrer un montant valide.");
+        function closeReservationModal() {
+            document.getElementById("reservationModal").style.display = "none";
         }
-    }
 
-    // Close the modal when clicking outside of it
-    window.onclick = function (event) {
-        const modal = document.getElementById('donationModal');
-        if (event.target == modal) {
-            modal.style.display = "none";
+        function openBoutiqueModal() {
+            document.getElementById("boutiqueModal").style.display = "block";
         }
-    }
-</script>
 
-<style>
-    .card-icons {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
+        function closeBoutiqueModal() {
+            document.getElementById("boutiqueModal").style.display = "none";
+        }
 
-    .card-icon {
-        width: 40px; /* Ajustez la taille de l'icône */
-        margin: 0 10px; /* Espacement entre les icônes */
-    }
-</style>
+        function openAboutModal() {
+            document.getElementById("aboutModal").style.display = "block";
+        }
 
+        function closeAboutModal() {
+            document.getElementById("aboutModal").style.display = "none";
+        }
 
+        function openContactModal() {
+            document.getElementById("contactModal").style.display = "block";
+        }
 
+        function closeContactModal() {
+            document.getElementById("contactModal").style.display = "none";
+        }
 
+        // Gestion du panier
+        let cart = [];
+
+        function addToCart(productName, productPrice) {
+            cart.push({ name: productName, price: productPrice });
+            displayCart();
+        }
+
+        function displayCart() {
+            const cartDiv = document.getElementById("cart");
+            const cartItemsList = cartDiv.querySelector('.cart-items');
+            cartItemsList.innerHTML = '';
+
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - ${item.price}`;
+                cartItemsList.appendChild(li);
+            });
+
+            cartDiv.style.display = cart.length ? 'block' : 'none';
+        }
+
+        function checkout() {
+            alert('Merci pour votre commande!');
+            cart = [];
+            displayCart();
+        }
+
+        // Gestion des formulaires
+        document.getElementById("reservationForm").onsubmit = function(event) {
+            event.preventDefault();
+            alert('Réservation confirmée!');
+            closeReservationModal();
+        };
+
+        document.getElementById("contactForm").onsubmit = function(event) {
+            event.preventDefault();
+            alert('Votre message a été envoyé!');
+            closeContactModal();
+        };
     </script>
-</body>
 
-</html>
+</body>
+        </html>
