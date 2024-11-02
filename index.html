@@ -19,13 +19,16 @@
     <meta property="og:type" content="website">
     
     <!-- Balises Twitter Card -->
+<meta name="og:image" content="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/826b9b4e-a792-71ca-909b-6b31698b330f.jpg">
+<meta name="og:title" content="Salon de Beauté - Lissage et Ongles Professionnels">
+<meta name="og:description" content="Découvrez notre salon de beauté spécialisé dans le lissage et la pose d'ongles professionnels.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Salon de Beauté - Lissage et Ongles Professionnels">
     <meta name="twitter:description" content="Découvrez notre salon de beauté spécialisé dans le lissage et la pose d'ongles professionnels.">
-    <meta name="twitter:image" content="URL_DE_VOTRE_IMAGE"> <!-- Remplacez par une URL d'image -->
+    <meta name="twitter:image" content="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/826b9b4e-a792-71ca-909b-6b31698b330f.jpg"> <!-- Remplacez par une URL d'image -->
     
     <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/826b9b4e-a792-71ca-909b-6b31698b330f.jpg" type="image/png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
@@ -266,13 +269,28 @@
             line-height: 1.6;
             font-family: 'Poppins', sans-serif;
         }
+        
+        
+
+#social-sharing {
+    margin-top: 300px; /* Ajustez la valeur selon vos besoins */
+}
+  .a2a_button_snapchat {
+            background-color: yellow;
+        }
     </style>
 </head>
 <body>
+<header style="display: flex; align-items: center; justify-content: space-between; padding: 20px; background-color: #f7f7f7;">
+<div>
+    <h1 style="font-size: 24px; color: #333;">ChibaKiss🤍</h1>
+    <p style="font-size: 16px; color: #666;">Lissage, coupe et soins capillaires professionnels pour femmes</p>
+</div>
+    <div style="max-width: 200px; max-height: 200px; overflow: hidden; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/826b9b4e-a792-71ca-909b-6b31698b330f.jpg" alt="Salon de coiffure pour femmes et hommes" style="width: 100%; height: auto; display: block;">
+    </div>
+</header>
 
-    <header>
-        <h1>Salon de Beauté - Lissage et Ongles Professionnels</h1>
-    </header>
 
     <nav>
         <a href="#services">Services</a>
@@ -336,7 +354,7 @@
     <div id="boutiqueModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeBoutiqueModal()">&times;</span>
-            <h2>Jenna Boutique</h2>
+            <h2>Boutique Accessoires </h2>
             <div class="product-card">
                 <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/7ff13caf-727e-4434-ce2f-bcdf863770c7.jpeg" alt="Produit 1">
                 <div class="product-info">
@@ -398,7 +416,32 @@
     <footer>
         <p>&copy; 2024 Salon de Beauté. Tous droits réservés.</p>
     </footer>
+ <div id="social-sharing">
+        <div id="social-sharing" class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px; top:150px;">
+            <a class="a2a_button_snapchat" href=""></a>
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+        </div>
+    </div>
 
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+
+    <script>
+        var socialSharing = document.getElementById('social-sharing');
+        var lastScrollTop = 0;
+
+        window.addEventListener('scroll', function() {
+            var st = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (st > lastScrollTop) {
+                socialSharing.style.display = 'none'; // Masquer le code en descendant
+            } else {
+                socialSharing.style.display = 'block'; // Afficher le code en montant
+            }
+            lastScrollTop = st;
+        });
+        </script>
     <script>
         function openReservationModal(serviceName, servicePrice) {
             document.getElementById("serviceName").value = serviceName;
