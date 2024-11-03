@@ -1,333 +1,408 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+<meta name="description" content="Découvrez nos services de création de sites web professionnels.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services de Création Numérique</title>
-    <meta name="description" content="Services de création numérique incluant des filtres Snapchat personnalisés, la localisation d'entreprise et la création de sites web.">
-    <meta name="keywords" content="filtres Snapchat, localisation entreprise, création site web, services numériques">
-    <meta name="robots" content="index, follow">
+    <title>Votre Site Web Professionnel</title>
+    <!-- Lien vers Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif; /* Utilisation de la police Roboto */
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
-            color: #333;
+            background-color: #f4f4f4;
+            overflow-x: hidden; /* Empêche le défilement horizontal */
         }
         header {
-            background: linear-gradient(to right, #4CAF50, #2196F3);
-            color: #fff;
+            background: linear-gradient(to right, #35424a, #5cb85c);
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header h1 {
+            font-size: 2.5em;
+            animation: slide-in 1s forwards;
+            opacity: 0;
+        }
+        @keyframes slide-in {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .wave-text {
+            display: inline-block;
+            animation: wave 1s infinite;
+            font-size: 1.2em;
+        }
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            25% { transform: translateY(-5px); }
+            50% { transform: translateY(5px); }
+            75% { transform: translateY(-5px); }
+        }
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        .carousel-images {
+            display: flex;
+            animation: slide 20s infinite;
+        }
+        .carousel-images img {
+            width: 100%;
+            min-width: 100%;
+            height: auto;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(0); }
+            25% { transform: translateX(-100%); }
+            45% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            70% { transform: translateX(-200%); }
+            75% { transform: translateX(-300%); }
+            100% { transform: translateX(0); }
+        }
+        section {
+            padding: 40px;
+            margin: 20px;
+            background: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fade-in 0.5s forwards;
+            animation-delay: 1s; /* Délai d'animation pour les sections */
+        }
+        @keyframes fade-in {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        footer {
             text-align: center;
             padding: 20px;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to right, #35424a, #5cb85c);
+            color: #ffffff;
         }
-        h1 {
-            margin: 0;
-            font-size: 36px;
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ff5722;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+            position: relative;
+            overflow: hidden;
+            margin-top: 10px;
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
+        .button:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-50%) scaleX(0);
+            transition: transform 0.3s;
+            z-index: 0;
+        }
+        .button:hover:after {
+            transform: translateX(-50%) scaleX(1);
+        }
+        .button:hover {
+            background: #e64a19;
+            transform: scale(1.05);
+        }
+        .text-animate {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+            border-right: 2px solid;
+            display: inline-block;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
+        .services ul {
+            list-style-type: none; /* Retire les puces de la liste */
+            padding: 0;
+        }
+        .services li {
+            background: #e0e0e0;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .services li:hover {
+            background: #d1d1d1;
+        }
+        /* Styles pour la modale */
+        .modal {
+            display: none; /* Cacher la modale par défaut */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
             padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            animation: slide-in 0.5s forwards;
         }
-        .service {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .service h2 {
-            font-size: 24px;
-            margin-top: 0;
-        }
-        .service p {
-            font-size: 16px;
-            color: #666;
-        }
-        .price {
-            color: #4CAF50;
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
             font-weight: bold;
         }
-        .order-button {
-          background-color: #007BFF; 
-          color: #fff; 
-          padding: 12px 24px; 
-          border-radius: 25px; 
-          cursor: pointer; 
-          box-shadow: 0 4px 10px rgba(0,123,255,0.3); 
-          transition: background-color 0.3s ease, transform 0.3s ease; 
-          margin-top: 15px; 
-          border:none; 
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
-        .order-button:hover {
-          background-color: #0056b3; 
-          transform: translateY(-3px); 
-        }
-        .creator-name {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 9999;
-            background-color: #2ecc71;
-            color: #fff;
-            padding: 10px 20px;
-            border-bottom-right-radius: 50px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            cursor:pointer ;
-        }
-        
-        .hide {
-           opacity :0 ;
-           transform :translateY(-50 px);
-       }
-       .description {
-           color :#ff5722 ;
-           font-weight :bold ;
-       }
-       a {
-           color :#2196F3 ;
-           text-decoration :none ;
-       }
-       a:hover {
-           text-decoration :underline ;
-       }
-       .small-box-container {
-           display :flex ;
-           justify-content :space-around ;
-           margin-top :20 px ;
-           width :100% ;
-       }
-       .small-box {
-           width :30% ;
-           max-width :90 px ;
-           background-color :#fff ;
-           padding :20 px ;
-           border :2 px solid transparent ;
-           border-radius :10 px ;
-           box-shadow :0     10 px rgba (  ) ,    ) ; 
-           transition:border-color  ease ; 
-           overflow:hidden ; 
-           display:flex ; 
-           flex-direction :column ; 
-           justify-content :space-between ; 
-           align-items:center ; 
-       } 
-       .small-box h3 { 
-           margin :  ; 
-           font-size :18 px ; 
-           color :blue ; 
-           text-align:center ; 
-       } 
-       .small-box p { 
-           margin-top :10 px ; 
-           font-size :14 px ; 
-           color:#666 ; 
-           text-align:center ; 
-       } 
-       .small-box a { 
-           text-decoration:none ; 
-       } 
-       .small-box.yellow { 
-           border-color :yellow ; 
-       } 
-       .small-box.green { 
-           border-color :green ; 
-       } 
-       .small-box.red { 
-           border-color:red ; 
-
-       /* Modal styles */
-       .modal {
-          display:none; /* Hidden by default */
-          position:fixed; /* Stay in place */
-          z-index:1; /* Sit on top */
-          left:0; top:0; width:100%; height:100%; overflow:auto; /* Full width and height */
-          background-color:black; /* Fallback color */
-          background-color:rgba(0,0,0,0.4); /* Black w/ opacity */
-      }
-      .modal-content {
-          background-color:#fefefe; margin:auto; padding:20px; border-radius:5px; width:80%;
-      }
-      .close {
-          color:#aaa; float:right; font-size:28px; font-weight:bold;
-      }
-      .close:hover,
-      .close:focus {
-          color:black; text-decoration:none; cursor:pointer;
-      }
-
-
-
-
     </style>
+
+
 </head>
 <body>
 
-
-<a href="https://www.snapchat.com/add/lucious-lion04?share_id=E2B3bwMxt0U&locale=fr-FR" target="_blank">
-    <div class="creator-name" aria-label="Nom du créateur">OLDEST</div>
-</a>
-
 <header>
-    <h1>Service de création numérique avec ma signature</h1>
+    <h1>Votre Site Web Professionnel</h1>
+    <p class="wave-text">Transformez votre idée en réalité avec Moi !</p>
 </header>
-<div class="container">
-    <!-- Service de Filtres Snapchat -->
-    <div class="service">
-        <h2>Création de Filtres Snapchat Personnalisés</h2>
-        <p>Obtenez des filtres Snapchat uniques et personnalisés pour vos événements, mariages, fêtes d'anniversaire, ou pour promouvoir votre entreprise. Prix : <span class="price">45 €</span>. Exemple : <span class="description"><a href="https://lens.snapchat.com/51f227930cb9470f999d4b89cf475625?share_id=TyI6hFace_8&locale=fr-FR">Cliquez sur ce lien pour voir un exemple de filtre</a></span></p>
-        
-        <blockquote class="snapchat-embed" data-snapchat-embed-width="306" data-snapchat-embed-height="481" data-snapchat-embed-url="https://www.snapchat.com/lens/51f227930cb9470f999d4b89cf475625/embed" data-snapchat-embed-style="border-radius:40px;" data-snapchat-embed-title="Lens FOOD TRUCK OL" style="background:#C4C4C4;border-radius:.5);margin:max-width:min-width;padding;width:-webkit-calc(100% -2);width:-calc(100% -2);display:flex;height"><div style=""><a title="Lens FOOD TRUCK OL" href="https://www.snapchat.com/lens/51f227930cb9470f999d4b89cf475625" style=""></a><div style=""></div></div><div style=""></div><div style=""><a title="Lens FOOD TRUCK OL" href="https://www.snapchat.com/lens/51f227930cb9470f999d4b89cf475625" style="">View more on Snapchat</a></div></blockquote><script async src="https://www.snapchat.com/embed.js"></script>          
-        
-        <button class="order-button" aria-label="Commander un filtre Snapchat personnalisé" onclick="document.getElementById('orderModal').style.display='block'">Commander un filtre</button>
+
+<div class="carousel">
+    <div class="carousel-images">
+        <img src="https://via.placeholder.com/800x400/35424a/ffffff?text=Image+1" alt="Image 1">
+        <img src="https://via.placeholder.com/800x400/5cb85c/ffffff?text=Image+2" alt="Image 2">
+        <img src="https://via.placeholder.com/800x400/ff5722/ffffff?text=Image+3" alt="Image 3">
+        <img src="https://via.placeholder.com/800x400/2196F3/ffffff?text=Image+4" alt="Image 4">
     </div>
+</div>
 
-    <!-- Service de Localisations -->
-    <div class="service">
-        <h2>Création de Localisations pour Votre Entreprise</h2>
-        <p>Nous créons des localisations personnalisées pour votre entreprise, afin que vos clients puissent facilement vous trouver sur la carte <span class="map">map snapchat</span>. Prix : <span class="price">70 €</span>.</p>
-        
-        <div class="image-container">
-            <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/13751a45-b5c0-d087-c33b-c7c8999cf15f.jpg" alt="Exemple de localisation d'entreprise sur Snapchat" width="300">
-        </div>
-        <p class="description">Cliquez sur ce lien pour voir un exemple : <a href="https://t.snapchat.com/MBfTkatp" target="_blank" class="map">Voir l'exemple</a></p>
+<section>
+<h2>Pourquoi choisir mes services ?</h2> 
+    <p class="text-animate">Nous comprenons que chaque projet est unique.</p>
+    <p>Avec notre expertise, vous obtiendrez un site qui attire les visiteurs et augmente votre visibilité en ligne.</p>
+</section>
 
-        <button class ="order-button "aria-label ="Commander une localisation personnalisée "onclick ="document.getElementById('orderModal').style.display='block' ">Commander une localisation </button>
+<section class="services">
+  <h2>Services que j'offre</h2>
+    <ul>
+        <li>
+            🌐 Création de sites vitrines
+            <a href="#" class="button" onclick="openModal('modalVitrine')">Voir Exemple</a>
+        </li>
+        <li>
+            📝 Développement de blogs
+            <a href="#" class="button" onclick="openModal('modalBlog')">Voir Exemple</a>
+        </li>
+        <li>
+            📈 Pages de capture pour générer des leads
+            <a href="#" class="button" onclick="openModal('modalCapture')">Voir Exemple</a>
+        </li>
+        <li>
+            🔧 Maintenance et mises à jour régulières
+            <a href="#" class="button" onclick="openModal('modalMaintenance')">Voir Exemple</a>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <h2>Offre spéciale pour mes abonnés</h2>
+    <p>Pour tous mes abonnés, je propose une <strong>consultation gratuite</strong> pour discuter de votre projet et vous donner des conseils personnalisés.</p>
+    <a href="#contact" class="button">Réservez votre consultation</a>
+</section>
+
+<section id="contact">
+    <h2>Contactez-moi</h2>
+    <p>Intéressé par mes services ? Laissez un commentaire ci-dessous ou envoyez-moi un message pour discuter de votre projet.</p>
+    <p>Email : votre.email@example.com</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 🗿The Strongest Holder 🇯🇲 Tous droits réservés. Anciennement connu sous le nom de  🗿HOLDEST🇯🇲.</p>
+    <ul>
+        <li><a href="/privacy-policy">Politique de confidentialité</a></li>
+        <li><a href="/terms">Conditions d'utilisation</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+    <p>Suivez-moi sur :
+        <a href="https://www.snapchat.com/add/lucious-lion04?share_id=Uqg1aKWRRwU&locale=fr-FR">Snapchat</a> |
+        <a href="tiktok.com/@holder_digital_services">TikTok</a> |
+        <a href="https://instagram.com">Instagram</a>
+    </p>
+</footer>
+<!-- Modales -->
+<div id="modalVitrine" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modalVitrine')">&times;</span>
+        <h2>Exemple de Code pour Création de Sites Vitrines</h2>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mon Site Vitrine&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Bienvenue sur Mon Site Vitrine&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;section&gt;
+        &lt;p&gt;Ici, vous trouverez des informations sur mes services.&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
     </div>
+</div>
 
-    <!-- Service de Création de Sites Web -->
-    <div class ="service ">
-        <h2 >Création de Sites Web </h2 >
-        <p >Je propose mes services de conception de sites web professionnels et conviviaux pour votre entreprise ou votre projet personnel. De plus , je crée chaque site en code HTML , assurant ainsi sa longévité et son autonomie vis-à-vis des plateformes comme Wix ou d'autres sites payants prix :</p >
-        <span class ="price ">80 €,130 €,160 €</span > selon la complexité.</p >
-
-        <button class ="order-button "aria-label ="Commander un site web "onclick ="document.getElementById('orderModal').style.display='block' ">Commander un site web </button>
-
-        <div class ="small-box-container ">
-            <div class ="small-box yellow ">
-                <a href ="lien_vers_page_jaune.html ">
-                    <h3>FOOD Restauration</h3>
-                    <p>COMMANDEZ.</p>
-                </a>
-            </div>
-            <div class="small-box green">
-                <a href="lien_vers_page_vert.html">
-                    <h3>"Coiffeur(euse)"</h3>
-                    <p>Accessoires.</p>
-                </a>
-            </div>
-            <div class="small-box red">
-                <a href="lien_vers_page_rouge.html">
-                    <h3>Service de V.T.S</h3>
-                    <p>Description.</p>
-                </a>
-            </div>
-        </div>
+<div id="modalBlog" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modalBlog')">&times;</span>
+        <h2>Exemple de Code pour Développement de Blogs</h2>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mon Blog&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Bienvenue sur Mon Blog&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Mon Premier Article&lt;/h2&gt;
+        &lt;p&gt;Ceci est le contenu de mon premier article.&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
     </div>
+</div>
 
-    <!-- Section Contact -->
-    <div class="service">
-        <h2>Contact</h2>
-        <p>Pour plus d'informations ou pour passer commande, veuillez nous contacter à l'adresse email suivante : <a href="mailto:oldestlucious@gmail.com">oldestlucious@gmail.com</a> ou par téléphone au : <span class="map">07 44 89 27 83</span></p>
+<div id="modalCapture" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modalCapture')">&times;</span>
+        <h2>Exemple de Code pour Pages de Capture</h2>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Page de Capture&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Inscrivez-vous pour des mises à jour&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;form&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+        &lt;button type="submit"&gt;S'inscrire&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
     </div>
+</div>
 
-    <!-- Réunion Webex -->
-    <div class="service">
-        <h2>Réunion Webex</h2>
-        <p>Rejoignez notre réunion Webex pour discuter de vos besoins en création numérique : 
-            <a href="https://meet374.webex.com/meet/pr27420501817">
-                <button class="order-button" aria-label="Rejoindre la réunion Webex">Rejoindre la réunion</button>
-            </a>
-        </p>
+<div id="modalMaintenance" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modalMaintenance')">&times;</span>
+        <h2>Exemple de Code pour Maintenance et Mises à Jour</h2>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-
+    width, initial-scale=1.0"&gt;
+    &lt;title&gt;Maintenance du Site&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Maintenance de Mon Site&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;section&gt;
+        &lt;p&gt;Ce site est en cours de maintenance.
+         Revenez bientôt !&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
     </div>
-
-    <!-- Modal Form -->
-    <div id="orderModal" class="modal" role="dialog" aria-modal="true">
-        <div class="modal-content">
-            <span class="close" onclick="document.getElementById('orderModal').style.display='none'">&times;</span>
-
-            <!-- Formulaire de Commande -->
-            <form action="https://formspree.io/f/{your-form-id}" method="POST">
-                <h2>Formulaire de Commande</h2>
-                <label for="name">Nom:</label>
-                <input type="text" id="name" name="name" required><br><br>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="_replyto" required><br><br>
-
-                <label for="service">Service:</label>
-                <select id="service" name="service">
-                    <option value="filtre">Filtre Snapchat</option>
-                    <option value="localisation">Localisation Entreprise</option>
-                    <option value="siteweb">Création de Site Web</option>
-                </select><br><br>
-
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4"></textarea><br><br>
-
-                <button type="submit">Envoyer</button>
-            </form>
-
-        </div>
-    </div>
+</div>
 
 <script>
-// Close modal when clicking outside of it
-window.onclick = function(event) {
-    var modal = document.getElementById('orderModal');
-    if (event.target == modal) {
-        modal.style.display = "none";
+    // Animation d'apparition pour les sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section, index) => {
+        section.style.animationDelay = `${index * 0.5 + 1}s`;
+         // Délai pour chaque section
+    });
+
+    // Ouvrir la modale
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
     }
-}
-</script>
 
-<style>
-/* Modal styles */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0; top: 0; width: 100%; height: 100%; overflow: auto; /* Full width and height */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-.modal-content {
-    background-color: #fefefe; 
-    margin: auto; 
-    padding: 20px; 
-    border-radius: 5px; 
-    width: 80%;
-}
-.close {
-    color: #aaa; 
-    float: right; 
-    font-size: 28px; 
-    font-weight: bold;
-}
-.close:hover,
-.close:focus {
-    color: black; 
-    text-decoration: none; 
-    cursor: pointer;
-}
-</style>
+    // Fermer la modale
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
 
-
-<script>
-// Example of adding an event listener to the buttons
-document.querySelectorAll('.order-button').forEach(button => {
-button.addEventListener('click', function() {
-// The modal opening is handled by the onclick attribute in the button
-});
-});
+    // Fermer la modale en cliquant à l'extérieur
+    window.onclick = function(event) {
+        const modals = document.getElementsByClassName('modal');
+        for (let i = 0; i < modals.length; i++) {
+            if (event.target == modals[i]) {
+                modals[i].style.display = "none";
+            }
+        }
+    };
 </script>
 
 </body>
-                         </html>
+</html>
