@@ -1,523 +1,333 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salon de Beauté - Lissage et Ongles Professionnels</title>
-    
-    <!-- Meta Description (SEO) -->
-    <meta name="description" content="Découvrez notre salon de beauté spécialisé dans le lissage et la pose d'ongles professionnels. Profitez d'un service de qualité pour sublimer votre beauté.">
-    
-    <!-- Meta Keywords (SEO) -->
-    <meta name="keywords" content="salon de beauté, lissage, ongles, pose d'ongles, manucure, beauté, soins esthétiques">
-    
-    <!-- Open Graph Meta Tags (Pour les réseaux sociaux) -->
-    <meta property="og:title" content="Salon de Beauté - Lissage et Ongles Professionnels">
-    <meta property="og:description" content="Notre salon de beauté vous propose des services professionnels de lissage et de pose d'ongles pour sublimer votre beauté.">
-    <meta property="og:image" content="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/826b9b4e-a792-71ca-909b-6b31698b330f.jpg"> <!-- Remplacez par une URL d'image -->
-    <meta property="og:url" content="https://web-site13015.github.io/salon_de_locks/"> <!-- Remplacez par l'URL de votre site -->
-    <meta property="og:type" content="website">
-    
-    <!-- Balises Twitter Card -->
-<meta name="og:image" content="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/826b9b4e-a792-71ca-909b-6b31698b330f.jpg">
-<meta name="og:title" content="Salon de Beauté - Lissage et Ongles Professionnels">
-<meta name="og:description" content="Découvrez notre salon de beauté spécialisé dans le lissage et la pose d'ongles professionnels.">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Salon de Beauté - Lissage et Ongles Professionnels">
-    <meta name="twitter:description" content="Découvrez notre salon de beauté spécialisé dans le lissage et la pose d'ongles professionnels.">
-    <meta name="twitter:image" content="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/826b9b4e-a792-71ca-909b-6b31698b330f.jpg"> <!-- Remplacez par une URL d'image -->
-    
-    <!-- Favicon -->
-  <link rel="icon" href="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/826b9b4e-a792-71ca-909b-6b31698b330f.jpg" type="image/png">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    
+    <title>Services de Création Numérique</title>
+    <meta name="description" content="Services de création numérique incluant des filtres Snapchat personnalisés, la localisation d'entreprise et la création de sites web.">
+    <meta name="keywords" content="filtres Snapchat, localisation entreprise, création site web, services numériques">
+    <meta name="robots" content="index, follow">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
         }
-
         header {
-            background-color: #ff6f91;
-            color: white;
-            padding: 20px;
+            background: linear-gradient(to right, #4CAF50, #2196F3);
+            color: #fff;
             text-align: center;
-            font-family: 'Merriweather', serif;
-        }
-
-        nav {
-            text-align: center;
-            padding: 10px;
-            background-color: #ff4785;
-            font-family: 'Merriweather', serif;
-        }
-
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        nav a:hover {
-            background-color: white;
-            color: #ff4785;
-            border-radius: 5px;
-        }
-
-        section {
             padding: 20px;
-            max-width: 1000px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .container {
+            max-width: 800px;
             margin: auto;
+            padding: 20px;
         }
-
-        .service-card, .product-card {
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            text-align: center;
         }
-
-        .service-card img, .product-card img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-
-        .service-info, .product-info {
-            width: 100%;
-            max-width: 600px;
-        }
-
-        .service-info h2, .product-info h2 {
-            color: #ff4785;
+        .service h2 {
             font-size: 24px;
-            font-family: 'Merriweather', serif;
+            margin-top: 0;
         }
-
-        .service-info p, .product-info p {
-            color: #555;
-            line-height: 1.6;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .btn {
-            background-color: #ff4785;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            border-radius: 25px;
+        .service p {
             font-size: 16px;
-            transition: background-color 0.3s ease;
-            margin-top: 10px;
-            font-family: 'Poppins', sans-serif;
+            color: #666;
         }
-
-        .btn:hover {
-            background-color: #ff6f91;
-        }
-
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            font-family: 'Poppins', sans-serif;
-        }
-
-        form input, form textarea, form select {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        form button {
-            width: 100%;
-            padding: 15px;
-            background-color: #ff4785;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        form button:hover {
-            background-color: #ff6f91;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #ff4785;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1; 
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4); 
-        }
-
-        .modal-content {
-            background-color: #fff;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 10px;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
+        .price {
+            color: #4CAF50;
             font-weight: bold;
         }
-
-        .close:hover,
-        .close:focus {
-            color: #ff4785;
-            text-decoration: none;
-            cursor: pointer;
+        .order-button {
+          background-color: #007BFF; 
+          color: #fff; 
+          padding: 12px 24px; 
+          border-radius: 25px; 
+          cursor: pointer; 
+          box-shadow: 0 4px 10px rgba(0,123,255,0.3); 
+          transition: background-color 0.3s ease, transform 0.3s ease; 
+          margin-top: 15px; 
+          border:none; 
         }
-
-        /* Panier Styles */
-        #cart {
-            display: none;
+        .order-button:hover {
+          background-color: #0056b3; 
+          transform: translateY(-3px); 
+        }
+        .creator-name {
             position: fixed;
-            right: 20px;
-            bottom: 20px;
-            background-color: #32cd32;
-            padding: 15px;
-            border-radius: 5px;
-            color: white;
-        }
-
-        .cart-items {
-            list-style: none;
-            padding: 0;
-        }
-
-        .cart-items li {
-            margin-bottom: 5px;
-        }
-
-        /* Responsive Design */
-        @media (min-width: 768px) {
-            .service-card, .product-card {
-                flex-direction: row;
-                text-align: left;
-            }
-
-            .service-info, .product-info {
-                padding-left: 20px;
-            }
-        }
-
-        .about, .contact {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            background-color: #fff;
-        }
-
-        .about h2, .contact h2 {
-            color: #ff4785;
-            font-family: 'Merriweather', serif;
-        }
-
-        .opening-hours {
-            margin-top: 20px;
-            font-family: 'Poppins', sans-serif;
-            background-color: #f7f7f7;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .opening-hours h3 {
-            color: #ff4785;
-            font-family: 'Merriweather', serif;
-        }
-
-        .opening-hours p {
-            color: #555;
-            line-height: 1.6;
-            font-family: 'Poppins', sans-serif;
+            top: 20px;
+            left: 20px;
+            z-index: 9999;
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 10px 20px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            cursor:pointer ;
         }
         
-        
+        .hide {
+           opacity :0 ;
+           transform :translateY(-50 px);
+       }
+       .description {
+           color :#ff5722 ;
+           font-weight :bold ;
+       }
+       a {
+           color :#2196F3 ;
+           text-decoration :none ;
+       }
+       a:hover {
+           text-decoration :underline ;
+       }
+       .small-box-container {
+           display :flex ;
+           justify-content :space-around ;
+           margin-top :20 px ;
+           width :100% ;
+       }
+       .small-box {
+           width :30% ;
+           max-width :90 px ;
+           background-color :#fff ;
+           padding :20 px ;
+           border :2 px solid transparent ;
+           border-radius :10 px ;
+           box-shadow :0     10 px rgba (  ) ,    ) ; 
+           transition:border-color  ease ; 
+           overflow:hidden ; 
+           display:flex ; 
+           flex-direction :column ; 
+           justify-content :space-between ; 
+           align-items:center ; 
+       } 
+       .small-box h3 { 
+           margin :  ; 
+           font-size :18 px ; 
+           color :blue ; 
+           text-align:center ; 
+       } 
+       .small-box p { 
+           margin-top :10 px ; 
+           font-size :14 px ; 
+           color:#666 ; 
+           text-align:center ; 
+       } 
+       .small-box a { 
+           text-decoration:none ; 
+       } 
+       .small-box.yellow { 
+           border-color :yellow ; 
+       } 
+       .small-box.green { 
+           border-color :green ; 
+       } 
+       .small-box.red { 
+           border-color:red ; 
 
-#social-sharing {
-    margin-top: 300px; /* Ajustez la valeur selon vos besoins */
-}
-  .a2a_button_snapchat {
-            background-color: yellow;
-        }
+       /* Modal styles */
+       .modal {
+          display:none; /* Hidden by default */
+          position:fixed; /* Stay in place */
+          z-index:1; /* Sit on top */
+          left:0; top:0; width:100%; height:100%; overflow:auto; /* Full width and height */
+          background-color:black; /* Fallback color */
+          background-color:rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+      .modal-content {
+          background-color:#fefefe; margin:auto; padding:20px; border-radius:5px; width:80%;
+      }
+      .close {
+          color:#aaa; float:right; font-size:28px; font-weight:bold;
+      }
+      .close:hover,
+      .close:focus {
+          color:black; text-decoration:none; cursor:pointer;
+      }
+
+
+
+
     </style>
 </head>
 <body>
-<header style="display: flex; align-items: center; justify-content: space-between; padding: 20px; background-color: #f7f7f7;">
-<div>
-    <h1 style="font-size: 24px; color: #333;">ChibaKiss🤍</h1>
-    <p style="font-size: 16px; color: #666;">Lissage, coupe et soins capillaires professionnels pour femmes</p>
-</div>
-    <div style="max-width: 200px; max-height: 200px; overflow: hidden; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/826b9b4e-a792-71ca-909b-6b31698b330f.jpg" alt="Salon de coiffure pour femmes et hommes" style="width: 100%; height: auto; display: block;">
-    </div>
+
+
+<a href="https://www.snapchat.com/add/lucious-lion04?share_id=E2B3bwMxt0U&locale=fr-FR" target="_blank">
+    <div class="creator-name" aria-label="Nom du créateur">OLDEST</div>
+</a>
+
+<header>
+    <h1>Service de création numérique avec ma signature</h1>
 </header>
-
-
-    <nav>
-        <a href="#services">Services</a>
-        <a href="#boutique" onclick="openBoutiqueModal()">Boutique</a>
-        <a href="#about" onclick="openAboutModal()">À propos</a>
-        <a href="#contact" onclick="openContactModal()">Contact</a>
-    </nav>
-
-    <section id="services">
-        <h2>Nos Services</h2>
-
-        <div class="service-card">
-            <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/360d82bf-1858-8e3f-34c9-02cb772c5599.jpeg" alt="Tresse Basique">
-            <div class="service-info">
-                <h2>Tresse Basique</h2>
-                <p>Des tresses simples, élégantes et abordables pour tous les types de cheveux. Démêlage inclus si nécessaire.</p>
-                <p><strong>Prix : 13 € - 25 €</strong></p>
-                <button class="btn" onclick="openReservationModal('Tresse Basique', '13 € - 25 €')">Réserver</button>
-            </div>
-        </div>
-
-        <div class="service-card">
-            <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/3975ea6b-3a7b-606a-e304-c31ed93b6b78.jpeg" alt="Lissage Brésilien">
-            <div class="service-info">
-                <h2>Lissage Brésilien</h2>
-                <p>Profitez de notre lissage brésilien qui rend vos cheveux doux, soyeux et faciles à coiffer. Idéal pour des cheveux bouclés ou épais.</p>
-                <p><strong>Prix : 30 € - 45 €</strong></p>
-                <button class="btn" onclick="openReservationModal('Lissage Brésilien', '30 € - 45 €')">Réserver</button>
-            </div>
-        </div>
-
-        <!-- Ajouter d'autres services ici -->
-
-    </section>
-
-    <!-- Panier -->
-    <div id="cart">
-        <h3>Panier</h3>
-        <ul class="cart-items"></ul>
-        <button class="btn" onclick="checkout()">Commander</button>
+<div class="container">
+    <!-- Service de Filtres Snapchat -->
+    <div class="service">
+        <h2>Création de Filtres Snapchat Personnalisés</h2>
+        <p>Obtenez des filtres Snapchat uniques et personnalisés pour vos événements, mariages, fêtes d'anniversaire, ou pour promouvoir votre entreprise. Prix : <span class="price">45 €</span>. Exemple : <span class="description"><a href="https://lens.snapchat.com/51f227930cb9470f999d4b89cf475625?share_id=TyI6hFace_8&locale=fr-FR">Cliquez sur ce lien pour voir un exemple de filtre</a></span></p>
+        
+        <blockquote class="snapchat-embed" data-snapchat-embed-width="306" data-snapchat-embed-height="481" data-snapchat-embed-url="https://www.snapchat.com/lens/51f227930cb9470f999d4b89cf475625/embed" data-snapchat-embed-style="border-radius:40px;" data-snapchat-embed-title="Lens FOOD TRUCK OL" style="background:#C4C4C4;border-radius:.5);margin:max-width:min-width;padding;width:-webkit-calc(100% -2);width:-calc(100% -2);display:flex;height"><div style=""><a title="Lens FOOD TRUCK OL" href="https://www.snapchat.com/lens/51f227930cb9470f999d4b89cf475625" style=""></a><div style=""></div></div><div style=""></div><div style=""><a title="Lens FOOD TRUCK OL" href="https://www.snapchat.com/lens/51f227930cb9470f999d4b89cf475625" style="">View more on Snapchat</a></div></blockquote><script async src="https://www.snapchat.com/embed.js"></script>          
+        
+        <button class="order-button" aria-label="Commander un filtre Snapchat personnalisé" onclick="document.getElementById('orderModal').style.display='block'">Commander un filtre</button>
     </div>
 
-    <!-- Modal de réservation -->
-    <div id="reservationModal" class="modal">
-    <div class="modal-content">
-            <span class="close" onclick="closeReservationModal()">&times;</span>
-            <h2>Réserver un Service</h2>
-            <form id="reservationForm">
-                <input type="text" id="clientName" placeholder="Votre Nom" required>
-                <input type="email" id="clientEmail" placeholder="Votre Email" required>
-                <input type="text" id="clientPhone" placeholder="Votre Téléphone" required>
-                <input type="text" id="serviceName" readonly>
-                <input type="text" id="servicePrice" readonly>
-                <input type="datetime-local" id="appointmentDate" required>
-                <button type="submit">Confirmer la Réservation</button>
-            </form>
+    <!-- Service de Localisations -->
+    <div class="service">
+        <h2>Création de Localisations pour Votre Entreprise</h2>
+        <p>Nous créons des localisations personnalisées pour votre entreprise, afin que vos clients puissent facilement vous trouver sur la carte <span class="map">map snapchat</span>. Prix : <span class="price">70 €</span>.</p>
+        
+        <div class="image-container">
+            <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/13751a45-b5c0-d087-c33b-c7c8999cf15f.jpg" alt="Exemple de localisation d'entreprise sur Snapchat" width="300">
+        </div>
+        <p class="description">Cliquez sur ce lien pour voir un exemple : <a href="https://t.snapchat.com/MBfTkatp" target="_blank" class="map">Voir l'exemple</a></p>
+
+        <button class ="order-button "aria-label ="Commander une localisation personnalisée "onclick ="document.getElementById('orderModal').style.display='block' ">Commander une localisation </button>
+    </div>
+
+    <!-- Service de Création de Sites Web -->
+    <div class ="service ">
+        <h2 >Création de Sites Web </h2 >
+        <p >Je propose mes services de conception de sites web professionnels et conviviaux pour votre entreprise ou votre projet personnel. De plus , je crée chaque site en code HTML , assurant ainsi sa longévité et son autonomie vis-à-vis des plateformes comme Wix ou d'autres sites payants prix :</p >
+        <span class ="price ">80 €,130 €,160 €</span > selon la complexité.</p >
+
+        <button class ="order-button "aria-label ="Commander un site web "onclick ="document.getElementById('orderModal').style.display='block' ">Commander un site web </button>
+
+        <div class ="small-box-container ">
+            <div class ="small-box yellow ">
+                <a href ="lien_vers_page_jaune.html ">
+                    <h3>FOOD Restauration</h3>
+                    <p>COMMANDEZ.</p>
+                </a>
+            </div>
+            <div class="small-box green">
+                <a href="lien_vers_page_vert.html">
+                    <h3>"Coiffeur(euse)"</h3>
+                    <p>Accessoires.</p>
+                </a>
+            </div>
+            <div class="small-box red">
+                <a href="lien_vers_page_rouge.html">
+                    <h3>Service de V.T.S</h3>
+                    <p>Description.</p>
+                </a>
+            </div>
         </div>
     </div>
 
-    <!-- Modal de la boutique -->
-    <div id="boutiqueModal" class="modal">
+    <!-- Section Contact -->
+    <div class="service">
+        <h2>Contact</h2>
+        <p>Pour plus d'informations ou pour passer commande, veuillez nous contacter à l'adresse email suivante : <a href="mailto:oldestlucious@gmail.com">oldestlucious@gmail.com</a> ou par téléphone au : <span class="map">07 44 89 27 83</span></p>
+    </div>
+
+    <!-- Réunion Webex -->
+    <div class="service">
+        <h2>Réunion Webex</h2>
+        <p>Rejoignez notre réunion Webex pour discuter de vos besoins en création numérique : 
+            <a href="https://meet374.webex.com/meet/pr27420501817">
+                <button class="order-button" aria-label="Rejoindre la réunion Webex">Rejoindre la réunion</button>
+            </a>
+        </p>
+    </div>
+
+    <!-- Modal Form -->
+    <div id="orderModal" class="modal" role="dialog" aria-modal="true">
         <div class="modal-content">
-            <span class="close" onclick="closeBoutiqueModal()">&times;</span>
-            <h2>Boutique Accessoires </h2>
-            <div class="product-card">
-                <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/7ff13caf-727e-4434-ce2f-bcdf863770c7.jpeg" alt="Produit 1">
-                <div class="product-info">
-                    <h2>Shampoing Hydratant</h2>
-                    <p>Un shampoing doux et hydratant pour tous les types de cheveux.</p>
-                    <p><strong>Prix : 15 €</strong></p>
-                    <button class="btn" onclick="addToCart('Shampoing Hydratant', '15 €')">Ajouter au Panier</button>
-                </div>
-            </div>
+            <span class="close" onclick="document.getElementById('orderModal').style.display='none'">&times;</span>
 
-            <div class="product-card">
-                <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/0f718b22-b08f-7025-a167-970294e19be0.jpeg" alt="Produit 2">
-                <div class="product-info">
-                    <h2>Masque Nourrissant</h2>
-                    <p>Un masque profond pour nourrir vos cheveux et leur redonner de l'éclat.</p>
-                    <p><strong>Prix : 20 €</strong></p>
-                    <button class="btn" onclick="addToCart('Masque Nourrissant', '20 €')">Ajouter au Panier</button>
-                </div>
-            </div>
+            <!-- Formulaire de Commande -->
+            <form action="https://formspree.io/f/{your-form-id}" method="POST">
+                <h2>Formulaire de Commande</h2>
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" required><br><br>
 
-            <!-- Ajouter d'autres produits ici -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="_replyto" required><br><br>
 
-        </div>
-    </div>
+                <label for="service">Service:</label>
+                <select id="service" name="service">
+                    <option value="filtre">Filtre Snapchat</option>
+                    <option value="localisation">Localisation Entreprise</option>
+                    <option value="siteweb">Création de Site Web</option>
+                </select><br><br>
 
-    <!-- Modal À propos -->
-    <div id="aboutModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeAboutModal()">&times;</span>
-            <h2>À propos de nous</h2>
-            <div class="about">
-                <p>Bienvenue au Salon de Beauté, votre destination pour des services de lissage et de manucure de qualité. Notre équipe est composée de professionnels passionnés par la beauté et le bien-être.</p>
-                <p>Nous nous engageons à fournir un service exceptionnel et à utiliser des produits de haute qualité pour garantir la satisfaction de nos clients.</p>
-            </div>
-        </div>
-    </div>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4"></textarea><br><br>
 
-    <!-- Modal Contact -->
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeContactModal()">&times;</span>
-            <h2>Contactez-nous</h2>
-            <form id="contactForm">
-                <input type="text" id="contactName" placeholder="Votre Nom" required>
-                <input type="email" id="contactEmail" placeholder="Votre Email" required>
-                <textarea id="contactMessage" placeholder="Votre Message" required></textarea>
                 <button type="submit">Envoyer</button>
             </form>
+
         </div>
     </div>
 
-    <div class="opening-hours">
-        <h3>Heures d'Ouverture</h3>
-        <p>Lundi - Vendredi : 9h00 - 19h00</p>
-        <p>Samedi : 10h00 - 18h00</p>
-        <p>Dimanche : Fermé</p>
-    </div>
+<script>
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    var modal = document.getElementById('orderModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 
-    <footer>
-        <p>&copy; 2024 Salon de Beauté. Tous droits réservés.</p>
-    </footer>
- <div id="social-sharing">
-        <div id="social-sharing" class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px; top:150px;">
-            <a class="a2a_button_snapchat" href=""></a>
-            <a class="a2a_button_facebook"></a>
-            <a class="a2a_button_twitter"></a>
-            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-        </div>
-    </div>
+<style>
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0; top: 0; width: 100%; height: 100%; overflow: auto; /* Full width and height */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal-content {
+    background-color: #fefefe; 
+    margin: auto; 
+    padding: 20px; 
+    border-radius: 5px; 
+    width: 80%;
+}
+.close {
+    color: #aaa; 
+    float: right; 
+    font-size: 28px; 
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black; 
+    text-decoration: none; 
+    cursor: pointer;
+}
+</style>
 
-    <script async src="https://static.addtoany.com/menu/page.js"></script>
 
-    <script>
-        var socialSharing = document.getElementById('social-sharing');
-        var lastScrollTop = 0;
-
-        window.addEventListener('scroll', function() {
-            var st = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (st > lastScrollTop) {
-                socialSharing.style.display = 'none'; // Masquer le code en descendant
-            } else {
-                socialSharing.style.display = 'block'; // Afficher le code en montant
-            }
-            lastScrollTop = st;
-        });
-        </script>
-    <script>
-        function openReservationModal(serviceName, servicePrice) {
-            document.getElementById("serviceName").value = serviceName;
-            document.getElementById("servicePrice").value = servicePrice;
-            document.getElementById("reservationModal").style.display = "block";
-        }
-
-        function closeReservationModal() {
-            document.getElementById("reservationModal").style.display = "none";
-        }
-
-        function openBoutiqueModal() {
-            document.getElementById("boutiqueModal").style.display = "block";
-        }
-
-        function closeBoutiqueModal() {
-            document.getElementById("boutiqueModal").style.display = "none";
-        }
-
-        function openAboutModal() {
-            document.getElementById("aboutModal").style.display = "block";
-        }
-
-        function closeAboutModal() {
-            document.getElementById("aboutModal").style.display = "none";
-        }
-
-        function openContactModal() {
-            document.getElementById("contactModal").style.display = "block";
-        }
-
-        function closeContactModal() {
-            document.getElementById("contactModal").style.display = "none";
-        }
-
-        // Gestion du panier
-        let cart = [];
-
-        function addToCart(productName, productPrice) {
-            cart.push({ name: productName, price: productPrice });
-            displayCart();
-        }
-
-        function displayCart() {
-            const cartDiv = document.getElementById("cart");
-            const cartItemsList = cartDiv.querySelector('.cart-items');
-            cartItemsList.innerHTML = '';
-
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = `${item.name} - ${item.price}`;
-                cartItemsList.appendChild(li);
-            });
-
-            cartDiv.style.display = cart.length ? 'block' : 'none';
-        }
-
-        function checkout() {
-            alert('Merci pour votre commande!');
-            cart = [];
-            displayCart();
-        }
-
-        // Gestion des formulaires
-        document.getElementById("reservationForm").onsubmit = function(event) {
-            event.preventDefault();
-            alert('Réservation confirmée!');
-            closeReservationModal();
-        };
-
-        document.getElementById("contactForm").onsubmit = function(event) {
-            event.preventDefault();
-            alert('Votre message a été envoyé!');
-            closeContactModal();
-        };
-    </script>
+<script>
+// Example of adding an event listener to the buttons
+document.querySelectorAll('.order-button').forEach(button => {
+button.addEventListener('click', function() {
+// The modal opening is handled by the onclick attribute in the button
+});
+});
+</script>
 
 </body>
-        </html>
+                         </html>
