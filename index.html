@@ -80,8 +80,9 @@
     <script>
         document.getElementById('generateButton').addEventListener('click', async function () {
             const description = document.getElementById('description').value;
-            const apiKey = "3ffce23a-456c-4e2a-b5b7-a224186e4734";
-            const url = "https://api.deepai.org/api/text2img";
+            const apiKey = "3ffce23a-456c-4e2a-b5b7-a224186e4734"; // Remplacez par votre clé API
+            const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+            const apiUrl = 'https://api.deepai.org/api/text2img';
 
             // Vérification que la description n'est pas vide
             if (!description.trim()) {
@@ -97,8 +98,8 @@
             imageElement.style.display = "none";
 
             try {
-                // Envoi de la requête à l'API
-                const response = await fetch(url, {
+                // Envoi de la requête à l'API avec le proxy
+                const response = await fetch(proxyUrl + apiUrl, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -109,11 +110,16 @@
                     }),
                 });
 
+                // Vérification du statut de la réponse
                 const data = await response.json();
+                console.log("Réponse de l'API : ", data);  // Ajouté pour debugger
 
-                // Vérification des erreurs dans la réponse
-                if (!response.ok || !data.output_url) {
-                    throw new Error(data.error || "Une erreur est survenue lors de la génération de l'image.");
+                if (!response.ok) {
+                    throw new Error(data.error || "Erreur de l'API.");
+                }
+
+                if (!data.output_url) {
+                    throw new Error("Aucune image générée. Vérifiez la description.");
                 }
 
                 // Affichage de l'image générée
