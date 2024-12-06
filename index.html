@@ -1,441 +1,132 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <!-- Balise Favicon -->
-    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
-
-    <!-- Balises Meta SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Création de sites web pour petites entreprises, intégration de filtres Snapchat (lenses), réalité augmentée, systèmes de localisation, flyers animés, voix off et montage vidéo.">
-    <meta name="keywords" content="création de site web, réalité augmentée, filtres Snapchat, lenses, petites entreprises, flyers animés, voix off, montage vidéo, localisation, marketing digital">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Ton Nom ou Ton Entreprise">
-
-    <!-- Titre de la page -->
-    <title>Sites Web, Filtres Snapchat & Flyers Animés pour Petites Entreprises</title>
-
-    <!-- Balises Open Graph pour les réseaux sociaux (Facebook, LinkedIn, etc.) -->
-    <meta property="og:title" content="Sites Web, Filtres Snapchat & Flyers Animés pour Petites Entreprises">
-    <meta property="og:description" content="Nous créons des sites web professionnels, des filtres Snapchat (lenses), des flyers animés et des voix off pour petites entreprises. Intégration de réalité augmentée et systèmes de localisation inclus.">
-    <meta property="og:image" content="path/to/image.jpg">
-    <meta property="og:url" content="https://www.ton-site-web.com">
-    <meta property="og:type" content="website">
-
-    <!-- Balises Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sites Web, Filtres Snapchat & Flyers Animés pour Petites Entreprises">
-    <meta name="twitter:description" content="Nous offrons des services de création de sites web, filtres Snapchat (lenses), flyers animés, voix off et systèmes de localisation pour petites entreprises.">
-    <meta name="twitter:image" content="path/to/image.jpg">
-
-    <!-- Feuilles de style -->
-    <link rel="stylesheet" href="path/to/style.css">
-
-    <!-- Balise Canonique pour éviter le contenu dupliqué -->
-    <link rel="canonical" href="https://www.ton-site-web.com">
-
-    <!-- Améliorations de performance -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- Scripts JavaScript (déplacés à la fin du body pour meilleure performance) -->
- <!-- Lien vers Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Générateur d'Images avec DeepAI</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif; /* Utilisation de la police Roboto */
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            overflow-x: hidden; /* Empêche le défilement horizontal */
-        }
-        header {
-            background: linear-gradient(to right, #35424a, #5cb85c);
-            color: #ffffff;
-            padding: 40px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        header h1 {
-            font-size: 2.5em;
-            animation: slide-in 1s forwards;
-            opacity: 0;
-        }
-        @keyframes slide-in {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        .wave-text {
-            display: inline-block;
-            animation: wave 1s infinite;
-            font-size: 1.2em;
-        }
-        @keyframes wave {
-            0%, 100% { transform: translateY(0); }
-            25% { transform: translateY(-5px); }
-            50% { transform: translateY(5px); }
-            75% { transform: translateY(-5px); }
-        }
-        .carousel {
-            position: relative;
-            max-width: 100%;
-            overflow: hidden;
-            margin: 20px auto;
-        }
-        .carousel-images {
+            background: #f9f9f9;
             display: flex;
-            animation: slide 20s infinite;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        .carousel-images img {
-            width: 100%;
-            min-width: 100%;
-            height: auto;
-        }
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            20% { transform: translateX(0); }
-            25% { transform: translateX(-100%); }
-            45% { transform: translateX(-100%); }
-            50% { transform: translateX(-200%); }
-            70% { transform: translateX(-200%); }
-            75% { transform: translateX(-300%); }
-            100% { transform: translateX(0); }
-        }
-        section {
-            padding: 40px;
-            margin: 20px;
-            background: #ffffff;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transform: translateY(20px);
-            opacity: 0;
-            animation: fade-in 0.5s forwards;
-            animation-delay: 1s; /* Délai d'animation pour les sections */
-        }
-        @keyframes fade-in {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        footer {
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
             text-align: center;
-            padding: 20px;
-            background: linear-gradient(to right, #35424a, #5cb85c);
-            color: #ffffff;
         }
-        .button {
-            display: inline-block;
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
             padding: 10px 20px;
-            background: #ff5722;
-            color: #ffffff;
-            text-decoration: none;
+            border: none;
+            background: #007bff;
+            color: #fff;
             border-radius: 5px;
-            transition: background 0.3s, transform 0.3s;
-            position: relative;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-        .button:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateX(-50%) scaleX(0);
-            transition: transform 0.3s;
-            z-index: 0;
-        }
-        .button:hover:after {
-            transform: translateX(-50%) scaleX(1);
-        }
-        .button:hover {
-            background: #e64a19;
-            transform: scale(1.05);
-        }
-        .text-animate {
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
-            border-right: 2px solid;
-            display: inline-block;
-        }
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: black; }
-        }
-        .services ul {
-            list-style-type: none; /* Retire les puces de la liste */
-            padding: 0;
-        }
-        .services li {
-            background: #e0e0e0;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .services li:hover {
-            background: #d1d1d1;
-        }
-        /* Styles pour la modale */
-        .modal {
-            display: none; /* Cacher la modale par défaut */
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding-top: 60px;
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
-            animation: slide-in 0.5s forwards;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
             cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #result img {
+            max-width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        #loading {
+            display: none;
+            margin-top: 20px;
+            color: #007bff;
+            font-size: 16px;
         }
     </style>
-
-
 </head>
 <body>
-
-<header>
-    <h1>Votre Site Web Professionnel</h1>
-    <p class="wave-text">Transformez votre idée en réalité avec Moi !</p>
-</header>
-
-<div class="carousel">
-    <div class="carousel-images">
-        <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/95326f6b-c309-b2f8-b46f-163508709e41.jpg" alt="Image 1">
-        <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/b02c8d42-2d74-aaf0-76d7-ff7ff640fb6c.jpg" alt="Image 2">
-        <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/a24b668f-f63c-0d04-aeeb-2ba75fccf142.jpg" alt="Image 3">
-        <img src="https://mcusercontent.com/40a9f1a77d46874eba2309d88/images/3c97995b-d5d6-c4c0-cb24-f2d3ab14052a.jpg" alt="Image 4">
+    <div class="container">
+        <h1>Générateur d'Images</h1>
+        <input type="text" id="description" placeholder="Décrivez l'image (ex : un chat dans un jardin)">
+        <button id="generateButton">Générer l'Image</button>
+        <div id="loading">Chargement...</div>
+        <div id="result">
+            <h2>Résultat :</h2>
+            <img id="generatedImage" src="" alt="Image générée" style="display: none;">
+        </div>
     </div>
-</div>
+    <script>
+        document.getElementById('generateButton').addEventListener('click', async function () {
+            const description = document.getElementById('description').value;
+            const apiKey = "3ffce23a-456c-4e2a-b5b7-a224186e4734";
+            const url = "https://api.deepai.org/api/text2img";
 
-<section>
-<h2>Pourquoi choisir mes services ?</h2> 
-    <p class="text-animate">Nous comprenons que chaque projet est unique.</p>
-    <p>Avec notre expertise, vous obtiendrez un site qui attire les visiteurs et augmente votre visibilité en ligne.</p>
-</section>
-
-<section class="services">
-  <h2>Services que j'offre</h2>
-    <ul>
-        <li>
-            🌐 Création de sites vitrines
-            <a href="#" class="button" onclick="openModal('modalVitrine')">Voir Exemple</a>
-        </li>
-        <li>
-            📝 Développement de blogs
-            <a href="#" class="button" onclick="openModal('modalBlog')">Voir Exemple</a>
-        </li>
-        <li>
-            📈 Pages de capture pour générer des leads
-            <a href="#" class="button" onclick="openModal('modalCapture')">Voir Exemple</a>
-        </li>
-        <li>
-            🔧 Maintenance et mises à jour régulières
-            <a href="#" class="button" onclick="openModal('modalMaintenance')">Voir Exemple</a>
-        </li>
-    </ul>
-</section>
-
-<section>
-    <h2>Offre spéciale pour mes abonnés</h2>
-    <p>Pour tous mes abonnés, je propose une <strong>consultation gratuite</strong> pour discuter de votre projet et vous donner des conseils personnalisés.</p>
-    <a href="#contact" class="button">Réservez votre consultation</a>
-</section>
-
-<section id="contact">
-    <h2>Contactez-moi</h2>
-    <p>Intéressé par mes services ? Laissez un commentaire ci-dessous ou envoyez-moi un message pour discuter de votre projet.</p>
-    <p>Email : votre.email@example.com</p>
-</section>
-
-<footer>
-    <p>&copy; 2024 🗿The Strongest Holder 🇯🇲 Tous droits réservés. Anciennement connu sous le nom de  🗿HOLDEST🇯🇲.</p>
-    <ul>
-        <li><a href="/privacy-policy">Politique de confidentialité</a></li>
-        <li><a href="/terms">Conditions d'utilisation</a></li>
-        <li><a href="/contact">Contact</a></li>
-    </ul>
-    <p>Suivez-moi sur :
-        <a href="https://www.snapchat.com/add/lucious-lion04?share_id=Uqg1aKWRRwU&locale=fr-FR">Snapchat</a> |
-        <a href="https://www.tiktok.com/@holder_digital_services?_t=8r6ppd4UI8v&_r=1">TikTok</a> |
-        <a href="https://instagram.com">Instagram</a>
-    </p>
-</footer>
-<!-- Modales -->
-<div id="modalVitrine" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modalVitrine')">&times;</span>
-        <h2>Exemple de Code pour Création de Sites Vitrines</h2>
-        <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="fr"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Mon Site Vitrine&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;header&gt;
-        &lt;h1&gt;Bienvenue sur Mon Site Vitrine&lt;/h1&gt;
-    &lt;/header&gt;
-    &lt;section&gt;
-        &lt;p&gt;Ici, vous trouverez des informations sur mes services.&lt;/p&gt;
-    &lt;/section&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-        </pre>
-    </div>
-</div>
-
-<div id="modalBlog" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modalBlog')">&times;</span>
-        <h2>Exemple de Code pour Développement de Blogs</h2>
-        <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="fr"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Mon Blog&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;header&gt;
-        &lt;h1&gt;Bienvenue sur Mon Blog&lt;/h1&gt;
-    &lt;/header&gt;
-    &lt;article&gt;
-        &lt;h2&gt;Mon Premier Article&lt;/h2&gt;
-        &lt;p&gt;Ceci est le contenu de mon premier article.&lt;/p&gt;
-    &lt;/article&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-        </pre>
-    </div>
-</div>
-
-<div id="modalCapture" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modalCapture')">&times;</span>
-        <h2>Exemple de Code pour Pages de Capture</h2>
-        <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="fr"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Page de Capture&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;header&gt;
-        &lt;h1&gt;Inscrivez-vous pour des mises à jour&lt;/h1&gt;
-    &lt;/header&gt;
-    &lt;form&gt;
-        &lt;label for="email"&gt;Email:&lt;/label&gt;
-        &lt;input type="email" id="email" name="email" required&gt;
-        &lt;button type="submit"&gt;S'inscrire&lt;/button&gt;
-    &lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-        </pre>
-    </div>
-</div>
-
-<div id="modalMaintenance" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modalMaintenance')">&times;</span>
-        <h2>Exemple de Code pour Maintenance et Mises à Jour</h2>
-        <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="fr"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-
-    width, initial-scale=1.0"&gt;
-    &lt;title&gt;Maintenance du Site&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;header&gt;
-        &lt;h1&gt;Maintenance de Mon Site&lt;/h1&gt;
-    &lt;/header&gt;
-    &lt;section&gt;
-        &lt;p&gt;Ce site est en cours de maintenance.
-         Revenez bientôt !&lt;/p&gt;
-    &lt;/section&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-        </pre>
-    </div>
-</div>
-
-<script>
-    // Animation d'apparition pour les sections
-    const sections = document.querySelectorAll('section');
-    sections.forEach((section, index) => {
-        section.style.animationDelay = `${index * 0.5 + 1}s`;
-         // Délai pour chaque section
-    });
-
-    // Ouvrir la modale
-    function openModal(modalId) {
-        document.getElementById(modalId).style.display = "block";
-    }
-
-    // Fermer la modale
-    function closeModal(modalId) {
-        document.getElementById(modalId).style.display = "none";
-    }
-
-    // Fermer la modale en cliquant à l'extérieur
-    window.onclick = function(event) {
-        const modals = document.getElementsByClassName('modal');
-        for (let i = 0; i < modals.length; i++) {
-            if (event.target == modals[i]) {
-                modals[i].style.display = "none";
+            // Vérification que la description n'est pas vide
+            if (!description.trim()) {
+                alert("Veuillez entrer une description !");
+                return;
             }
-        }
-    };
-</script>
 
+            // Affichage du message de chargement
+            const loading = document.getElementById('loading');
+            const result = document.getElementById('result');
+            const imageElement = document.getElementById('generatedImage');
+            loading.style.display = "block";
+            imageElement.style.display = "none";
+
+            try {
+                // Envoi de la requête à l'API
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'api-key': apiKey,
+                    },
+                    body: JSON.stringify({
+                        text: description,
+                    }),
+                });
+
+                const data = await response.json();
+
+                // Vérification des erreurs dans la réponse
+                if (!response.ok || !data.output_url) {
+                    throw new Error(data.error || "Une erreur est survenue lors de la génération de l'image.");
+                }
+
+                // Affichage de l'image générée
+                imageElement.src = data.output_url;
+                imageElement.style.display = "block";
+            } catch (error) {
+                console.error("Erreur :", error);
+                alert("Erreur : " + error.message);
+            } finally {
+                // Masquage du message de chargement
+                loading.style.display = "none";
+            }
+        });
+    </script>
 </body>
 </html>
