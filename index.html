@@ -38,7 +38,6 @@
 
   <style>
     body {
-      margin: 0;
       font-family: 'Cormorant Garamond', serif;
       background: linear-gradient(90deg, #292A2B, #FFFFFF);
       color: #ffffff;
@@ -57,13 +56,13 @@
     }
 
     .intro h1 {
-      font-size: 3rem;
+      font-size: 5rem;
       margin-bottom: 20px;
       font-weight: bold;
     }
 
     .intro p {
-      font-size: 1.2rem;
+      font-size: 2.4rem;
       margin-bottom: 40px;
     }
 
@@ -81,14 +80,82 @@
       border: 4px solid #8A8A8A;
     }
 
+  
+  header {
+  background: linear-gradient(135deg, #ffffff, #f3f3f3); /* Fond doux */
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre noire douce */
+  margin: 20px auto;
+}
+
+header .logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+header .subtitle {
+  font-size: 3.4rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ombre noire sur texte */
+}
+
+header ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+ header p {
+  
+   font-size: 2.4rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+ 
+  
+header ul li {
+  font-size: 2rem;
+  color: #555;
+  margin: 5px 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre douce */
+}
+
+header .social-icons {
+  margin-top: 15px;
+}
+
+header .social-icons a {
+  text-decoration: none;
+  color: #fff;
+  background: #333;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Ombre noire */
+  transition: all 0.3s ease;
+}
+
+header .social-icons a:hover {
+  background: #555;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Accentuation à l'hover */
+}
+  
+  
+  
+  
     .title {
-      font-size: 2.5rem;
+      font-size: 1.3rem;
       font-weight: bold;
       margin: 10px 0;
     }
 
     .subtitle {
-      font-size: 1.2rem;
+      font-size: 2.3rem;
       color: #D3D3D3;
       margin-bottom: 30px;
     }
@@ -133,13 +200,13 @@
       transform: scale(1.05);
     }
 
-    .button img {
+    
+ .button img {
       width: 30px;
+      height: 30px;
+      border-radius: 20%;
     }
-
-  
-  
-   .call-to-action {
+    .call-to-action {
       margin-top: 30px;
     }
 
@@ -156,21 +223,7 @@
       font-size: 1.2rem;
       color: #D3D3D3;
     }
-  
-  
-  
-  
-  
-    .button:hover {
-      transform: scale(1.05);
-    }
 
-    .button img {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-    }
-    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -211,7 +264,6 @@
       border-radius: 5px;
     }
 
-    /* Ajout de styles pour les prix */
     .price-before {
       text-decoration: line-through;
       color: #888888;
@@ -224,63 +276,233 @@
       font-size: 2.4rem;
       font-weight: bold;
     }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+.button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background: #000000;
+      color: #FFFFFF;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+    .button {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+      background-color: #000;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    .service-info {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .price-before {
+      text-decoration: line-through;
+      color: #999;
+    }
+
+    .price-after {
+      font-weight: bold;
+      color: #FFD700;
+    }
+
+    .testimonial {
+      margin-top: 15px;
+      font-size: 1rem;
+      background-color: #333;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .stars {
+      font-size: 1.3rem;
+      color: #FFD700;
+    }
+
+    .star {
+      margin-right: 3px;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    .testimonial-author {
+      font-weight: bold;
+      margin-top: 5px;
+      color: #ccc;
+    }
+
+    img {
+      max-width: 200px;
+      height: auto;
+      margin-left: 10px;
+    }
+   /* Ajout de styles pour les prix */
+.price-before {
+  text-decoration: line-through;
+  color: #888888;
+  font-size: 2.3rem;
+  margin-right: 9px;
+}
+
+.price-after {
+  color: #FF0000; /* Rouge pour afficher le prix après réduction */
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+  .cookie-icon {
+  font-size: 24px;
+  margin-left: 10px;
+  color: #ff6600; /* Couleur orange pour la coquille */
+}
   </style>
 </head>
 <body>
-  <!-- Section d'introduction -->
   <div class="intro" id="intro">
     <h1>Bienvenue sur LE PLUS FORT DÉTENTEUR</h1>
     <p>Nourrir les esprits créatifs avec les meilleurs outils et ressources. Explorez nos services et découvrez ce que nous avons à offrir !</p>
     <button onclick="showMainContent()">Explorer maintenant</button>
   </div>
 
-  <!-- Contenu principal -->
   <div class="main-content" id="main-content">
-    <header>
-      <img src="https://storage.googleapis.com/bitly-image-upload/Iobs0ORonot" alt="Logo" class="logo">
-      <h1 class="title">LE PLUS FORT DÉTENTEUR</h1>    
-      <h2>Nos Services</h2>
-      <p class="subtitle">Des solutions clés en main pour vos besoins professionnels</p>
-      <div class="social-icons">
-        <a href="https://web-site13015.github.io/Holder_Digital_Services/#contact" target="_blank">TikTok</a>
-        <a href="https://t.me/VibesGhettoPro" target="_blank">Telegram</a>
-      </div>
-    </header>
-
-    <div class="buttons">
-      <a href="#" class="button" onclick="showModal('Boutique clé en main', 'Voici une boutique clé en main, simple à personnaliser !', 'boutique')">
-        Boutique clé en main - Prix : <span class="price-before">200€</span> <span class="price-after">180€</span>
-        <img src="https://storage.googleapis.com/bitly-image-upload/Iobs0p5g1js" alt="Icone">
-      </a>
-      <a href="#" class="button" onclick="showModal('Site de réservation pour locks', 'Un site professionnel pour vos réservations de locks.', 'locks')">
-        Site de réservation pour locks - Prix : <span class="price-before">220€</span> <span class="price-after">200€</span>
-        <img src="https://storage.googleapis.com/bitly-image-upload/Iobs0p5g1js" alt="Icone">
-      </a>
-      <a href="#" class="button" onclick="showModal('Site blanchiment dentaire', 'Design moderne pour services dentaires.', 'dentaire')">
-        Site blanchiment dentaire - Prix : <span class="price-before">280€</span> <span class="price-after">250€</span>
-        <img src="https://storage.googleapis.com/bitly-image-upload/Iobs0p5g1js" alt="Icone">
-      </a>
+   <header>
+  <img src="https://storage.googleapis.com/bitly-image-upload/Iobs0ORonot" alt="Logo" class="logo">
+  <p class="subtitle">🚀 Des solutions clés en main pour vos besoins professionnels 🛍️💈🚖</p>
+  <p>Nous proposons des boutiques en ligne prêtes à l'emploi pour :</p>
+  <ul>
+    <li>🛒 Petits commerces</li>
+    <li>💈 Salons de coiffure et services de locks</li>
+    <li>🍔 Restaurants, livraisons 🚚 et commandes en ligne</li>
+    <li>🚖 Services de VTC</li>
+  </ul>
+  <p>✨ Simplifiez vos opérations, développez votre entreprise et atteignez de nouveaux sommets dès aujourd'hui !</p>
+  <div class="social-icons">
+    <a href="https://web-site13015.github.io/Holder_Digital_Services/#contact" target="_blank">TikTok</a>
+    <a href="https://t.me/VibesGhettoPro" target="_blank">Telegram</a>
+  </div>
+</header>
+<div class="buttons">
+  <!-- Service: Boutique clé en main -->
+  <a href="#" class="button" onclick="showModal('Boutique clé en main', 'Voici une boutique clé en main, simple à personnaliser !', 'boutique')">
+    <div class="service-info">
+      <span>Boutique clé en main - Prix : <span class="price-before">200€</span> <span class="price-after">180€</span></span>
+      <img src="https://storage.googleapis.com/bitly-image-upload/Iobs0p5g1js" alt="Icone">
     </div>
+    <div class="testimonial">
+      <div class="stars">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9734;</span>
+      </div>
+      <p class="testimonial-text">"Très facile à personnaliser et super design!"</p>
+      <p class="testimonial-author">- Client satisfait</p>
+      <button class="btn-profite" onclick="event.stopPropagation(); window.location.href='https://www.instagram.com/profil_instagram_personne1/'">Profite</button>
+    </div>
+  </a>
 
-  <!-- Fenêtre modale -->
+  <!-- Service: Site de réservation pour locks -->
+  <a href="#" class="button" onclick="showModal('Site de réservation pour locks', 'Un site professionnel pour vos réservations de locks.', 'locks')">
+    <div class="service-info">
+      <span>Site de réservation pour locks - Prix : <span class="price-before">220€</span> <span class="price-after">200€</span></span>
+      <img src="https://storage.googleapis.com/bitly-image-upload/Iobs0p5g1js" alt="Icone">
+    </div>
+    <div class="testimonial">
+      <div class="stars">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+      </div>
+      <p class="testimonial-text">"Un site vraiment professionnel et pratique à utiliser!"</p>
+      <p class="testimonial-author">- Client heureux</p>
+      <button class="btn-profite" onclick="event.stopPropagation(); window.location.href='https://www.instagram.com/profil_instagram_personne2/'">Profite</button>
+    </div>
+  </a>
+
+  <!-- Service: Site blanchiment dentaire -->
+  <a href="#" class="button" onclick="showModal('Site blanchiment dentaire', 'Design moderne pour services dentaires.', 'dentaire')">
+    <div class="service-info">
+      <span>Site blanchiment dentaire - Prix : <span class="price-before">280€</span> <span class="price-after">250€</span></span>
+      <img src="https://storage.googleapis.com/bitly-image-upload/Iobs0p5g1js" alt="Icone">
+    </div>
+    <div class="testimonial">
+      <div class="stars">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9734;</span>
+      </div>
+      <p class="testimonial-text">"Design moderne, parfait pour ma clinique!"</p>
+      <p class="testimonial-author">- Professionnel du secteur dentaire</p>
+      <button class="btn-profite" onclick="event.stopPropagation(); window.location.href='https://www.instagram.com/profil_instagram_personne3/'">Profite</button>
+    </div>
+  </a>
+</div>
+
+  <!-- Modal -->
   <div class="modal" id="modal">
     <div class="modal-content">
       <h3 id="modal-title"></h3>
       <p id="modal-description"></p>
       <pre id="modal-code"></pre>
       <a href="#" id="modal-link" class="button" target="_blank">Voir le site</a>
-      <!-- Nouveau bouton : Obtenir ce site via PayPal -->
       <a href="https://py.pl/2JM7Ky" class="button" target="_blank">Obtenir ce site sur PayPal</a>
       <button class="close-modal" onclick="closeModal()">Fermer</button>
     </div>
   </div>
 
-    <!-- Section Appel à l'action -->
-    <div class="call-to-action">
-      <img src="https://storage.googleapis.com/bitly-image-upload/IobrnlVVvJQ" alt="Inscription" class="cta-image">
-      <p class="cta-text">Inscrivez-vous dès maintenant pour bénéficier de nos offres spéciales</p>
-    </div>
+  <!-- Appel à l'action -->
+  <div class="call-to-action">
+    <img src="https://storage.googleapis.com/bitly-image-upload/IobrnlVVvJQ" alt="Inscription" class="cta-image">
+    <p class="cta-text">Inscrivez-vous dès maintenant pour bénéficier de nos offres spéciales</p>
   </div>
+    <div id="cookie-notification" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #333; color: white; padding: 10px; text-align: center; display: none;">
+  <span>Ce site utilise des cookies pour améliorer votre expérience. En continuant, vous acceptez notre utilisation des cookies. 🍪</span>
+  <button onclick="acceptCookies()" style="background-color: #ff6600; color: white; border: none; padding: 5px 10px; margin-left: 10px; cursor: pointer;">Accepter</button>
+</div>
+<script>
+    // Afficher la notification des cookies au chargement de la page
+window.onload = function() {
+  if (!localStorage.getItem('cookiesAccepted')) {
+    document.getElementById('cookie-notification').style.display = 'block';
+  }
+};
+
+// Fonction pour accepter les cookies
+function acceptCookies() {
+  localStorage.setItem('cookiesAccepted', 'true');
+  document.getElementById('cookie-notification').style.display = 'none';
+}
+    </script>
   <script>
     function showMainContent() {
       document.getElementById('intro').style.display = 'none';
@@ -289,27 +511,29 @@
 
     function showModal(title, description, type) {
       const codeExamples = {
-        boutique: `<div>\n  <h1>Boutique clé en main</h1>\n  <p>Prête à l'emploi pour vos ventes en ligne.</p>\n</div>`,
-        locks: `<div>\n  <h1>Réservation pour locks</h1>\n  <p>Réservez facilement vos créneaux.</p>\n</div>`,
-        dentaire: `<div>\n  <h1>Blanchiment dentaire</h1>\n  <p>Présentez vos services efficacement.</p>\n</div>`
+        boutique: `<div>\n  <h1>Boutique clé en main</h1>\<p>Description: Créez votre propre boutique en ligne clé en main avec des outils faciles à personnaliser et un design moderne. Parfait pour démarrer votre activité en ligne rapidement.</p>
+<pre>&lt;div class="shop"&gt;\n  &lt;h1&gt;Bienvenue dans notre boutique&lt;/h1&gt;\n  &lt;!-- Ajouter des produits ici --&gt;\n&lt;/div&gt;</pre>`,
+        locks: `<div>\n  <h1>Site de réservation pour locks</h1>\n  <p>Description: Offrez à vos clients un site pratique et professionnel pour réserver leurs locks facilement.</p>\n  <pre>&lt;div class="booking"&gt;\n  &lt;h2&gt;Réservez votre lock&lt;/h2&gt;\n  &lt;!-- Interface de réservation --&gt;\n&lt;/div&gt;</pre>`,
+        dentaire: `<div>\n  <h1>Site blanchiment dentaire</h1>\n  <p>Description: Créez un site professionnel pour vos services de blanchiment dentaire avec un design moderne.</p>\n  <pre>&lt;div class="dental-service"&gt;\n  &lt;h2&gt;Services de blanchiment dentaire&lt;/h2&gt;\n  &lt;!-- Ajouter des informations sur les services --&gt;\n&lt;/div&gt;</pre>`
       };
 
-      const links = {
-        boutique: "https://web-site13015.github.io/Marseille_by_la_reunion_shopping/",
-        locks: "https://bit.ly/3ZuH9RF",
-        dentaire: "https://bit.ly/3ZuH9RF"
+      const modalTitle = {
+        boutique: "Boutique clé en main",
+        locks: "Site de réservation pour locks",
+        dentaire: "Site blanchiment dentaire"
       };
 
-      document.getElementById('modal-title').innerText = title;
-      document.getElementById('modal-description').innerText = description;
-      document.getElementById('modal-code').innerText = codeExamples[type];
-      document.getElementById('modal-link').href = links[type];
-      document.getElementById('modal').style.display = 'flex';
+      document.getElementById("modal-title").textContent = modalTitle[type];
+      document.getElementById("modal-description").innerHTML = codeExamples[type];
+      document.getElementById("modal-code").textContent = codeExamples[type];
+      document.getElementById("modal-link").setAttribute("href", "https://votre-url.com");
+
+      document.getElementById("modal").style.display = "flex";
     }
 
     function closeModal() {
-      document.getElementById('modal').style.display = 'none';
+      document.getElementById("modal").style.display = "none";
     }
   </script>
 </body>
-    </html>
+  </html>
