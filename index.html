@@ -1,138 +1,315 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Générateur d'Images avec DeepAI</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f9f9f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Nourrir les esprits créatifs avec des outils et des ressources de qualité. Découvrez nos services professionnels et explorez nos solutions clés en main !" />
+  <meta name="keywords" content="création de site, boutique clé en main, réservation locks, blanchiment dentaire, outils créatifs" />
+  <meta name="author" content="LE PLUS FORT DÉTENTEUR" />
+  
+  <!-- Open Graph Meta Tags (For Social Media Sharing) -->
+  <meta property="og:title" content="LE PLUS FORT DÉTENTEUR - Page d'accueil" />
+  <meta property="og:description" content="Nourrir les esprits créatifs avec des outils et des ressources de qualité. Découvrez nos services professionnels et explorez nos solutions clés en main !" />
+  <meta property="og:image" content="https://d1ayxb9ooonjts.cloudfront.net/0482a3c938673192a591f2845b9eb275.png" />
+  <meta property="og:url" content="https://votre-url.com" />
+  <meta property="og:type" content="website" />
+  
+  <meta name="twitter:title" content="LE PLUS FORT DÉTENTEUR - Page d'accueil" />
+  <meta name="twitter:description" content="Nourrir les esprits créatifs avec des outils et des ressources de qualité. Découvrez nos services professionnels et explorez nos solutions clés en main !" />
+  <meta name="twitter:image" content="https://d1ayxb9ooonjts.cloudfront.net/0482a3c938673192a591f2845b9eb275.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <title>LE PLUS FORT DÉTENTEUR - Page d'accueil</title>
 
-        .container {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 400px;
-            text-align: center;
-        }
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://d1ayxb9ooonjts.cloudfront.net/0482a3c938673192a591f2845b9eb275.png" />
+  
+  <!-- Preconnect to external domains for performance improvement -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://storage.googleapis.com" />
+  
+  <!-- CSS Styles -->
+  <link href="https://d1ayxb9ooonjts.cloudfront.net/6d4e695c5e36a560c048a1a99976bf1c.css" rel="stylesheet" type="text/css">
 
-        h1 {
-            margin-bottom: 20px;
-            color: #333;
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
 
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      background: linear-gradient(90deg, #292A2B, #FFFFFF);
+      color: #ffffff;
+    }
 
-        button {
-            padding: 10px 20px;
-            border: none;
-            background: #007bff;
-            color: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+    /* Section d'introduction */
+    .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      background: linear-gradient(180deg, #292A2B 0%, #525457 100%);
+      padding: 20px;
+    }
 
-        button:hover {
-            background: #0056b3;
-        }
+    .intro h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
 
-        #result img {
-            max-width: 100%;
-            margin-top: 20px;
-            border-radius: 10px;
-        }
+    .intro p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
 
-        #loading {
-            display: none;
-            margin-top: 20px;
-            color: #007bff;
-            font-size: 16px;
-        }
-    </style>
+    .main-content {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto;
+      border: 4px solid #8A8A8A;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #D3D3D3;
+      margin-bottom: 30px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      color: #FFFFFF;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 0 auto;
+      max-width: 300px;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background: #000000;
+      color: #FFFFFF;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    .button img {
+      width: 30px;
+    }
+
+  
+  
+   .call-to-action {
+      margin-top: 30px;
+    }
+
+    .cta-image {
+      width: 90%;
+      max-width: 600px;
+      border-radius: 15px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .cta-text {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #D3D3D3;
+    }
+  
+  
+  
+  
+  
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    .button img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      color: #000000;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 420px;
+    }
+
+    .modal-content pre {
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: monospace;
+      text-align: left;
+      overflow: auto;
+    }
+
+    .close-modal {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #ff0000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Ajout de styles pour les prix */
+    .price-before {
+      text-decoration: line-through;
+      color: #888888;
+      font-size: 2.3rem;
+      margin-right: 9px;
+    }
+
+    .price-after {
+      color: #FF0000;
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Générateur d'Images</h1>
-        <input type="text" id="description" placeholder="Décrivez l'image (ex : un chat dans un jardin)">
-        <button id="generateButton">Générer l'Image</button>
-        <div id="loading">Chargement...</div>
-        <div id="result">
-            <h2>Résultat :</h2>
-            <img id="generatedImage" src="" alt="Image générée" style="display: none;">
-        </div>
+  <!-- Section d'introduction -->
+  <div class="intro" id="intro">
+    <h1>Bienvenue sur LE PLUS FORT DÉTENTEUR</h1>
+    <p>Nourrir les esprits créatifs avec les meilleurs outils et ressources. Explorez nos services et découvrez ce que nous avons à offrir !</p>
+    <button onclick="showMainContent()">Explorer maintenant</button>
+  </div>
+
+  <!-- Contenu principal -->
+  <div class="main-content" id="main-content">
+    <header>
+      <img src="https://storage.googleapis.com/bitly-image-upload/Iobs0ORonot" alt="Logo" class="logo">
+      <h1 class="title">LE PLUS FORT DÉTENTEUR</h1>    
+      <h2>Nos Services</h2>
+      <p class="subtitle">Des solutions clés en main pour vos besoins professionnels</p>
+      <div class="social-icons">
+        <a href="https://web-site13015.github.io/Holder_Digital_Services/#contact" target="_blank">TikTok</a>
+        <a href="https://t.me/VibesGhettoPro" target="_blank">Telegram</a>
+      </div>
+    </header>
+
+    <div class="buttons">
+      <a href="#" class="button" onclick="showModal('Boutique clé en main', 'Voici une boutique clé en main, simple à personnaliser !', 'boutique')">
+        Boutique clé en main - Prix : <span class="price-before">200€</span> <span class="price-after">180€</span>
+        <img src="https://storage.googleapis.com/bitly-image-upload/Iobs0p5g1js" alt="Icone">
+      </a>
+      <a href="#" class="button" onclick="showModal('Site de réservation pour locks', 'Un site professionnel pour vos réservations de locks.', 'locks')">
+        Site de réservation pour locks - Prix : <span class="price-before">220€</span> <span class="price-after">200€</span>
+        <img src="https://storage.googleapis.com/bitly-image-upload/Iobs0p5g1js" alt="Icone">
+      </a>
+      <a href="#" class="button" onclick="showModal('Site blanchiment dentaire', 'Design moderne pour services dentaires.', 'dentaire')">
+        Site blanchiment dentaire - Prix : <span class="price-before">280€</span> <span class="price-after">250€</span>
+        <img src="https://storage.googleapis.com/bitly-image-upload/Iobs0p5g1js" alt="Icone">
+      </a>
     </div>
-    <script>
-        document.getElementById('generateButton').addEventListener('click', async function () {
-            const description = document.getElementById('description').value;
-            const apiKey = "3ffce23a-456c-4e2a-b5b7-a224186e4734"; // Remplacez par votre clé API
-            const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-            const apiUrl = 'https://api.deepai.org/api/text2img';
 
-            // Vérification que la description n'est pas vide
-            if (!description.trim()) {
-                alert("Veuillez entrer une description !");
-                return;
-            }
+  <!-- Fenêtre modale -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h3 id="modal-title"></h3>
+      <p id="modal-description"></p>
+      <pre id="modal-code"></pre>
+      <a href="#" id="modal-link" class="button" target="_blank">Voir le site</a>
+      <!-- Nouveau bouton : Obtenir ce site via PayPal -->
+      <a href="https://py.pl/2JM7Ky" class="button" target="_blank">Obtenir ce site sur PayPal</a>
+      <button class="close-modal" onclick="closeModal()">Fermer</button>
+    </div>
+  </div>
 
-            // Affichage du message de chargement
-            const loading = document.getElementById('loading');
-            const result = document.getElementById('result');
-            const imageElement = document.getElementById('generatedImage');
-            loading.style.display = "block";
-            imageElement.style.display = "none";
+    <!-- Section Appel à l'action -->
+    <div class="call-to-action">
+      <img src="https://storage.googleapis.com/bitly-image-upload/IobrnlVVvJQ" alt="Inscription" class="cta-image">
+      <p class="cta-text">Inscrivez-vous dès maintenant pour bénéficier de nos offres spéciales</p>
+    </div>
+  </div>
+  <script>
+    function showMainContent() {
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+    }
 
-            try {
-                // Envoi de la requête à l'API avec le proxy
-                const response = await fetch(proxyUrl + apiUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'api-key': apiKey,
-                    },
-                    body: JSON.stringify({
-                        text: description,
-                    }),
-                });
+    function showModal(title, description, type) {
+      const codeExamples = {
+        boutique: `<div>\n  <h1>Boutique clé en main</h1>\n  <p>Prête à l'emploi pour vos ventes en ligne.</p>\n</div>`,
+        locks: `<div>\n  <h1>Réservation pour locks</h1>\n  <p>Réservez facilement vos créneaux.</p>\n</div>`,
+        dentaire: `<div>\n  <h1>Blanchiment dentaire</h1>\n  <p>Présentez vos services efficacement.</p>\n</div>`
+      };
 
-                // Vérification du statut de la réponse
-                const data = await response.json();
-                console.log("Réponse de l'API : ", data);  // Ajouté pour debugger
+      const links = {
+        boutique: "https://web-site13015.github.io/Marseille_by_la_reunion_shopping/",
+        locks: "https://bit.ly/3ZuH9RF",
+        dentaire: "https://bit.ly/3ZuH9RF"
+      };
 
-                if (!response.ok) {
-                    throw new Error(data.error || "Erreur de l'API.");
-                }
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-description').innerText = description;
+      document.getElementById('modal-code').innerText = codeExamples[type];
+      document.getElementById('modal-link').href = links[type];
+      document.getElementById('modal').style.display = 'flex';
+    }
 
-                if (!data.output_url) {
-                    throw new Error("Aucune image générée. Vérifiez la description.");
-                }
-
-                // Affichage de l'image générée
-                imageElement.src = data.output_url;
-                imageElement.style.display = "block";
-            } catch (error) {
-                console.error("Erreur :", error);
-                alert("Erreur : " + error.message);
-            } finally {
-                // Masquage du message de chargement
-                loading.style.display = "none";
-            }
-        });
-    </script>
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
 </body>
-</html>
+    </html>
