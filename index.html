@@ -1,81 +1,1947 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Ma Boutique - Connexion Snapchat</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    header {
-      background-color: #222;
-      color: white;
-      padding: 20px 0;
-    }
-    .container {
-      padding: 40px 20px;
-    }
-    .snap-login-btn {
-      background-color: #fffc00;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 50px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    .snap-login-btn:hover {
-      background-color: #f2e600;
-    }
-    .message {
-      margin-top: 30px;
-      font-size: 16px;
-      color: #333;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le marché du soleil - Baskets Premium</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --secondary: #2C3E50;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --success: #28A745;
+            --warning: #FFC107;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header amélioré */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            
+            top: 0;
+            z-index: 100;
+        }
+        section {
+  scroll-margin-top: 30px; /* adapte à la hauteur de ton header */
+}
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 10px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover, 
+        nav ul li a.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .icons a {
+            color: var(--dark);
+            font-size: 18px;
+            position: relative;
+            display: flex;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        /* Bannière responsive */
+        .banner {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542291026-7eec264c27ff');
+            background-size: cover;
+            background-position: center;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            padding: 20px;
+        }
+        
+        .banner-content {
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 10px;
+        }
+        
+        .banner h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .banner p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+        
+        /* Section catégories */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .category {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .category img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .category-info {
+            padding: 25px;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .category-info h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* Grille de produits */
+        .featured-products {
+            margin-bottom: 50px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+        
+        .product-img-container {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product:hover .product-img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .product-old-price {
+            text-decoration: line-through;
+            color: #777;
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+        
+        .product-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .product-btn:hover {
+            background-color: var(--primary);
+        }
+        
+        /* Section avantages */
+        .benefits {
+            background-color: #fff;
+            padding: 50px 0;
+            margin-bottom: 50px;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background-color: var(--light);
+            transition: all 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        /* Footer amélioré */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-col ul li i {
+            margin-right: 10px;
+            width: 20px;
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Popup de connexion */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .popup.show {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .popup-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            transform: translateY(-50px);
+            transition: transform 0.4s;
+        }
+        
+        .popup.show .popup-content {
+            transform: translateY(0);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #777;
+            transition: color 0.3s;
+        }
+        
+        .close-btn:hover {
+            color: var(--primary);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
+        }
+        
+        /* Panier latéral */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            background-color: white;
+            z-index: 1500;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            transition: right 0.4s;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .cart-sidebar.open {
+            right: 0;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .cart-close {
+            font-size: 24px;
+            cursor: pointer;
+            color: #777;
+        }
+        
+        .cart-items {
+            margin-bottom: 30px;
+        }
+        
+        .cart-item {
+            display: flex;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            background-color: var(--light);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+        
+        .cart-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+    /* Affichage utilisateur */
+        .user-profile {
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            z-index: 1000;
+            display: none;
+            min-width: 200px;
+        }
+        
+        .user-profile.show {
+            display: block;
+        }
+        
+        .user-profile p {
+            margin: 8px 0;
+            font-size: 0.9rem;
+        }
+        
+        .user-profile strong {
+            color: var(--primary);
+        }
+        
+        .user-profile .logout-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+    
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                justify-content: center;
+                margin: 15px 0;
+            }
+            
+            .banner h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cart-sidebar {
+                max-width: 100%;
+            }
+        }
+    
+    
+    
+    nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    gap: 20px;
+  }
+
+  nav ul li {
+    /* style de ta liste nav */
+  }
+
+  /* Style bouton suivi */
+  #track-btn {
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  #track-btn i {
+    font-size: 18px;
+  }
+
+  /* Popup */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .popup.show {
+    display: flex;
+  }
+
+  .popup-content {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* Form */
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+
+  input[type=text] {
+    width: 100%;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  button.btn {
+    width: 100%;
+    padding: 10px;
+    background: #0066cc;
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  button.btn:hover {
+    background: #005bb5;
+  }
+
+  /* Tracking steps */
+  #tracking-steps {
+    margin-top: 20px;
+  }
+
+  .step {
+    padding: 10px;
+    border-left: 4px solid #ccc;
+    margin-bottom: 8px;
+    position: relative;
+    font-weight: 500;
+    color: #666;
+    display: flex;
+    align-items: center;
+  }
+
+  .step.completed {
+    border-color: green;
+    color: green;
+  }
+
+  .step.current {
+    border-color: orange;
+    color: orange;
+    font-weight: 700;
+  }
+
+  .step::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+  }
+
+  .step.completed::before {
+    background-color: green;
+  }
+
+  .step.current::before {
+    background-color: orange;
+  }
+
+  /* Icône devant texte */
+  .step .icon {
+    margin-right: 10px;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+    
+    
+    
+    
+    .popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.popup.show { display: flex; }
+
+    </style>
 </head>
 <body>
+    <!-- En-tête -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-sun"></i>
+                Le marché <span>du soleil</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Accueil</a></li>
+                    <li><a href="#products">Nouveautés</a></li>
+                    <li><a href="#baskets">Baskets</a></li>
+                    <li><a href="#brands">Marques</a></li>
+                    <li><a href="#promotions">Promotions</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="track-btn"><i class="fas fa-truck"></i> Suivi</a></li>
+                </ul>
+            </nav>
+            <div class="icons">
+                <a href="#" id="search-btn">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="#" id="user-btn">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="#" id="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+ <!-- Profil utilisateur -->
+    <!-- Section Mon Compte (masquée par défaut) -->
+<section id="account-section" style="display:none; max-width:400px; margin:40px auto; background:#fff; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,0.08); padding:32px 28px;">
+    <h2>Mon compte</h2>
+    <p><strong>Email :</strong> <span id="user-email"></span></p>
+    <div class="user-options">
+        <button onclick="afficherHistoriqueCommandes()"><i class="fas fa-box"></i> Historique de commandes</button>
+            <button onclick="alert('Paramètres à venir !')"><i class="fas fa-cog"></i> Paramètres</button>
+    </div>
+    <button id="logout-btn" class="btn" style="background:#FF6B00; color:#fff; margin-top:10px;">Se déconnecter</button>
+    <button id="close-account-btn" class="btn" style="background:#eee; color:#333; margin-left:10px;">Retour à la boutique</button>
+</section>
 
-  <header>
-    <h1>LE PLUS FROID</h1>
-    <p>Ta boutique streetwear, connecté avec Snapchat</p>
-  </header>
+    
+    <!-- Bannière principale -->
+    <section class="banner">
+        <div class="container banner-content">
+            <h1>Baskets exclusives à prix imbattables</h1>
+            <p>Découvrez notre collection de baskets Nike, Lacoste, Adidas et autres marques premium</p>
+            <div>
+                <a href="#products" class="btn">Explorer la collection</a>
+                <a href="#" class="btn btn-outline">Voir les promotions</a>
+            </div>
+        </div>
+    </section>
 
-  <div class="container">
-    <h2>Bienvenue sur notre boutique</h2>
-    <p>Connecte-toi avec Snapchat pour accéder à tes offres personnalisées.</p>
+    <!-- Catégories -->
+    <section class="container">
+        <h2 class="section-title">Nos catégories</h2>
+        <div class="categories">
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77" alt="Baskets">
+                <div class="category-info">
+                    <h3>Baskets de Sport</h3>
+                    <a href="#" class="btn">Voir tout</a>
+                </div>
+            </div>
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f" alt="Éditions limitées">
+                <div class="category-info">
+                    <h3>Éditions limitées</h3>
+                    <a href="#" class="btn">Découvrir</a>
+                </div>
+            </div>
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa" alt="Accessoires">
+                <div class="category-info">
+                    <h3>Accessoires</h3>
+                    <a href="#" class="btn">Explorer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+     <hr class="section-separator">
 
-    <button class="snap-login-btn" onclick="loginWithSnap()">Se connecter avec Snapchat</button>
+    <!-- Produits phares -->
+    <section id="products" class="container featured-products">
+        <h2 class="section-title">Nouveautés</h2>
+        <div class="products-grid">
+            <!-- Produit 1 -->
+            <div class="product">
+                <span class="product-badge">Nouveau</span>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772" alt="Nike Air Max" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Nike Air Max 90</h3>
+                    <span class="product-old-price">140 €</span>
+                    <span class="product-price">120 €</span>
+                    <button class="product-btn add-to-cart" data-id="1" data-name="Nike Air Max 90" data-price="120" data-image="https://images.unsplash.com/photo-1549298916-b41d501d3772">
+                        <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Produit 2 -->
+            <div class="product">
+                <span class="product-badge">Populaire</span>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa" alt="Lacoste Carnaby" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Lacoste Carnaby Evo</h3>
+                    <span class="product-price">110 €</span>
+                    <button class="product-btn add-to-cart" data-id="2" data-name="Lacoste Carnaby Evo" data-price="110" data-image="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa">
+                        <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Produit 3 -->
+            <div class="product">
+                <span class="product-badge">Meilleure vente</span>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77" alt="Adidas Ultraboost" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Adidas Ultraboost</h3>
+                    <span class="product-price">140 €</span>
+                    <button class="product-btn add-to-cart" data-id="3" data-name="Adidas Ultraboost" data-price="140" data-image="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77">
+                        <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Produit 4 -->
+            <div class="product">
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f" alt="New Balance" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">New Balance 574</h3>
+                    <span class="product-old-price">110 €</span>
+                    <span class="product-price">95 €</span>
+                    <button class="product-btn add-to-cart" data-id="4" data-name="New Balance 574" data-price="95" data-image="https://images.unsplash.com/photo-1543508282-6319a3e2621f">
+                        <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+     <hr class="section-separator">
 
-    <div class="message" id="snap-result"></div>
+<!-- Section Baskets -->
+    <section id="baskets" class="container">
+        <h2 class="section-title">Baskets</h2>
+        <div class="products-grid">
+            <!-- Produit 1 -->
+            <div class="product">
+                <span class="product-badge">Nouveau</span>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Baskets Sport" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Nike Run Swift</h3>
+                    <span class="product-price">110 €</span>
+                    <button class="product-btn add-to-cart" data-id="5" data-name="Nike Run Swift" data-price="110" data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+                        <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Produit 2 -->
+            <div class="product">
+                <span class="product-badge">Populaire</span>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a" alt="Baskets Ville" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Adidas Street Style</h3>
+                    <span class="product-price">95 €</span>
+                    <button class="product-btn add-to-cart" data-id="6" data-name="Adidas Street Style" data-price="95" data-image="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a">
+                        <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Produit 3 -->
+            <div class="product">
+                <span class="product-badge">Meilleure vente</span>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1605408499391-6368c628ef42" alt="Baskets Running" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Puma Velocity</h3>
+                    <span class="product-price">105 €</span>
+                    <button class="product-btn add-to-cart" data-id="7" data-name="Puma Velocity" data-price="105" data-image="https://images.unsplash.com/photo-1605408499391-6368c628ef42">
+                        <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Produit 4 -->
+            <div class="product">
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1587563871167-1ee9c731c60f" alt="Baskets Casual" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Reebok Classic</h3>
+                    <span class="product-old-price">120 €</span>
+                    <span class="product-price">99 €</span>
+                    <button class="product-btn add-to-cart" data-id="8" data-name="Reebok Classic" data-price="99" data-image="https://images.unsplash.com/photo-1587563871167-1ee9c731c60f">
+                        <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section Marques -->
+    <section id="brands" class="container">
+        <h2 class="section-title">Marques</h2>
+        <div class="categories">
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f" alt="Nike">
+                <div class="category-info">
+                    <h3>Nike</h3>
+                    <a href="#products" class="btn">Découvrir</a>
+                </div>
+            </div>
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a" alt="Adidas">
+                <div class="category-info">
+                    <h3>Adidas</h3>
+                    <a href="#products" class="btn">Découvrir</a>
+                </div>
+            </div>
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1605408499391-6368c628ef42" alt="Puma">
+                <div class="category-info">
+                    <h3>Puma</h3>
+                    <a href="#products" class="btn">Découvrir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+     <hr class="section-separator">
+
+       <!-- Section Promotions -->
+    <section id="promotions" class="container">
+        <h2 class="section-title">Promotions</h2>
+        <div class="products-grid">
+            <!-- Produit 1 -->
+            <div class="product">
+                <span class="product-badge">-20%</span>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb" alt="Promo 1" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Asics Gel-Lyte</h3>
+                    <span class="product-old-price">130 €</span>
+                    <span class="product-price">104 €</span>
+                    <button class="product-btn add-to-cart" data-id="9" data-name="Asics Gel-Lyte" data-price="104" data-image="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb">
+                        <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Produit 2 -->
+            <div class="product">
+                <span class="product-badge">-15%</span>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1607522370275-f14206abe5d3" alt="Promo 2" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Converse All Star</h3>
+                    <span class="product-old-price">85 €</span>
+                    <span class="product-price">72 €</span>
+                    <button class="product-btn add-to-cart" data-id="10" data-name="Converse All Star" data-price="72" data-image="https://images.unsplash.com/photo-1607522370275-f14206abe5d3">
+                        <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Produit 3 -->
+            <div class="product">
+                <span class="product-badge">-30%</span>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa" alt="Promo 3" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Lacoste Sport</h3>
+                    <span class="product-old-price">120 €</span>
+                    <span class="product-price">84 €</span>
+                    <button class="product-btn add-to-cart" data-id="11" data-name="Lacoste Sport" data-price="84" data-image="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa">
+                        <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Produit 4 -->
+            <div class="product">
+                <span class="product-badge">-25%</span>
+                <div class="product-img-container">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772" alt="Promo 4" class="product-img">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Nike Air Force</h3>
+                    <span class="product-old-price">110 €</span>
+                    <span class="product-price">82.50 €</span>
+                    <button class="product-btn add-to-cart" data-id="12" data-name="Nike Air Force" data-price="82.5" data-image="https://images.unsplash.com/photo-1549298916-b41d501d3772">
+                        <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+     <hr class="section-separator">
+
+    <!-- Section avantages -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Pourquoi choisir Le marché du soleil ?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>Livraison rapide</h3>
+                    <p>Expédition sous 24h avec suivi La Poste</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Paiement sécurisé</h3>
+                    <p>Carte bancaire, PayPal, virement</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-undo-alt"></i>
+                    </div>
+                    <h3>Retours faciles</h3>
+                    <p>30 jours pour changer d'avis</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Support client</h3>
+                    <p>Assistance 7j/7 par téléphone et email</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ <hr class="section-separator">
+<!-- Section Contact -->
+    <section id="contact" class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Adresse</h3>
+                <p>123 Rue du Commerce, Marseille</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Téléphone</h3>
+                <p>+33 4 12 34 56 78</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <p>contact@marchedusoleil.fr</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Horaires</h3>
+                <p>Lun-Sam: 9h-19h</p>
+            </div>
+        </div>
+    </section>
+    <hr class="section-separator">
+    <div class="popup" id="track-popup">
+    <div class="popup-content">
+        <span class="close-btn" id="close-track-popup">&times;</span>
+        <h2>Suivi de commande</h2>
+        <iframe
+            id="trackingmore-iframe"
+            width="100%"
+            src="https://oldestlucious1j.trackingmore.org/?page=tracking-page&mode=iframe"
+            frameborder="0"
+            style="min-height: 600px; border: none;"></iframe>
+    </div>
+</div>
+
+  
+
+        <!-- Zone pour afficher les étapes -->
+        <div id="tracking-steps" style="margin-top: 20px;"></div>
+    </div>
+</div>
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Le marché du soleil</h3>
+                    <p>Vente de baskets et articles de marque d'exception à prix abordables.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Nouveautés</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Baskets</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Marques</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Promotions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Informations</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> À propos</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Politique de confidentialité</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Conditions d'utilisation</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Paiement et livraison</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Marseille, France</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +33 6 12 34 56 78</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> contact@marchedusoleil.fr</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Lun-Sam: 9h-19h</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Le marché du soleil. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+  <!-- Popup Authentification (Connexion/Inscription/Mot de passe oublié) -->
+<div class="popup" id="auth-popup">
+    <div class="popup-content" style="max-width: 400px;">
+        <span class="close-btn" id="close-auth-popup">&times;</span>
+        <div id="auth-forms">
+            <!-- Connexion -->
+            <form id="login-form">
+                <h2>Connexion</h2>
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Mot de passe</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn" style="width:100%;">Se connecter</button>
+                <p style="margin-top:10px; text-align:center;">
+                    <a href="#" id="show-register">Créer un compte</a> | 
+                    <a href="#" id="show-forgot">Mot de passe oublié ?</a>
+                </p>
+            </form>
+            <!-- Inscription -->
+            <form id="register-form" style="display:none;">
+                <h2>Inscription</h2>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Mot de passe</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password2">Confirmer le mot de passe</label>
+                    <input type="password" id="register-password2" required>
+                </div>
+                <button type="submit" class="btn" style="width:100%;">Créer un compte</button>
+                <p style="margin-top:10px; text-align:center;">
+                    <a href="#" id="show-login">Déjà un compte ? Se connecter</a>
+                </p>
+            </form>
+            <!-- Mot de passe oublié -->
+            <form id="forgot-form" style="display:none;">
+                <h2>Mot de passe oublié</h2>
+                <div class="form-group">
+                    <label for="forgot-email">Email</label>
+                    <input type="email" id="forgot-email" required>
+                </div>
+                <button type="submit" class="btn" style="width:100%;">Réinitialiser</button>
+                <p style="margin-top:10px; text-align:center;">
+                    <a href="#" id="show-login2">Retour à la connexion</a>
+                </p>
+            </form>
+        </div>
+        <div id="auth-message" style="display:none; text-align:center; margin-top:20px;"></div>
+    </div>
+</div>
+
+
+    <!-- Panier latéral -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3 class="cart-title">Votre Panier</h3>
+            <span class="cart-close">&times;</span>
+        </div>
+        <div class="cart-items">
+            <!-- Les éléments du panier seront ajoutés ici dynamiquement -->
+        </div>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cart-total-price">0 €</span>
+        </div>
+        <div class="cart-buttons">
+            <a href="#" id="open-commande" class="btn" style="text-align: center;">Commander</a>
+                <a href="#" class="btn btn-outline" style="text-align: center; background-color: transparent; color: var(--secondary); border-color: var(--secondary);">Continuer les achats</a>
+        </div>
+    </div>
+
+<!-- Popup Commande -->
+<div id="commande-popup" class="popup">
+  <div class="popup-content" style="max-width:400px;width:100%;padding:32px 24px;box-shadow:0 4px 24px rgba(0,0,0,0.12);border-radius:12px;">
+    <span class="close-btn" id="close-commande-popup" style="position:absolute;top:18px;right:24px;font-size:28px;cursor:pointer;">&times;</span>
+    <h2 style="margin-bottom:18px;text-align:center;color:#2C3E50;">Finaliser ma commande</h2>
+    <form id="commande-form" action="https://formspree.io/f/xeokdgzz" method="POST" style="display:flex;flex-direction:column;gap:16px;">
+      <label>
+        Nom complet
+        <input type="text" name="nom" required style="width:100%;padding:10px;border-radius:5px;border:1px solid #ccc;">
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required style="width:100%;padding:10px;border-radius:5px;border:1px solid #ccc;">
+      </label>
+      <label>
+        Téléphone
+        <input type="text" name="telephone" required style="width:100%;padding:10px;border-radius:5px;border:1px solid #ccc;">
+      </label>
+      <label>
+        Adresse de livraison
+        <input type="text" name="adresse" required style="width:100%;padding:10px;border-radius:5px;border:1px solid #ccc;">
+      </label>
+      <label>
+        Panier
+        <textarea name="panier" id="panier-field" required readonly style="width:100%;min-height:70px;padding:10px;border-radius:5px;border:1px solid #ccc;background:#f8f9fa;"></textarea>
+      </label>
+      <button type="submit" class="btn" style="background:#FF6B00;color:#fff;font-weight:bold;font-size:1.1em;border:none;border-radius:6px;padding:12px 0;cursor:pointer;">Envoyer ma commande</button>
+    </form>
+    <div id="confirmation-message" style="display:none;margin-top:24px;color:#28A745;font-weight:bold;text-align:center;font-size:1.1em;">
+      Merci, votre commande a bien été reçue et sera traitée rapidement.<br>Vous recevrez une confirmation par email.
+    </div>
   </div>
+</div>
 
   <script>
-    // === CONFIG PERSONNELLE ===
-    const CLIENT_ID = "2B25B4C7-EE89-4079-918C-F7FFD00A883F";
-    const REDIRECT_URI = "https://web-site13015.github.io/Market_collection/";
-    const SCOPE = "user.display_name user.bitmoji.avatar";
+// Ouvre la popup quand on clique sur "Commander"
+document.querySelector('.cart-buttons .btn').onclick = function(e) {
+    e.preventDefault();
+    // Exemple de récupération du panier (remplace par ta logique si besoin)
+    let panier = JSON.parse(localStorage.getItem('panier')) || [];
+    let recap = panier.length ? panier.map(p =>
+      `${p.nom} x${p.quantite} (${p.prix} €)`
+    ).join('\n') : "Panier vide";
+    document.getElementById('panier-field').value = recap;
+    document.getElementById('commande-popup').classList.add('show');
+};
 
-    // === SI CODE PRÉSENT DANS URL ===
-    const urlParams = new URLSearchParams(window.location.search);
-    const authCode = urlParams.get("code");
+// Ferme la popup
+document.getElementById('close-commande-popup').onclick = function() {
+    document.getElementById('commande-popup').classList.remove('show');
+    // Réinitialise le formulaire si besoin
+    document.getElementById('commande-form').style.display = "flex";
+    document.getElementById('confirmation-message').style.display = "none";
+};
 
-    if (authCode) {
-      document.getElementById("snap-result").innerHTML =
-        "<strong>Connexion réussie !</strong><br>Code reçu : <code>" + authCode + "</code><br>Envoie ce code à ton serveur pour récupérer un token d'accès.";
-    }
+// Envoi du formulaire via AJAX pour confirmation instantanée
+document.getElementById('commande-form').onsubmit = function(e){
+    e.preventDefault();
+    const form = e.target;
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.style.display = "none";
+        document.getElementById('confirmation-message').style.display = "block";
+        // Tu peux aussi vider le panier ici si tu veux
+        localStorage.removeItem('panier');
+      } else {
+        alert("Erreur lors de l'envoi !");
+      }
+    }).catch(() => alert("Erreur réseau !"));
+};
 
-    // === FONCTION DE REDIRECTION SNAPCHAT ===
-    function loginWithSnap() {
-      const snapAuthUrl = `https://accounts.snapchat.com/login/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=code&scope=${encodeURIComponent(SCOPE)}`;
-      window.location.href = snapAuthUrl;
-    }
+
+
+// Fermer le panier latéral quand on clique sur "Continuer les achats"
+document.querySelector('.cart-buttons .btn-outline').onclick = function(e) {
+    e.preventDefault();
+    document.getElementById('cart-sidebar').classList.remove('open');
+};
+
   </script>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script>
+  // Configuration Firebase (remplace par tes infos)
+  const firebaseConfig = {
+    apiKey: "AIzaSyCo9SeF-8tPFtzOFlF9grhzX9FJkf8l1j8",
+    authDomain: "hldst-shop.firebaseapp.com",
+    projectId: "hldst-shop",
+    storageBucket: "hldst-shop.appspot.com",
+    messagingSenderId: "518099073740",
+    appId: "1:518099073740:web:79793a301ab851c70f6069",
+    measurementId: "G-XCWCJZX0JY"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  // Affiche section Mon Compte ou popup Auth
+  document.getElementById('user-btn').onclick = function(e) {
+      e.preventDefault();
+      if(auth.currentUser) {
+          document.getElementById('account-section').style.display = "block";
+          document.getElementById('user-email').textContent = auth.currentUser.email;
+          window.scrollTo({top:0, behavior:'smooth'});
+      } else {
+          document.getElementById('auth-popup').classList.add('show');
+          showForm('login');
+      }
+  };
+  // Ferme la section Mon Compte
+  document.getElementById('close-account-btn').onclick = function() {
+      document.getElementById('account-section').style.display = "none";
+  };
+
+  // Popup Auth
+  document.getElementById('close-auth-popup').onclick = function() {
+      document.getElementById('auth-popup').classList.remove('show');
+      resetAuthForms();
+  };
+  window.addEventListener('click', function(event) {
+      const popup = document.getElementById('auth-popup');
+      if (event.target === popup) {
+          popup.classList.remove('show');
+          resetAuthForms();
+      }
+  });
+
+  // Navigation entre formulaires
+  document.getElementById('show-register').onclick = function(e) { e.preventDefault(); showForm('register'); };
+  document.getElementById('show-login').onclick = function(e) { e.preventDefault(); showForm('login'); };
+  document.getElementById('show-login2').onclick = function(e) { e.preventDefault(); showForm('login'); };
+  document.getElementById('show-forgot').onclick = function(e) { e.preventDefault(); showForm('forgot'); };
+
+  function showForm(form) {
+      document.getElementById('login-form').style.display = (form === 'login') ? 'block' : 'none';
+      document.getElementById('register-form').style.display = (form === 'register') ? 'block' : 'none';
+      document.getElementById('forgot-form').style.display = (form === 'forgot') ? 'block' : 'none';
+      document.getElementById('auth-message').style.display = 'none';
+  }
+  function resetAuthForms() {
+      showForm('login');
+      document.getElementById('login-form').reset();
+      document.getElementById('register-form').reset();
+      document.getElementById('forgot-form').reset();
+      document.getElementById('auth-message').style.display = 'none';
+  }
+
+  // Connexion
+  document.getElementById('login-form').onsubmit = function(e) {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      auth.signInWithEmailAndPassword(email, password)
+          .then(userCredential => {
+              document.getElementById('auth-message').innerHTML = "<span style='color:green;'>Connexion réussie !</span>";
+              document.getElementById('auth-message').style.display = 'block';
+              setTimeout(() => {
+                  document.getElementById('auth-popup').classList.remove('show');
+              }, 1200);
+          })
+          .catch(error => {
+              document.getElementById('auth-message').innerHTML = "<span style='color:red;'>" + error.message + "</span>";
+              document.getElementById('auth-message').style.display = 'block';
+          });
+  };
+
+  // Inscription
+  document.getElementById('register-form').onsubmit = function(e) {
+      e.preventDefault();
+      const email = document.getElementById('register-email').value;
+      const pass1 = document.getElementById('register-password').value;
+      const pass2 = document.getElementById('register-password2').value;
+      if (pass1 !== pass2) {
+          document.getElementById('auth-message').innerHTML = "<span style='color:red;'>Les mots de passe ne correspondent pas.</span>";
+          document.getElementById('auth-message').style.display = 'block';
+          return;
+      }
+      auth.createUserWithEmailAndPassword(email, pass1)
+          .then(userCredential => {
+              document.getElementById('auth-message').innerHTML = "<span style='color:green;'>Inscription réussie !</span>";
+              document.getElementById('auth-message').style.display = 'block';
+              setTimeout(() => {
+                  document.getElementById('auth-popup').classList.remove('show');
+              }, 1200);
+          })
+          .catch(error => {
+              document.getElementById('auth-message').innerHTML = "<span style='color:red;'>" + error.message + "</span>";
+              document.getElementById('auth-message').style.display = 'block';
+          });
+  };
+
+  // Mot de passe oublié
+  document.getElementById('forgot-form').onsubmit = function(e) {
+      e.preventDefault();
+      const email = document.getElementById('forgot-email').value;
+      auth.sendPasswordResetEmail(email)
+          .then(() => {
+              document.getElementById('auth-message').innerHTML = "<span style='color:green;'>Email de réinitialisation envoyé !</span>";
+              document.getElementById('auth-message').style.display = 'block';
+          })
+          .catch(error => {
+              document.getElementById('auth-message').innerHTML = "<span style='color:red;'>" + error.message + "</span>";
+              document.getElementById('auth-message').style.display = 'block';
+          });
+  };
+
+  // Affichage utilisateur connecté/déconnexion
+  auth.onAuthStateChanged(function(user) {
+      if (user) {
+          document.getElementById('user-email').textContent = user.email;
+      } else {
+          document.getElementById('account-section').style.display = "none";
+          document.getElementById('user-email').textContent = '';
+      }
+  });
+  document.getElementById('logout-btn').onclick = function() {
+      auth.signOut();
+      document.getElementById('account-section').style.display = "none";
+  };
+</script>
+<script>
+function ajouterCommandeHistorique(commande) {
+    let historique = JSON.parse(localStorage.getItem('historiqueCommandes')) || [];
+    historique.push(commande);
+    localStorage.setItem('historiqueCommandes', JSON.stringify(historique));
+}
+
+function afficherHistoriqueCommandes() {
+    let historique = JSON.parse(localStorage.getItem('historiqueCommandes')) || [];
+    if (historique.length === 0) {
+        alert("Aucune commande enregistrée.");
+        return;
+    }
+    let message = historique.map(cmd =>
+        `Commande du ${cmd.date}\nMontant : ${cmd.montant} €\nProduits :\n` +
+        cmd.produits.map(p => `- ${p.nom} x${p.quantite} (${p.prix} €)`).join('\n')
+    ).join('\n\n');
+    alert(message);
+}
+
+// Exemple d'ajout d'une commande (à appeler lors de la validation d'achat)
+document.getElementById('ajouter-commande-btn')?.addEventListener('click', function() {
+    const commande = {
+        id: Date.now(),
+        produits: [
+            { nom: "Nike Air Max 90", prix: 120, quantite: 1 }
+        ],
+        montant: 120,
+        date: new Date().toLocaleString()
+    };
+    ajouterCommandeHistorique(commande);
+    alert("Commande ajoutée !");
+});
+
+// Relier le bouton historique (si pas d'onclick dans le HTML)
+document.querySelector('.user-options button')?.addEventListener('click', afficherHistoriqueCommandes);
+</script>
+
+    <!-- JavaScript -->
+    <script>
+        // Gestion du panier
+        let cart = [];
+        const cartBtn = document.getElementById('cart-btn');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const cartClose = document.querySelector('.cart-close');
+        const cartItemsContainer = document.querySelector('.cart-items');
+        const cartTotalPrice = document.getElementById('cart-total-price');
+        const cartCount = document.querySelector('.cart-count');
+        
+        // Ouvrir/fermer le panier
+        cartBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            cartSidebar.classList.add('open');
+        });
+        
+        cartClose.addEventListener('click', function() {
+            cartSidebar.classList.remove('open');
+        });
+        
+        // Ajouter au panier
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const product = {
+                    id: this.dataset.id,
+                    name: this.dataset.name,
+                    price: parseFloat(this.dataset.price),
+                    image: this.dataset.image,
+                    quantity: 1
+                };
+                
+                // Vérifier si le produit est déjà dans le panier
+                const existingProduct = cart.find(item => item.id === product.id);
+                
+                if (existingProduct) {
+                    existingProduct.quantity++;
+                } else {
+                    cart.push(product);
+                }
+                
+                updateCart();
+                cartSidebar.classList.add('open');
+                
+                // Animation de confirmation
+                const btn = this;
+                btn.innerHTML = '<i class="fas fa-check"></i> Ajouté';
+                btn.style.backgroundColor = 'var(--success)';
+                
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-shopping-cart"></i> Ajouter au panier';
+                    btn.style.backgroundColor = '';
+                }, 2000);
+            });
+        });
+        
+        // Mettre à jour le panier
+        function updateCart() {
+            // Mettre à jour le compteur
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // Mettre à jour les éléments du panier
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p style="text-align: center; padding: 20px;">Votre panier est vide</p>';
+                cartTotalPrice.textContent = '0 €';
+                return;
+            }
+            
+            let totalPrice = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+                
+                const cartItemElement = document.createElement('div');
+                cartItemElement.className = 'cart-item';
+                cartItemElement.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">${item.price.toFixed(2)} €</div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                        </div>
+                    </div>
+                `;
+                
+                cartItemsContainer.appendChild(cartItemElement);
+            });
+            
+            cartTotalPrice.textContent = totalPrice.toFixed(2) + ' €';
+            
+            // Gérer les boutons de quantité
+            document.querySelectorAll('.decrease').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const id = this.dataset.id;
+                    const item = cart.find(item => item.id === id);
+                    
+                    if (item.quantity > 1) {
+                        item.quantity--;
+                    } else {
+                        cart = cart.filter(item => item.id !== id);
+                    }
+                    
+                    updateCart();
+                });
+            });
+            
+            document.querySelectorAll('.increase').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const id = this.dataset.id;
+                    const item = cart.find(item => item.id === id);
+                    item.quantity++;
+                    updateCart();
+                });
+            });
+        }
+        
+    
+          // Suivi de commande
+        const trackBtn = document.getElementById('track-btn');
+        const trackPopup = document.getElementById('track-popup');
+        trackBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            trackPopup.classList.add('show');
+        });
+    
+        // Gestion du popup de connexion
+        const userBtn = document.getElementById('user-btn');
+        const loginPopup = document.getElementById('login-popup');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        userBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            loginPopup.classList.add('show');
+        });
+        
+        closeBtn.addEventListener('click', function() {
+            loginPopup.classList.remove('show');
+        });
+        
+        window.addEventListener('click', function(e) {
+            if (e.target === loginPopup) {
+                loginPopup.classList.remove('show');
+            }
+        });
+        
+        // Gestion du formulaire de connexion
+        const loginForm = document.getElementById('login-form');
+        
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Simulation de connexion réussie
+            if (email && password) {
+                alert(`Connexion réussie avec: ${email}`);
+                loginForm.reset();
+                loginPopup.classList.remove('show');
+            } else {
+                alert('Veuillez remplir tous les champs');
+            }
+        });
+        
+        // Initialiser le panier
+        updateCart();
+    </script>
+   
+<script>
+  document.getElementById('track-btn').onclick = function(e) {
+      e.preventDefault();
+      document.getElementById('track-popup').classList.add('show');
+      document.getElementById('tracking-steps').innerHTML = '';
+      document.getElementById('track-form').reset();
+  };
+  document.getElementById('close-track-popup').onclick = function() {
+      document.getElementById('track-popup').classList.remove('show');
+      document.getElementById('tracking-steps').innerHTML = '';
+      document.getElementById('track-form').reset();
+  };
+  window.onclick = function(event) {
+      const popup = document.getElementById('track-popup');
+      if (event.target === popup) {
+          popup.classList.remove('show');
+          document.getElementById('tracking-steps').innerHTML = '';
+          document.getElementById('track-form').reset();
+      }
+  };
+  document.getElementById('track-form').onsubmit = function(e) {
+      e.preventDefault();
+      const orderNumber = document.getElementById('order-number').value.trim();
+      if (!orderNumber) {
+        document.getElementById('tracking-steps').innerHTML = "<p style='color: red;'>Merci d'entrer un numéro de commande.</p>";
+        return;
+      }
+      const steps = [
+          {icon: '✅', text: 'Commande reçue', completed: true},
+          {icon: '🛠️', text: 'Préparation en cours', completed: true},
+          {icon: '📦', text: 'Expédiée', completed: false},
+          {icon: '🚚', text: 'En cours de livraison', completed: false},
+          {icon: '🎉', text: 'Livrée', completed: false}
+      ];
+      let html = `<p>Suivi pour la commande <strong>#${orderNumber}</strong> :</p>`;
+      steps.forEach((step, i) => {
+          html += `<div class="step${step.completed ? ' completed' : (i === 2 ? ' current' : '')}">
+              <span class="icon">${step.icon}</span>
+              ${step.text}
+          </div>`;
+      });
+      document.getElementById('tracking-steps').innerHTML = html;
+  };
+</script>
+
+<script>
+    // Gestion ouverture/fermeture du popup
+    document.getElementById('track-btn').onclick = function(e) {
+        e.preventDefault();
+        document.getElementById('track-popup').classList.add('show');
+    };
+    document.getElementById('close-track-popup').onclick = function() {
+        document.getElementById('track-popup').classList.remove('show');
+    };
+    window.onclick = function(event) {
+        const popup = document.getElementById('track-popup');
+        if (event.target === popup) {
+            popup.classList.remove('show');
+        }
+    };
+
+    // Ajustement automatique de la hauteur de l'iframe TrackingMore
+    const iframe = document.getElementById("trackingmore-iframe");
+    const handleResize = (height) => {
+        iframe.style.height = height + 'px';
+    };
+    window.addEventListener('message', (event) => {
+        const { type, height } = event.data;
+        if (type === 'resize' || type === 'init') {
+            handleResize(height);
+        }
+    });
+</script>
+
 
 </body>
 </html>
