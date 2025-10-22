@@ -1,816 +1,1006 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>La Malette à Parfum - Parfums d'Exception</title>
-  <meta name="description" content="Parfums exclusifs et rares. Une expérience olfactive d'exception avec La Malette à Parfum.">
-  
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="La Malette à Parfum - Parfums d'Exception" />
-  <meta property="og:description" content="Parfums exclusifs et rares. Une expérience olfactive d'exception avec La Malette à Parfum." />
-  <meta property="og:image" content="https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/042218d2-72e5-6077-e434-cb49690cc551.png" />
-  <meta property="og:url" content="https://votrewebsite.com/" /> <!-- Remplacez par le lien réel de votre site -->
-  <meta property="og:type" content="website" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skunk Snow ❄️🔥</title>
+    
+    <!-- Protection Meta -->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
+    <meta name="copyright" content="Skunk Snow">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="La Malette à Parfum - Parfums d'Exception" />
-  <meta name="twitter:description" content="Parfums exclusifs et rares. Une expérience olfactive d'exception avec La Malette à Parfum." />
-  <meta name="twitter:image" content="https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/042218d2-72e5-6077-e434-cb49690cc551.png" />
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.4;
+            overflow-x: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        /* Header Style App */
+        .app-header {
+            background: #1a1a1a;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #8a2be2;
+            backdrop-filter: blur(10px);
+        }
 
-  
-  
-  <style>
-    :root {
-      --gold: #C9A96E;
-      --dark: #0A0A0A;
-      --light: #F5F5F5;
-      --gray: #8A8A8A;
-      --border: rgba(201, 169, 110, 0.3);
-    }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--dark);
-      color: var(--light);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+        .logo span {
+            color: #8a2be2;
+        }
 
-    /* Header Premium */
-    .premium-header {
-      background: linear-gradient(135deg, rgba(10,10,10,0.98) 0%, rgba(20,20,20,0.95) 100%);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
+        .cart-icon {
+            position: relative;
+            background: #8a2be2;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
 
-    .header-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-    }
+        .cart-count {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: #ff4444;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
 
-    .brand-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      font-weight: 500;
-      color: var(--gold);
-      letter-spacing: 1px;
-    }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #8a2be2, #4a00e0);
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 0;
+        }
 
-    .cart-icon {
-      position: relative;
-      cursor: pointer;
-      font-size: 18px;
-      color: var(--gold);
-      transition: transform 0.3s ease;
-    }
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
 
-    .cart-icon:hover {
-      transform: scale(1.1);
-    }
+        .hero p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
 
-    .cart-count {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      background: var(--gold);
-      color: var(--dark);
-      border-radius: 50%;
-      padding: 2px 6px;
-      font-size: 11px;
-      font-weight: 600;
-    }
+        /* Products Grid */
+        .products-section {
+            padding: 20px;
+        }
 
-    /* Social Bar avec couleurs spécifiques */
-    .elegant-social {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      padding: 15px;
-      background: rgba(201, 169, 110, 0.05);
-      border-top: 1px solid var(--border);
-    }
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-    .social-icon {
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      font-size: 16px;
-      text-decoration: none;
-    }
+        .section-title span {
+            color: #8a2be2;
+        }
 
-    .social-icon:hover {
-      transform: translateY(-2px);
-    }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
 
-    .snapchat {
-      background-color: #FFFC00;
-      color: #000;
-    }
+        .product-card {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 16px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
 
-    .instagram {
-      background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
-      color: white;
-    }
+        .product-card:active {
+            transform: scale(0.98);
+            background: #222;
+        }
 
-    .tiktok {
-      background-color: #000000;
-      color: #00f2ea;
-      position: relative;
-      overflow: hidden;
-    }
+        .product-image {
+            height: 120px;
+            background: #2a2a2a;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
 
-    .tiktok::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, #00f2ea, #ff0050);
-      opacity: 0.8;
-      z-index: -1;
-    }
+        .product-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
 
-    /* Main Content */
-    main {
-      margin-top: 120px;
-      padding: 40px 20px;
-      min-height: calc(100vh - 120px);
-      position: relative;
-    }
+        .product-description {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
 
-    /* Product Container */
-    .product-container {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-    }
+        .product-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #8a2be2;
+            margin-bottom: 12px;
+        }
 
-    .product-card {
-      background: rgba(255,255,255,0.05);
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      margin-bottom: 20px;
-      transition: 0.3s;
-    }
+        .add-to-cart {
+            width: 100%;
+            background: #8a2be2;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
 
-    .product-card:hover {
-      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
-    }
+        .add-to-cart:active {
+            background: #7a1bd2;
+            transform: scale(0.98);
+        }
 
-    .product-image {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      margin-bottom: 20px;
-    }
+        /* Cart Modal */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
 
-    .product-image:hover {
-      transform: scale(1.02);
-    }
+        .cart-modal.active {
+            right: 0;
+        }
 
-    .product-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      color: var(--gold);
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1a1a1a;
+        }
 
-    .product-stars {
-      color: #FFD700;
-      font-size: 18px;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
+        .cart-header h3 {
+            font-size: 20px;
+            font-weight: 700;
+        }
 
-    .product-description {
-      color: var(--gray);
-      font-size: 16px;
-      margin-bottom: 15px;
-      line-height: 1.6;
-    }
+        .close-cart {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .product-price {
-      font-size: 24px;
-      color: var(--gold);
-      margin-bottom: 20px;
-      font-weight: 500;
-    }
+        .cart-items {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
 
-    /* Bouton Premium */
-    .premium-btn {
-      background: transparent;
-      border: 2px solid var(--gold);
-      color: var(--gold);
-      padding: 12px 30px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 14px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #333;
+        }
 
-    .premium-btn:hover {
-      background: var(--gold);
-      color: var(--dark);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
-    }
+        .cart-item-image {
+            width: 50px;
+            height: 50px;
+            background: #2a2a2a;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 20px;
+        }
 
-    /* Carousel Miniatures */
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-      gap: 15px;
-      padding: 10px 0;
-      justify-content: center;
-      max-width: 100%;
-    }
+        .cart-item-details {
+            flex: 1;
+        }
 
-    .carousel img {
-      width: 80px;
-      height: 80px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s;
-      border: 2px solid transparent;
-      object-fit: cover;
-    }
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
 
-    .carousel img:hover, 
-    .carousel img.active {
-      transform: scale(1.05);
-      border-color: var(--gold);
-    }
+        .cart-item-price {
+            color: #8a2be2;
+            font-weight: 600;
+            font-size: 14px;
+        }
 
-    /* Flèches de navigation */
-    .nav-arrow {
-      position: absolute;
-      top: 45%;
-      font-size: 24px;
-      color: var(--gold);
-      background: rgba(0,0,0,0.4);
-      border-radius: 50%;
-      padding: 15px;
-      cursor: pointer;
-      user-select: none;
-      transition: 0.3s;
-      z-index: 5;
-      border: 1px solid var(--border);
-    }
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            margin-top: 6px;
+            gap: 8px;
+        }
 
-    .nav-arrow:hover {
-      background: rgba(201, 169, 110, 0.3);
-      transform: scale(1.1);
-    }
+        .quantity-btn {
+            width: 32px;
+            height: 32px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
 
-    .nav-arrow.left {
-      left: 15px;
-    }
+        .quantity-value {
+            font-weight: 600;
+            min-width: 20px;
+            text-align: center;
+        }
 
-    .nav-arrow.right {
-      right: 15px;
-    }
+        .remove-item {
+            color: #ff6b6b;
+            margin-left: 12px;
+            font-size: 18px;
+        }
 
-    /* Modals */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(10,10,10,0.95);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-    }
+        .cart-footer {
+            padding: 20px;
+            background: #1a1a1a;
+            border-top: 1px solid #333;
+        }
 
-    .modal-content {
-      background: rgba(20,20,20,0.95);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 40px;
-      max-width: 500px;
-      width: 90%;
-      backdrop-filter: blur(20px);
-    }
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
 
-    .close-modal {
-      float: right;
-      color: var(--gray);
-      cursor: pointer;
-      font-size: 18px;
-      transition: color 0.3s ease;
-    }
+        .checkout-btn {
+            width: 100%;
+            background: #8a2be2;
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
 
-    .close-modal:hover {
-      color: var(--gold);
-    }
+        .checkout-btn:active {
+            background: #7a1bd2;
+            transform: scale(0.98);
+        }
 
-    .modal-title {
-      font-family: 'Playfair Display', serif;
-      color: var(--gold);
-      margin-bottom: 25px;
-      font-size: 24px;
-    }
+        /* Order Section */
+        .order-section {
+            padding: 20px;
+            background: #000;
+        }
 
-    /* Formulaire Premium */
-    .form-group {
-      margin-bottom: 20px;
-    }
+        .order-box {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid #333;
+        }
 
-    .form-input {
-      width: 100%;
-      padding: 12px 15px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--light);
-      font-size: 14px;
-      transition: all 0.3s ease;
-    }
+        .client-form {
+            margin-bottom: 20px;
+        }
 
-    .form-input:focus {
-      outline: none;
-      border-color: var(--gold);
-      background: rgba(255,255,255,0.08);
-    }
+        .form-group {
+            margin-bottom: 16px;
+        }
 
-    /* Calculateur de Distance Automatique */
-    .auto-distance {
-      background: rgba(201, 169, 110, 0.05);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 20px;
-      margin: 20px 0;
-    }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
 
-    .distance-info {
-      font-size: 13px;
-      color: var(--gray);
-      margin-bottom: 10px;
-    }
+        .form-control {
+            width: 100%;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 12px;
+            color: white;
+            padding: 14px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
 
-    .distance-result {
-      margin-top: 15px;
-      padding: 15px;
-      background: rgba(255,255,255,0.03);
-      border-radius: 6px;
-      border-left: 3px solid var(--gold);
-      font-size: 14px;
-    }
+        .form-control:focus {
+            outline: none;
+            border-color: #8a2be2;
+            background: #333;
+        }
 
-    /* Notification */
-    .notification {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: var(--gold);
-      color: var(--dark);
-      padding: 15px 25px;
-      border-radius: 8px;
-      z-index: 3000;
-      font-weight: 500;
-      display: none;
-      animation: slideIn 0.3s ease;
-    }
+        textarea.form-control {
+            min-height: 80px;
+            resize: vertical;
+        }
 
-    @keyframes slideIn {
-      from {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
+        .copy-message {
+            background: #2a2a2a;
+            padding: 16px;
+            border-radius: 12px;
+            margin: 16px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #444;
+        }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .header-top {
-        padding: 15px 20px;
-      }
-      
-      .brand-title {
-        font-size: 20px;
-      }
-      
-      main {
-        margin-top: 100px;
-        padding: 20px 15px;
-      }
-      
-      .nav-arrow {
-        font-size: 20px;
-        padding: 12px;
-      }
-      
-      .nav-arrow.left {
-        left: 10px;
-      }
-      
-      .nav-arrow.right {
-        right: 10px;
-      }
-      
-      .carousel img {
-        width: 60px;
-        height: 60px;
-      }
-      
-      .product-name {
-        font-size: 26px;
-      }
-    }
-  </style>
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            flex-direction: column;
+        }
+
+        .action-btn {
+            padding: 16px;
+            border: none;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .action-btn:active {
+            transform: scale(0.98);
+        }
+
+        .generate-btn {
+            background: #8a2be2;
+            color: white;
+        }
+
+        .copy-btn {
+            background: #00c853;
+            color: white;
+            display: none;
+        }
+
+        .telegram-btn {
+            background: #0088cc;
+            color: white;
+        }
+
+        /* Security Features */
+        .security-features {
+            background: #1a1a1a;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 12px;
+            border-left: 4px solid #8a2be2;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .security-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .security-features li {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Footer */
+        .app-footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+            font-size: 12px;
+            border-top: 1px solid #333;
+        }
+
+        /* Responsive */
+        @media (max-width: 380px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .action-buttons {
+                flex-direction: row;
+            }
+            
+            .action-btn {
+                flex: 1;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- App Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo">Skunk <span>Snow</span> ❄️</div>
+            <div class="cart-icon" id="cartIcon">
+                🛒
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
 
-<!-- Header Premium -->
-<header class="premium-header">
-  <div class="header-top">
-    <div class="brand-title">LA MALETTE À PARFUM</div>
-    <div class="cart-icon" id="openCart">
-      <i class="fas fa-shopping-bag"></i>
-      <span class="cart-count" id="cartCount">0</span>
-    </div>
-  </div>
-  
-  <!-- Barre Social avec couleurs spécifiques -->
-  <div class="elegant-social">
-    <a href="https://www.snapchat.com/add/lamalette13" class="social-icon snapchat">
-      <i class="fab fa-snapchat"></i>
-    </a>
-    <a href="#" class="social-icon instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="#" class="social-icon tiktok">
-      <i class="fab fa-tiktok"></i>
-    </a>
-  </div>
-</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Skunk Snow ❄️🔥</h1>
+        <p>Qualité Street • Livraison Discrète</p>
+    </section>
 
-<!-- Main Content -->
-<main>
-  <!-- Flèches de navigation pour changer de PAGE -->
-  <div class="nav-arrow left" onclick="prevPage()">
-    <i class="fas fa-chevron-left"></i>
-  </div>
-  <div class="nav-arrow right" onclick="nextPage()">
-    <i class="fas fa-chevron-right"></i>
-  </div>
-
-  <div class="product-container">
-    <div class="product-card">
-      <img id="mainProductImage" src="" alt="Parfum d'exception" class="product-image" onclick="openZoom()">
-      <h1 class="product-name" id="productName"></h1>
-      <div class="product-stars" id="productStars"></div>
-      <p class="product-description" id="productDescription"></p>
-      <div class="product-price" id="productPrice"></div>
-      <button class="premium-btn" onclick="addToCart()">Ajouter au panier</button>
+    <!-- Security Features Info -->
+    <div class="security-features">
+        <strong>🔒 Sécurité Activée:</strong>
+        <ul>
+            <li>✅ Protection copie/colle</li>
+            <li>✅ Navigation privée</li>
+            <li>✅ Aucun tracking</li>
+            <li>✅ Communication chiffrée</li>
+        </ul>
     </div>
 
-    <!-- Carousel des miniatures pour la page actuelle -->
-    <div class="carousel" id="carousel"></div>
-  </div>
-</main>
+    <!-- Products Section -->
+    <section class="products-section">
+        <h2 class="section-title">Nos <span>Produits</span></h2>
+        <div class="products-grid" id="productsGrid">
+            <!-- Produits chargés par JavaScript -->
+        </div>
+    </section>
 
-<!-- Modal Panier -->
-<div id="cartModal" class="modal">
-  <div class="modal-content">
-    <span class="close-modal" onclick="closeCart()">✕</span>
-    <h3 class="modal-title">Votre Sélection</h3>
-    <div id="cartItems"></div>
-    <div class="cart-total" id="cartTotal" style="text-align: right; margin: 20px 0; color: var(--gold); font-weight: 500;"></div>
-    <button class="premium-btn" onclick="openCheckout()" style="width: 100%;">Procéder à la commande</button>
-  </div>
-</div>
+    <!-- Order Section -->
+    <section class="order-section">
+        <div class="order-box">
+            <h2 class="section-title">Finaliser <span>Commande</span></h2>
+            
+            <div class="client-form">
+                <div class="form-group">
+                    <label>📞 Téléphone</label>
+                    <input type="tel" id="clientPhone" class="form-control" placeholder="06 12 34 56 78" required>
+                </div>
+                <div class="form-group">
+                    <label>📍 Adresse</label>
+                    <textarea id="clientAddress" class="form-control" placeholder="Numéro, rue, code postal, ville..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>📝 Notes (optionnel)</label>
+                    <textarea id="clientNotes" class="form-control" placeholder="Instructions spéciales..."></textarea>
+                </div>
+            </div>
+            
+            <div class="copy-message" id="copyMessage">
+Remplissez le formulaire et cliquez sur "Générer la commande"
+            </div>
+            
+            <div class="action-buttons">
+                <button class="action-btn generate-btn" id="generateBtn">
+                    🛒 Générer la commande
+                </button>
+                <button class="action-btn copy-btn" id="copyBtn">
+                    📋 Copier le message
+                </button>
+                <a href="https://t.me/VibesGhettoPro" class="action-btn telegram-btn" target="_blank">
+                    📱 Ouvrir Telegram
+                </a>
+            </div>
+        </div>
+    </section>
 
-<!-- Modal Checkout avec Calculateur Automatique -->
-<div id="checkoutModal" class="modal">
-  <div class="modal-content">
-    <span class="close-modal" onclick="closeCheckout()">✕</span>
-    <h3 class="modal-title">Finaliser votre commande</h3>
-    
-    <!-- Calculateur de Distance Automatique -->
-    <div class="auto-distance">
-      <div class="distance-info">
-        <i class="fas fa-map-marker-alt" style="color: var(--gold); margin-right: 8px;"></i>
-        <strong>Livraison depuis Marseille</strong> - La distance sera calculée automatiquement
-      </div>
-      <div class="distance-result" id="distanceResult">
-        Entrez votre adresse pour calculer la distance de livraison...
-      </div>
+    <!-- Footer -->
+    <footer class="app-footer">
+        <p>&copy; 2024 Skunk Snow ❄️🔥 - Street Quality</p>
+        <p style="margin-top: 8px; font-size: 10px; opacity: 0.6;">
+            Communication sécurisée via Telegram
+        </p>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Votre Panier</h3>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Articles du panier -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">0,00 €</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">
+                Finaliser la commande ›
+            </button>
+        </div>
     </div>
-    
-    <!-- FORMSPREE INTÉGRÉ ICI -->
-    <form id="orderForm" action="https://formspree.io/f/xqaywbqw" method="POST">
-      <div class="form-group">
-        <input type="text" id="clientName" name="Nom" class="form-input" placeholder="Nom complet" required onchange="calculateAutoDistance()">
-      </div>
-      <div class="form-group">
-        <input type="tel" id="clientPhone" name="Téléphone" class="form-input" placeholder="Téléphone" required onchange="calculateAutoDistance()">
-      </div>
-      <div class="form-group">
-        <input type="text" id="clientAddress" name="Adresse" class="form-input" placeholder="Adresse complète" required onchange="calculateAutoDistance()">
-      </div>
-      
-      <!-- Champs cachés pour Formspree -->
-      <input type="hidden" id="orderDetails" name="Produits commandés">
-      <input type="hidden" id="orderTotal" name="Total commande">
-      <input type="hidden" id="distanceInfo" name="Distance livraison">
-      
-      <button type="submit" class="premium-btn" style="width: 100%;">Confirmer la commande</button>
-    </form>
-  </div>
-</div>
 
-<!-- Modal Zoom -->
-<div id="zoomModal" class="modal">
-  <span class="close-modal" onclick="closeZoom()">✕</span>
-  <img id="zoomImage" src="" style="max-width: 90%; max-height: 90%; border-radius: 12px;">
-</div>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
 
-<!-- Notification -->
-<div class="notification" id="notification"></div>
+    <script>
+        // ========== SÉCURITÉ INTÉGRÉE ==========
+        
+        // 1. Blocage clic droit et inspecteur
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            showNotification('🚫 Action désactivée pour la sécurité');
+        });
 
-<script>
-// Données des produits (comme dans votre code original)
-const pages = [
-  [
-    {name:"Ambre Sublime", desc:"Un parfum boisé et envoûtant.", price:79, img:"https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/e31f0c4e-0de2-0dba-4fa4-569606500fbf.jpg", stars:5},
-    {name:"Fleur de Minuit", desc:"Fleur d'oranger et jasmin.", price:69, img:"https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/cca97080-a2b6-3c54-0e3a-072311bb61f3.jpg", stars:4},
-    {name:"Parfum de Rêve", desc:"Notes florales délicates.", price:59, img:"https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/cd838fb0-99c1-debb-6d8f-2b873a18dea9.jpg", stars:5},
-    {name:"Mystère Oriental", desc:"Chaleur et épices envoûtantes.", price:85, img:"https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/e6c2b3aa-0b6a-2166-6da7-c377e6947baf.jpg", stars:4}
-  ],
-  [
-    {name:"Brume Marine", desc:"Accords frais et iodés.", price:64, img:"https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/e937dd10-dc31-54c6-bfbb-567675af8e51.jpg", stars:4},
-    {name:"Cuir d'Orient", desc:"Notes de cuir et d'épices.", price:89, img:"https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/acf4fcea-63bf-21a5-bdac-dfe8c72b1593.jpg", stars:5},
-    {name:"Éclat de Figue", desc:"Parfum doux et décadent.", price:72, img:"https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/32778e35-3ed1-ee82-c2ca-77e8f1da2e0c.jpg", stars:4},
-    {name:"Nocturne Mystique", desc:"Arômes envoûtants et mystérieux.", price:95, img:"https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/476093c4-70c5-df4d-ec3d-6c3b21c2d271.jpg", stars:5}
-  ]
-];
+        // 2. Blocage raccourcis développeur
+        document.addEventListener('keydown', function(e) {
+            // F12, Ctrl+Shift+I, Ctrl+Shift+C, etc.
+            if (e.key === 'F12' || 
+                (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+                (e.ctrlKey && e.shiftKey && e.key === 'C') ||
+                (e.ctrlKey && e.key === 'u')) {
+                e.preventDefault();
+                showNotification('🚫 Mode développeur désactivé');
+            }
+        });
 
-let currentPage = 0;
-let currentIndex = 0;
-let cart = [];
+        // 3. Détection basique d'inspecteur
+        let devToolsOpen = false;
+        setInterval(function() {
+            const widthThreshold = window.outerWidth - window.innerWidth > 100;
+            const heightThreshold = window.outerHeight - window.innerHeight > 100;
+            
+            if ((widthThreshold || heightThreshold) && !devToolsOpen) {
+                devToolsOpen = true;
+                showNotification('⚠️ Navigation sécurisée activée');
+            }
+        }, 1000);
 
-// Affichage du produit principal
-function displayProduct() {
-  const product = pages[currentPage][currentIndex];
-  
-  document.getElementById('productName').textContent = product.name;
-  document.getElementById('productDescription').textContent = product.desc;
-  document.getElementById('productPrice').textContent = product.price + " €";
-  document.getElementById('mainProductImage').src = product.img;
-  document.getElementById('productStars').textContent = '★'.repeat(product.stars);
-  
-  // Mise à jour du carousel
-  displayCarousel();
-}
+        // 4. Protection contre la copie
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+            showNotification('📝 Copie désactivée - Utilisez le bouton "Copier"');
+        });
 
-// Affichage du carousel des miniatures
-function displayCarousel() {
-  const carousel = document.getElementById('carousel');
-  carousel.innerHTML = '';
-  
-  pages[currentPage].forEach((product, index) => {
-    const img = document.createElement('img');
-    img.src = product.img;
-    img.classList.toggle('active', index === currentIndex);
-    img.onclick = () => {
-      currentIndex = index;
-      displayProduct();
-    };
-    carousel.appendChild(img);
-  });
-}
+        // 5. Protection contre le drag
+        document.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
 
-// Navigation entre PAGES (flèches)
-function nextPage() {
-  currentPage = (currentPage + 1) % pages.length;
-  currentIndex = 0;
-  displayProduct();
-}
+        // ========== DONNÉES DES PRODUITS ==========
+        const products = [
+            {
+                id: 1,
+                name: "Guise House 🏠",
+                description: "MOULA premium qualité house, effet équilibré",
+                price: 34.99,
+                image: "🏠",
+                emoji: "🏠"
+            },
+            {
+                id: 2,
+                name: "SQUADRA Tanz 💃",
+                description: "SQUADRA qualité Tanz, arômes intenses",
+                price: 39.99,
+                image: "💃",
+                emoji: "💃"
+            },
+            {
+                id: 3,
+                name: "CÉRÉALES Mik 🌾",
+                description: "Cereales Mik, qualité exceptionnelle",
+                price: 36.99,
+                image: "🌾",
+                emoji: "🌾"
+            },
+            {
+                id: 4,
+                name: "01-05-2025 📅",
+                description: "Lot spécial 01-05-2025, réserve limitée",
+                price: 42.99,
+                image: "📅",
+                emoji: "📅"
+            },
+            {
+                id: 5,
+                name: "120/200 🔥",
+                description: "MOULA 120/200, ratio parfait effets optimaux",
+                price: 38.99,
+                image: "🔥",
+                emoji: "🔥"
+            },
+            {
+                id: 6,
+                name: "CHERRY-PIE 🍒",
+                description: "Cherry Pie 73 Premium, qualité supérieure",
+                price: 45.99,
+                image: "🍒",
+                emoji: "🍒"
+            },
+            {
+                id: 7,
+                name: "SQUADRA farmz 🚜",
+                description: "SQUADRA farmz, produit de la ferme",
+                price: 41.99,
+                image: "🚜",
+                emoji: "🚜"
+            }
+        ];
 
-function prevPage() {
-  currentPage = (currentPage - 1 + pages.length) % pages.length;
-  currentIndex = 0;
-  displayProduct();
-}
+         // ========== ÉLÉMENTS DOM ==========
+        const productsGrid = document.getElementById('productsGrid');
+        const cartIcon = document.getElementById('cartIcon');
+        const cartCount = document.getElementById('cartCount');
+        const cartModal = document.getElementById('cartModal');
+        const closeCart = document.getElementById('closeCart');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const overlay = document.getElementById('overlay');
+        const copyMessage = document.getElementById('copyMessage');
+        const copyBtn = document.getElementById('copyBtn');
+        const generateBtn = document.getElementById('generateBtn');
+        const clientPhone = document.getElementById('clientPhone');
+        const clientAddress = document.getElementById('clientAddress');
+        const clientNotes = document.getElementById('clientNotes');
 
-// Panier
-function addToCart() {
-  const product = pages[currentPage][currentIndex];
-  cart.push({...product});
-  updateCart();
-  showNotification('Produit ajouté au panier');
-}
+        // ========== PANIER ==========
+        let cart = [];
+        let currentOrderMessage = "";
 
-function updateCart() {
-  const cartItems = document.getElementById('cartItems');
-  const cartCount = document.getElementById('cartCount');
-  const cartTotal = document.getElementById('cartTotal');
-  
-  cartItems.innerHTML = '';
-  let total = 0;
-  
-  cart.forEach((item, index) => {
-    const itemElement = document.createElement('div');
-    itemElement.style.display = 'flex';
-    itemElement.style.justifyContent = 'space-between';
-    itemElement.style.alignItems = 'center';
-    itemElement.style.padding = '10px 0';
-    itemElement.style.borderBottom = '1px solid var(--border)';
-    
-    itemElement.innerHTML = `
-      <div>
-        <div style="font-weight: 500;">${item.name}</div>
-        <div style="color: var(--gray); font-size: 14px;">${item.price} €</div>
-      </div>
-      <button onclick="removeFromCart(${index})" style="background: none; border: none; color: var(--gray); cursor: pointer; font-size: 16px;">
-        <i class="fas fa-times"></i>
-      </button>
-    `;
-    
-    cartItems.appendChild(itemElement);
-    total += item.price;
-  });
-  
-  cartCount.textContent = cart.length;
-  cartTotal.textContent = `Total : ${total} €`;
-}
+        // ========== FONCTIONS PRINCIPALES ==========
+        function displayProducts() {
+            productsGrid.innerHTML = '';
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image">${product.image}</div>
+                    <h3 class="product-title">${product.name}</h3>
+                    <p class="product-description">${product.description}</p>
+                    <div class="product-price">${product.price.toFixed(2)} €</div>
+                    <button class="add-to-cart" data-id="${product.id}">
+                        Ajouter au panier 🛒
+                    </button>
+                `;
+                productsGrid.appendChild(productCard);
+            });
 
-function removeFromCart(index) {
-  cart.splice(index, 1);
-  updateCart();
-  showNotification('Produit retiré du panier');
-}
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', addToCart);
+            });
+        }
 
-// Calculateur de distance automatique
-function calculateAutoDistance() {
-  const address = document.getElementById('clientAddress').value;
-  const resultDiv = document.getElementById('distanceResult');
-  
-  if (!address) {
-    resultDiv.innerHTML = 'Entrez votre adresse pour calculer la distance de livraison...';
-    resultDiv.style.color = 'var(--gray)';
-    return;
-  }
-  
-  // Simulation de calcul (à remplacer par API réelle)
-  resultDiv.innerHTML = `
-    <div style="display: flex; align-items: center; justify-content: space-between;">
-      <div>
-        <div style="font-weight: 500;">Distance estimée</div>
-        <div style="color: var(--gray); font-size: 12px;">Depuis Marseille</div>
-      </div>
-      <div style="color: var(--gold); font-weight: 600; font-size: 18px;">
-        <span id="calculatedDistance">Calcul...</span>
-      </div>
-    </div>
-  `;
-  
-  // Simulation d'un délai de calcul
-  setTimeout(() => {
-    const distances = ["12.5 km", "8.3 km", "15.7 km", "22.1 km", "5.8 km"];
-    const randomDistance = distances[Math.floor(Math.random() * distances.length)];
-    document.getElementById('calculatedDistance').textContent = randomDistance;
-    
-    // Mettre à jour le champ caché pour Formspree
-    document.getElementById('distanceInfo').value = `Distance: ${randomDistance} - Adresse: ${address}`;
-  }, 1500);
-}
+        function addToCart(e) {
+            const productId = parseInt(e.target.getAttribute('data-id'));
+            const product = products.find(p => p.id === productId);
+            
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            showNotification(`${product.name} ajouté 🛒`);
+        }
 
-// Gestion des modals
-function openCart() {
-  document.getElementById('cartModal').style.display = 'flex';
-}
+        function updateCart() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align: center; padding: 40px; color: #666;">Votre panier est vide</p>';
+                cartTotal.textContent = '0,00 €';
+                return;
+            }
+            
+            let totalPrice = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-image">${item.image}</div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">${item.price.toFixed(2)} €</div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                            <span class="quantity-value">${item.quantity}</span>
+                            <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                            <span class="remove-item" data-id="${item.id}">🗑️</span>
+                        </div>
+                    </div>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+            
+            cartTotal.textContent = `${totalPrice.toFixed(2)} €`;
+            
+            document.querySelectorAll('.quantity-btn.decrease').forEach(button => {
+                button.addEventListener('click', decreaseQuantity);
+            });
+            
+            document.querySelectorAll('.quantity-btn.increase').forEach(button => {
+                button.addEventListener('click', increaseQuantity);
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', removeItem);
+            });
+        }
 
-function closeCart() {
-  document.getElementById('cartModal').style.display = 'none';
-}
+        function decreaseQuantity(e) {
+            const productId = parseInt(e.target.getAttribute('data-id'));
+            const item = cart.find(item => item.id === productId);
+            
+            if (item.quantity > 1) {
+                item.quantity -= 1;
+            } else {
+                cart = cart.filter(item => item.id !== productId);
+            }
+            
+            updateCart();
+        }
 
-function openCheckout() {
-  if (cart.length === 0) {
-    showNotification('Votre panier est vide');
-    return;
-  }
-  closeCart();
-  document.getElementById('checkoutModal').style.display = 'flex';
-  
-  // Préparer les données de commande pour Formspree
-  let orderDetailsText = '';
-  let total = 0;
-  
-  cart.forEach(item => {
-    orderDetailsText += `• ${item.name} - ${item.price} €\n`;
-    total += item.price;
-  });
-  
-  // Mettre à jour les champs cachés pour Formspree
-  document.getElementById('orderDetails').value = orderDetailsText;
-  document.getElementById('orderTotal').value = total + ' €';
-}
+        function increaseQuantity(e) {
+            const productId = parseInt(e.target.getAttribute('data-id'));
+            const item = cart.find(item => item.id === productId);
+            
+            item.quantity += 1;
+            updateCart();
+        }
 
-function closeCheckout() {
-  document.getElementById('checkoutModal').style.display = 'none';
-}
+        function removeItem(e) {
+            const productId = parseInt(e.target.getAttribute('data-id'));
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+        }
 
-function openZoom() {
-  document.getElementById('zoomImage').src = pages[currentPage][currentIndex].img;
-  document.getElementById('zoomModal').style.display = 'flex';
-}
+        function generateOrderMessage() {
+            if (cart.length === 0) {
+                return "❌ Votre panier est vide";
+            }
 
-function closeZoom() {
-  document.getElementById('zoomModal').style.display = 'none';
-}
+            const phone = clientPhone.value.trim();
+            const address = clientAddress.value.trim();
+            const notes = clientNotes.value.trim();
 
-// Notification
-function showNotification(message) {
-  const notification = document.getElementById('notification');
-  notification.textContent = message;
-  notification.style.display = 'block';
-  
-  setTimeout(() => {
-    notification.style.display = 'none';
-  }, 3000);
-}
+            if (!phone || !address) {
+                return "❌ Remplissez téléphone et adresse";
+            }
+            
+            let message = "🛒 **COMMANDE SKUNK SNOW** ❄️🔥\n\n";
+            message += "📦 **PRODUITS :**\n\n";
+            
+            cart.forEach(item => {
+                message += `• ${item.name} x${item.quantity} - ${(item.price * item.quantity).toFixed(2)}€\n`;
+            });
+            
+            const total = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            message += `\n💰 **TOTAL : ${total.toFixed(2)}€**\n\n`;
+            message += `📞 **TÉLÉPHONE :** ${phone}\n`;
+            message += `📍 **ADRESSE :** ${address}\n`;
+            
+            if (notes) {
+                message += `\n📝 **NOTES :** ${notes}\n`;
+            }
+            
+            message += `\n⏰ **Date :** ${new Date().toLocaleString('fr-FR')}\n`;
+            message += "\nMerci ! ❄️🔥";
+            
+            return message;
+        }
 
-// Gestion du formulaire Formspree
-document.getElementById('orderForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const name = document.getElementById('clientName').value.trim();
-  const phone = document.getElementById('clientPhone').value.trim();
-  const address = document.getElementById('clientAddress').value.trim();
-  
-  if (!name || !phone || !address) {
-    showNotification('Veuillez remplir tous les champs');
-    return;
-  }
-  
-  // Afficher un message d'envoi
-  showNotification('Envoi de la commande en cours...');
-  
-  // Soumission simple du formulaire (plus fiable)
-  this.submit();
-  
-  // Réinitialiser après envoi
-  setTimeout(() => {
-    showNotification('Commande envoyée ! Nous vous contacterons bientôt.');
-    cart = [];
-    updateCart();
-    closeCheckout();
-    this.reset();
-  }, 1000);
-});
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                right: 20px;
+                background: #8a2be2;
+                color: white;
+                padding: 16px;
+                border-radius: 12px;
+                z-index: 1001;
+                text-align: center;
+                font-weight: 600;
+                box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
 
-// Événements
-document.getElementById('openCart').addEventListener('click', openCart);
+        // ========== ÉVÉNEMENTS ==========
+        checkoutBtn.addEventListener('click', function() {
+            if (cart.length === 0) {
+                showNotification('Votre panier est vide 🛒');
+                return;
+            }
+            
+            closeCartModal();
+            document.querySelector('.order-section').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
 
-// Navigation au clavier
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'ArrowLeft') {
-    prevPage();
-  } else if (e.key === 'ArrowRight') {
-    nextPage();
-  }
-});
+        generateBtn.addEventListener('click', function() {
+            currentOrderMessage = generateOrderMessage();
+            
+            if (currentOrderMessage.startsWith('❌')) {
+                showNotification(currentOrderMessage);
+                return;
+            }
+            
+            copyMessage.textContent = currentOrderMessage;
+            copyBtn.style.display = 'flex';
+            generateBtn.textContent = '🔄 Regénérer';
+            
+            showNotification('✅ Commande générée !');
+        });
 
-// Initialisation
-displayProduct();
-</script>
+        copyBtn.addEventListener('click', function() {
+            if (!currentOrderMessage) {
+                showNotification('Générez d\'abord une commande');
+                return;
+            }
+            
+            navigator.clipboard.writeText(currentOrderMessage).then(() => {
+                showNotification('✅ Message copié ! Collez sur Telegram');
+            }).catch(err => {
+                showNotification('❌ Erreur de copie');
+            });
+        });
 
+        cartIcon.addEventListener('click', openCartModal);
+        closeCart.addEventListener('click', closeCartModal);
+        overlay.addEventListener('click', closeCartModal);
+
+        function openCartModal() {
+            cartModal.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCartModal() {
+            cartModal.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // ========== INITIALISATION ==========
+        displayProducts();
+        updateCart();
+        
+        copyBtn.style.display = 'none';
+
+        // Message de sécurité au chargement
+        setTimeout(() => {
+            showNotification('🔒 Sécurité activée - Navigation privée');
+        }, 1000);
+    </script>
 </body>
 </html>
