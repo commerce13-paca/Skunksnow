@@ -102,17 +102,29 @@
             color: var(--accent-color);
         }
 
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
         .cart-icon {
             position: relative;
-            cursor: pointer;
-            font-size: 1.5rem;
+            background: #8a2be2;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
         }
 
         .cart-count {
             position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: var(--accent-color);
+            top: -6px;
+            right: -6px;
+            background: #ff4444;
             color: white;
             border-radius: 50%;
             width: 20px;
@@ -120,7 +132,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .view-code-btn {
+            background: #00c853;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            display: none;
         }
 
         /* Hero Section avec votre image */
@@ -134,11 +157,12 @@
             margin-bottom: 3rem;
         }
 
-        .hero h1 {
-            font-size: 3rem;
+        .hero p:first-child {
+            font-size: 1.8rem;
+            font-weight: bold;
             margin-bottom: 1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .hero p {
@@ -418,55 +442,176 @@
         .form-control:focus {
             outline: none;
             border-color: var(--accent-color);
+            background: #333;
+        }
+
+        /* Suggestions d'adresse */
+        .address-suggestions {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: var(--border-radius);
+            margin-top: 5px;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+            position: absolute;
+            width: calc(100% - 30px);
+            z-index: 10;
+        }
+
+        .address-suggestion {
+            padding: 10px 15px;
+            border-bottom: 1px solid #444;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .address-suggestion:hover {
+            background: #8a2be2;
+        }
+
+        .address-suggestion:last-child {
+            border-bottom: none;
+        }
+
+        .distance-info {
+            background: #2a2a2a;
+            padding: 16px;
+            border-radius: var(--border-radius);
+            margin: 16px 0;
+            border: 1px solid #444;
+            display: none;
         }
 
         .copy-message {
-            background-color: var(--dark-gray);
-            padding: 1rem;
+            background: #2a2a2a;
+            padding: 16px;
             border-radius: var(--border-radius);
-            margin: 1rem 0;
-            text-align: left;
-            font-family: monospace;
+            margin: 16px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.4;
             white-space: pre-wrap;
             max-height: 200px;
             overflow-y: auto;
+            border: 1px solid #444;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            flex-direction: column;
+        }
+
+        .action-btn {
+            padding: 16px;
+            border: none;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .action-btn:active {
+            transform: scale(0.98);
+        }
+
+        .generate-btn {
+            background: #8a2be2;
+            color: white;
         }
 
         .copy-btn {
-            background-color: var(--accent-color);
+            background: #00c853;
             color: white;
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-weight: 500;
-            transition: var(--transition);
-            margin: 0.5rem;
-            width: 100%;
-        }
-
-        .copy-btn:hover {
-            background-color: #6a1cb3;
+            display: none;
         }
 
         .telegram-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: #0088cc;
+            background: #0088cc;
             color: white;
-            padding: 1rem 2rem;
-            border-radius: var(--border-radius);
-            font-weight: 500;
-            margin-top: 1rem;
-            transition: var(--transition);
-            text-decoration: none;
-            width: 100%;
-            justify-content: center;
         }
 
-        .telegram-btn:hover {
-            background-color: #0077b3;
+        /* Security Features */
+        .security-features {
+            background: #1a1a1a;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 12px;
+            border-left: 4px solid #8a2be2;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .security-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .security-features li {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Confirmation Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .confirmation-modal {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 20px;
+            border: 3px solid #8a2be2;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+        }
+
+        .confirmation-code-display {
+            font-size: 48px;
+            font-weight: 900;
+            color: #ff4444;
+            margin: 20px 0;
+            text-shadow: 0 2px 10px rgba(255, 68, 68, 0.3);
+        }
+
+        .confirmation-instruction {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .close-modal {
+            background: #8a2be2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
         }
 
         /* Footer */
@@ -494,29 +639,6 @@
         .overlay.active {
             opacity: 1;
             visibility: visible;
-        }
-
-        /* Security Features */
-        .security-features {
-            background: #1a1a1a;
-            padding: 15px;
-            margin: 10px;
-            border-radius: 12px;
-            border-left: 4px solid #8a2be2;
-            font-size: 12px;
-            color: #999;
-        }
-
-        .security-features ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .security-features li {
-            margin: 5px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         /* Responsive */
@@ -560,6 +682,10 @@
                 padding: 1rem;
                 font-size: 0.9rem;
             }
+
+            .hero p:first-child {
+                font-size: 1.4rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -582,6 +708,10 @@
             .container {
                 width: 95%;
             }
+
+            .hero p:first-child {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -594,9 +724,14 @@
                     <img src="https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/67b5c8d4-de1c-5b5c-fd7f-e29eb9e491e0.png" alt="Skunk Snow Logo" class="logo-img">
                     <div class="logo">Skunk <span>Snow</span> ❄️🔥</div>
                 </div>
-                <div class="cart-icon" id="cartIcon">
-                    <span>🛒</span>
-                    <span class="cart-count" id="cartCount">0</span>
+                <div class="header-actions">
+                    <button class="view-code-btn" id="viewCodeBtn">
+                        📋 Voir mon code
+                    </button>
+                    <div class="cart-icon" id="cartIcon">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -605,8 +740,8 @@
     <!-- Hero Section avec votre image -->
     <section class="hero">
         <div class="container">
-    <p>NOUVELLE ARRIVAGE DE FRAPPE QUE DE LA TOP QUALITE ARRANGER</p>
-    <p>Qualité Street • Premium • Livraison Discrète</p>
+            <p>NOUVELLE ARRIVAGE DE FRAPPE QUE DE LA TOP QUALITE ARRANGER</p>
+            <p>Qualité Street • Premium • Livraison Discrète</p>
         </div>
     </section>
 
@@ -621,7 +756,7 @@
         </ul>
     </div>
 
-    <!-- Products Section -->
+     <!-- Products Section -->
     <section class="products" id="produits">
         <div class="container">
             <h2 class="section-title">Nos <span>Produits</span> 💨</h2>
@@ -646,21 +781,34 @@
                         <label>📞 Votre Téléphone</label>
                         <input type="tel" id="clientPhone" class="form-control" placeholder="06 12 34 56 78" required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="position: relative;">
                         <label>📍 Votre Adresse de Livraison</label>
-                        <textarea id="clientAddress" class="form-control" placeholder="Numéro, rue, code postal, ville..." required rows="3"></textarea>
+                        <textarea id="clientAddress" class="form-control" placeholder="Commencez à taper votre adresse..." required rows="3"></textarea>
+                        <div class="address-suggestions" id="addressSuggestions">
+                            <!-- Les suggestions apparaîtront ici -->
+                        </div>
                     </div>
+                </div>
+
+                <div class="distance-info" id="distanceInfo">
+                    <!-- Les infos de distance s'afficheront ici -->
                 </div>
                 
                 <div class="copy-message" id="copyMessage">
 Remplissez le formulaire et cliquez sur "Générer la commande"
                 </div>
                 
-                <button class="copy-btn" id="generateBtn">🛒 Générer la commande</button>
-                <button class="copy-btn" id="copyBtn" style="display: none;">📋 Copier le message</button>
-                <a href="https://t.me/+3Puv4NligoE3MDQ8" class="telegram-btn" target="_blank">
-                    <span>📱</span> Ouvrir Telegram
-                </a>
+                <div class="action-buttons">
+                    <button class="action-btn generate-btn" id="generateBtn">
+                        🛒 Générer la commande
+                    </button>
+                    <button class="action-btn copy-btn" id="copyBtn">
+                        📋 Copier le message
+                    </button>
+                    <a href="https://t.me/+3Puv4NligoE3MDQ8" class="action-btn telegram-btn" target="_blank">
+                        📱 Ouvrir Telegram
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -687,6 +835,19 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
                 <span id="cartTotal">0,00 €</span>
             </div>
             <button class="checkout-btn" id="checkoutBtn">Finaliser la commande ›</button>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal-overlay" id="confirmationModal">
+        <div class="confirmation-modal">
+            <h2>🔐 CODE DE CONFIRMATION</h2>
+            <div class="confirmation-code-display" id="confirmationCodeDisplay"></div>
+            <p class="confirmation-instruction">
+                📸 Faites une capture d'écran de ce code<br>
+                Montrez-le au livreur pour confirmer votre commande
+            </p>
+            <button class="close-modal" id="closeModal">Fermer</button>
         </div>
     </div>
 
@@ -777,7 +938,7 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
             }
         ];
 
-        // ========== ADRESSES PRÉDÉFINIES ==========
+         // ========== ADRESSES PRÉDÉFINIES ==========
         const predefinedAddresses = [
             "Traverse des Rosiers, 13014 Marseille",
             "Vieux Port, 13001 Marseille",
