@@ -696,13 +696,13 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
     <script>
         // ========== SÉCURITÉ INTÉGRÉE ==========
         
-       // 1. Blocage clic droit et inspecteur
+        // 1. Blocage clic droit et inspecteur
         document.addEventListener('contextmenu', function(e) {
             e.preventDefault();
             showNotification('🚫 Action désactivée pour la sécurité');
         });
 
-         // 2. Blocage raccourcis développeur
+        // 2. Blocage raccourcis développeur
         document.addEventListener('keydown', function(e) {
             // F12, Ctrl+Shift+I, Ctrl+Shift+C, etc.
             if (e.key === 'F12' || 
@@ -777,26 +777,75 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
             }
         ];
 
+        // ========== ADRESSES PRÉDÉFINIES ==========
+        const predefinedAddresses = [
+            "Traverse des Rosiers, 13014 Marseille",
+            "Vieux Port, 13001 Marseille",
+            "Prado, 13008 Marseille",
+            "Cours Julien, 13006 Marseille",
+            "La Plaine, 13005 Marseille",
+            "Le Panier, 13002 Marseille",
+            "Endoume, 13007 Marseille",
+            "Belsunce, 13001 Marseille",
+            "La Joliette, 13002 Marseille",
+            "Les Catalans, 13007 Marseille"
+        ];
+
         // ========== ÉLÉMENTS DOM ==========
         const productsGrid = document.getElementById('productsGrid');
         const cartIcon = document.getElementById('cartIcon');
         const cartCount = document.getElementById('cartCount');
-        const cartModal = document.getElementById('cartModal');
-        const closeCart = document.getElementById('closeCart');
-        const cartItems = document.getElementById('cartItems');
-        const cartTotal = document.getElementById('cartTotal');
-        const checkoutBtn = document.getElementById('checkoutBtn');
-        const overlay = document.getElementById('overlay');
+        const viewCodeBtn = document.getElementById('viewCodeBtn');
         const copyMessage = document.getElementById('copyMessage');
         const copyBtn = document.getElementById('copyBtn');
         const generateBtn = document.getElementById('generateBtn');
         const clientName = document.getElementById('clientName');
         const clientPhone = document.getElementById('clientPhone');
         const clientAddress = document.getElementById('clientAddress');
+        const addressSuggestions = document.getElementById('addressSuggestions');
+        const distanceInfo = document.getElementById('distanceInfo');
+        const confirmationModal = document.getElementById('confirmationModal');
+        const confirmationCodeDisplay = document.getElementById('confirmationCodeDisplay');
+        const closeModal = document.getElementById('closeModal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const cartModal = document.getElementById('cartModal');
+        const closeCart = document.getElementById('closeCart');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const overlay = document.getElementById('overlay');
 
-        // ========== PANIER ==========
+        // ========== CONFIGURATION ==========
+        const entrepotMarseille = "Traverse des Rosiers, 13014 Marseille";
         let cart = [];
         let currentOrderMessage = "";
+        let confirmationNumber = "";
+        let distanceKm = 0;
+
+        // ========== STOCKAGE LOCAL ==========
+        function saveToLocalStorage() {
+            const orderData = {
+                code: confirmationNumber,
+                phone: clientPhone.value,
+                address: clientAddress.value,
+                timestamp: new Date().getTime()
+            };
+            localStorage.setItem('skunkSnowOrder', JSON.stringify(orderData));
+        }
+
+        function loadFromLocalStorage() {
+            const saved = localStorage.getItem('skunkSnowOrder');
+            if (saved) {
+                const orderData = JSON.parse(saved);
+                // Vérifier si la commande a moins de 24h
+                const now = new Date().getTime();
+                if (now - orderData.timestamp < 24 * 60 * 60 * 1000) {
+                    confirmationNumber = orderData.code;
+                    viewCodeBtn.style.display = 'block';
+                    return true;
+                }
+            }
+            return false;
+        }
 
         // ========== FONCTIONS PRINCIPALES ==========
         function displayProducts() {
@@ -918,6 +967,69 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
             updateCart();
         }
 
+        // ========== SUGGESTIONS D'ADRESSE ==========
+        function showAddressSuggestions() {
+            const input = clientAddress.value.toLowerCase();
+            addressSuggestions.innerHTML = '';
+            
+            if (input.length < 2) {
+                addressSuggestions.style.display = 'none';
+                return;
+            }
+            
+            const filteredAddresses = predefinedAddresses.filter(addr => 
+                addr.toLowerCase().includes(input)
+            );
+            
+            if (filteredAddresses.length > 0) {
+                filteredAddresses.forEach(addr => {
+                    const suggestion = document.createElement('div');
+                    suggestion.className = 'address-suggestion';
+                    suggestion.textContent = addr;
+                    suggestion.addEventListener('click', function() {
+                        clientAddress.value = addr;
+                        addressSuggestions.style.display = 'none';
+                        verifyAddress();
+                    });
+                    addressSuggestions.appendChild(suggestion);
+                });
+                addressSuggestions.style.display = 'block';
+            } else {
+                addressSuggestions.style.display = 'none';
+            }
+        }
+
+        function calculateDistance(address) {
+            // Simulation de calcul de distance depuis Traverse des Rosiers
+            const distances = [2, 5, 8, 12, 15, 20, 25];
+            return distances[Math.floor(Math.random() * distances.length)];
+        }
+
+        function verifyAddress() {
+            const address = clientAddress.value.trim();
+            
+            if (address.length > 10) {
+                distanceKm = calculateDistance(address);
+                
+                let deliveryText = "";
+                if (distanceKm <= 15) {
+                    deliveryText = `✅ LIVRAISON GRATUITE - ${distanceKm} km de l'entrepôt`;
+                } else if (distanceKm <= 30) {
+                    deliveryText = `🚚 Livraison possible - ${distanceKm} km de l'entrepôt`;
+                } else {
+                    deliveryText = `❌ Hors zone - ${distanceKm} km de l'entrepôt`;
+                }
+                
+                distanceInfo.innerHTML = `
+                    <strong>${deliveryText}</strong>
+                    <p>📍 Distance depuis Traverse des Rosiers : ${distanceKm} km</p>
+                `;
+                distanceInfo.style.display = 'block';
+            } else {
+                distanceInfo.style.display = 'none';
+            }
+        }
+
         function generateOrderMessage() {
             if (cart.length === 0) {
                 return "❌ Votre panier est vide";
@@ -930,6 +1042,13 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
             if (!name || !phone || !address) {
                 return "❌ Remplissez tous les champs du formulaire";
             }
+
+            if (distanceKm > 30) {
+                return "❌ Hors zone de livraison (max 30km)";
+            }
+            
+            // Générer code confirmation
+            confirmationNumber = Math.floor(Math.random() * 90) + 10;
             
             let message = "🛒 **COMMANDE SKUNK SNOW** ❄️🔥\n\n";
             message += "📦 **PRODUITS :**\n\n";
@@ -943,6 +1062,8 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
             message += `👤 **NOM :** ${name}\n`;
             message += `📞 **TÉLÉPHONE :** ${phone}\n`;
             message += `📍 **ADRESSE :** ${address}\n`;
+            message += `📏 **DISTANCE :** ${distanceKm} km de l'entrepôt\n`;
+            message += `🔐 **CODE : ${confirmationNumber}**\n`;
             message += "\nMerci ! ❄️🔥";
             
             return message;
@@ -975,20 +1096,12 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
             }, 3000);
         }
 
-        // ========== ÉVÉNEMENTS ==========
-        checkoutBtn.addEventListener('click', function() {
-            if (cart.length === 0) {
-                showNotification('Votre panier est vide 🛒');
-                return;
-            }
-            
-            closeCartModal();
-            document.getElementById('commander').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
+        function showConfirmationModal() {
+            confirmationCodeDisplay.textContent = confirmationNumber;
+            confirmationModal.classList.add('active');
+        }
 
+        // ========== ÉVÉNEMENTS ==========
         generateBtn.addEventListener('click', function() {
             currentOrderMessage = generateOrderMessage();
             
@@ -998,7 +1111,13 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
             }
             
             copyMessage.textContent = currentOrderMessage;
-            copyBtn.style.display = 'block';
+            copyBtn.style.display = 'flex';
+            generateBtn.textContent = '🔄 Regénérer';
+            
+            // Sauvegarder et afficher le modal
+            saveToLocalStorage();
+            showConfirmationModal();
+            viewCodeBtn.style.display = 'block';
             
             showNotification('✅ Commande générée !');
         });
@@ -1016,9 +1135,51 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
             });
         });
 
+        // Suggestions d'adresse
+        clientAddress.addEventListener('input', function() {
+            showAddressSuggestions();
+            if (this.value.length > 10) {
+                verifyAddress();
+            }
+        });
+
+        // Fermer les suggestions quand on clique ailleurs
+        document.addEventListener('click', function(e) {
+            if (!clientAddress.contains(e.target) && !addressSuggestions.contains(e.target)) {
+                addressSuggestions.style.display = 'none';
+            }
+        });
+
+        // Modal events
+        closeModal.addEventListener('click', function() {
+            confirmationModal.classList.remove('active');
+        });
+
+        viewCodeBtn.addEventListener('click', function() {
+            if (confirmationNumber) {
+                showConfirmationModal();
+            } else if (loadFromLocalStorage()) {
+                showConfirmationModal();
+            } else {
+                showNotification('❌ Aucun code de commande trouvé');
+            }
+        });
+
         cartIcon.addEventListener('click', openCartModal);
         closeCart.addEventListener('click', closeCartModal);
         overlay.addEventListener('click', closeCartModal);
+        checkoutBtn.addEventListener('click', function() {
+            if (cart.length === 0) {
+                showNotification('Votre panier est vide 🛒');
+                return;
+            }
+            
+            closeCartModal();
+            document.getElementById('commander').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
 
         function openCartModal() {
             cartModal.classList.add('active');
@@ -1037,6 +1198,9 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
         updateCart();
         
         copyBtn.style.display = 'none';
+        
+        // Charger les données sauvegardées au démarrage
+        loadFromLocalStorage();
 
         // Message de sécurité au chargement
         setTimeout(() => {
