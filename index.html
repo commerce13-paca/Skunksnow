@@ -803,7 +803,7 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
                         🛒 Générer la commande
                     </button>
                     <button class="action-btn copy-btn" id="copyBtn">
-                        📋 Copier le message
+                        📋 Copier le message Ouvrir telegram 👇🏼
                     </button>
                     <a href="https://t.me/+3Puv4NligoE3MDQ8" class="action-btn telegram-btn" target="_blank">
                         📱 Ouvrir Telegram
@@ -890,7 +890,7 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
         const products = [
             {
                 id: 1,
-                name: "Neige Régine 0,75g",
+                name: "Skunk 0,75g",
                 description: "Qualité, effet glace intense",
                 price: 30.00,
                 image: "🌨️",
@@ -898,7 +898,7 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
             },
             {
                 id: 2,
-                name: "Neige Régine 1,5g",
+                name: "Skunk 1,5g",
                 description: "Qualité , effet glacé intense",
                 price: 50.00,
                 image: "🌨️",
@@ -1174,16 +1174,16 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
                 
                 let deliveryText = "";
                 if (distanceKm <= 15) {
-                    deliveryText = `✅ LIVRAISON GRATUITE - ${distanceKm} km de l'entrepôt`;
+                    deliveryText = `✅ LIVRAISON GRATUITE - ${distanceKm} km `;
                 } else if (distanceKm <= 30) {
-                    deliveryText = `🚚 Livraison possible - ${distanceKm} km de l'entrepôt`;
+                    deliveryText = `🚚 Livraison possible - ${distanceKm} km `;
                 } else {
                     deliveryText = `❌ Hors zone - ${distanceKm} km de l'entrepôt`;
                 }
                 
                 distanceInfo.innerHTML = `
                     <strong>${deliveryText}</strong>
-                    <p>📍 Distance depuis le point de vente : ${distanceKm} km</p>
+                    <p>📍 temps de livraison : ${distanceKm} km</p>
                 `;
                 distanceInfo.style.display = 'block';
             } else {
