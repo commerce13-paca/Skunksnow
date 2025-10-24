@@ -209,6 +209,27 @@
             color: var(--epicerie-color);
         }
 
+        /* Styles pour les catégories */
+        .product-category {
+            margin-bottom: 3rem;
+        }
+
+        .category-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .category-title span {
+            background: linear-gradient(45deg, #8a2be2, #00bfff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -458,128 +479,6 @@
             background-color: #6a1cb3;
         }
 
-        /* Copy Section avec formulaire SIMPLIFIÉ */
-        .copy-section {
-            background-color: var(--primary-color);
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .copy-box {
-            background-color: var(--secondary-color);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .client-form {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.8rem;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--dark-gray);
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            font-size: 1rem;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            background: #333;
-        }
-
-        .delivery-time {
-            background: #2a2a2a;
-            padding: 16px;
-            border-radius: var(--border-radius);
-            margin: 16px 0;
-            border: 1px solid #444;
-            text-align: center;
-            display: none;
-        }
-
-        .delivery-time.active {
-            display: block;
-        }
-
-        .copy-message {
-            background: #2a2a2a;
-            padding: 16px;
-            border-radius: var(--border-radius);
-            margin: 16px 0;
-            font-family: 'Courier New', monospace;
-            font-size: 12px;
-            line-height: 1.4;
-            white-space: pre-wrap;
-            max-height: 200px;
-            overflow-y: auto;
-            border: 1px solid #444;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 12px;
-            flex-direction: column;
-        }
-
-        .action-btn {
-            padding: 16px;
-            border: none;
-            border-radius: 16px;
-            font-weight: 700;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            text-align: center;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            cursor: pointer;
-        }
-
-        .action-btn:active {
-            transform: scale(0.98);
-        }
-
-        .generate-btn {
-            background: #8a2be2;
-            color: white;
-        }
-
-        .copy-btn {
-            background: #00c853;
-            color: white;
-            display: none;
-        }
-
-        .telegram-btn {
-            background: #0088cc;
-            color: white;
-        }
-
-        .auto-telegram-btn {
-            background: linear-gradient(45deg, #8a2be2, #0088cc);
-            color: white;
-            display: none;
-        }
-
         /* Security Features */
         .security-features {
             background: #1a1a1a;
@@ -686,6 +585,112 @@
             color: white;
         }
 
+        /* NOUVEAU : Popup de commande */
+        .order-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: #1a1a1a;
+            padding: 25px;
+            border-radius: 15px;
+            border: 3px solid #8a2be2;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+            z-index: 1003;
+            transition: transform 0.3s ease;
+        }
+
+        .order-popup.active {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .order-popup h2 {
+            color: #8a2be2;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .client-form {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #8a2be2;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--dark-gray);
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: #333;
+        }
+
+        .delivery-time {
+            background: #2a2a2a;
+            padding: 16px;
+            border-radius: var(--border-radius);
+            margin: 16px 0;
+            border: 1px solid #444;
+            text-align: center;
+            display: none;
+        }
+
+        .delivery-time.active {
+            display: block;
+        }
+
+        .order-buttons {
+            display: flex;
+            gap: 12px;
+            flex-direction: column;
+        }
+
+        .order-btn {
+            padding: 16px;
+            border: none;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .generate-btn {
+            background: #8a2be2;
+            color: white;
+        }
+
+        .close-order-btn {
+            background: #444;
+            color: white;
+        }
+
         /* Footer */
         footer {
             background-color: var(--primary-color);
@@ -745,15 +750,6 @@
             .product-card {
                 margin-bottom: 1rem;
             }
-            
-            .copy-box {
-                padding: 1rem;
-            }
-            
-            .copy-btn, .telegram-btn {
-                padding: 1rem;
-                font-size: 0.9rem;
-            }
 
             .hero p:first-child {
                 font-size: 1.4rem;
@@ -765,6 +761,10 @@
 
             .popup-code {
                 font-size: 36px;
+            }
+
+            .order-popup {
+                padding: 20px;
             }
         }
 
@@ -800,6 +800,11 @@
             .popup-btn {
                 padding: 10px;
                 font-size: 13px;
+            }
+
+            .order-btn {
+                padding: 14px;
+                font-size: 14px;
             }
         }
     </style>
@@ -847,12 +852,33 @@
         </ul>
     </div>
 
-    <!-- Products Section -->
+    <!-- Products Section avec catégories -->
     <section class="products" id="produits">
         <div class="container">
-            <h2 class="section-title">Nos <span>Produits</span> 💨</h2>
-            <div class="products-grid" id="productsGrid">
-                <!-- Les produits seront ajoutés dynamiquement par JavaScript -->
+            <h2 class="section-title">Nos <span>Menus</span> 💨</h2>
+            
+            <!-- Menu Skunk -->
+            <div class="product-category">
+                <h3 class="category-title">🌨️ <span>Menu Skunk</span></h3>
+                <div class="products-grid" id="skunkGrid">
+                    <!-- Produits Skunk ajoutés dynamiquement -->
+                </div>
+            </div>
+
+            <!-- Menu Résine -->
+            <div class="product-category">
+                <h3 class="category-title">🍫 <span>Menu Résine</span></h3>
+                <div class="products-grid" id="resineGrid">
+                    <!-- Produits Résine ajoutés dynamiquement -->
+                </div>
+            </div>
+
+            <!-- Menu Fleurs -->
+            <div class="product-category">
+                <h3 class="category-title">🍁 <span>Menu Fleurs</span></h3>
+                <div class="products-grid" id="fleursGrid">
+                    <!-- Produits Fleurs ajoutés dynamiquement -->
+                </div>
             </div>
         </div>
     </section>
@@ -862,61 +888,7 @@
         <div class="container">
             <h2 class="section-title epicerie-title">🛒 <span>Épicerie</span> & Boissons</h2>
             <div class="products-grid" id="epicerieGrid">
-                <!-- Les produits d'épicerie seront ajoutés dynamiquement par JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Copy Section avec formulaire ULTRA SIMPLIFIÉ -->
-    <section class="copy-section" id="commander">
-        <div class="container">
-            <div class="copy-box">
-                <h2 class="section-title">Finaliser <span>Commande</span> 📲</h2>
-                
-                <div class="client-form">
-                    <div class="form-group">
-                        <label>👤 Votre Nom</label>
-                        <input type="text" id="clientName" class="form-control" placeholder="Votre nom complet" required>
-                    </div>
-                    <div class="form-group">
-                        <label>📞 Votre Téléphone</label>
-                        <input type="tel" id="clientPhone" class="form-control" placeholder="06 12 34 56 78" required>
-                    </div>
-                    
-                    <!-- ADRESSE SIMPLIFIÉE -->
-                    <div class="form-group">
-                        <label>📍 Votre Adresse Complète</label>
-                        <textarea id="clientAddress" class="form-control" placeholder="Exemple: 15 Rue de la République, 13001 Marseille..." required rows="3"></textarea>
-                    </div>
-                </div>
-
-                <!-- TEMPS DE LIVRAISON SIMPLE -->
-                <div class="delivery-time" id="deliveryTime">
-                    <strong>🚗 Livraison estimée: <span id="deliveryMinutes">15-25</span> minutes</strong>
-                    <p>✅ Livraison GRATUITE</p>
-                </div>
-                
-                <div class="copy-message" id="copyMessage">
-Remplissez le formulaire et cliquez sur "Générer la commande"
-                </div>
-                
-                <div class="action-buttons">
-                    <button class="action-btn generate-btn" id="generateBtn">
-                        🛒 Générer la commande
-                    </button>
-                    
-                    <!-- BOUTON TOUT-EN-UN -->
-                    <button class="action-btn auto-telegram-btn" id="autoTelegramBtn">
-                        📋 Copier et Ouvrir Telegram
-                    </button>
-                    
-                    <button class="action-btn copy-btn" id="copyBtn">
-                        📋 Copier la commande
-                    </button>
-                    <a href="https://t.me/+3Puv4NligoE3MDQ8" class="action-btn telegram-btn" target="_blank">
-                        📱 Ouvrir Telegram
-                    </a>
-                </div>
+                <!-- Les produits d'épicerie seront ajoutés dynamiquement -->
             </div>
         </div>
     </section>
@@ -946,7 +918,7 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
         </div>
     </div>
 
-    <!-- NOUVEAU : Popup de finalisation COMPACT -->
+    <!-- Popup de finalisation -->
     <div class="final-popup" id="finalPopup">
         <h2>✅ Commande Prête !</h2>
         <div class="popup-code" id="popupCode"></div>
@@ -971,6 +943,43 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
             </button>
             <button class="popup-btn popup-close" id="popupCloseBtn">
                 ✌️ Compris
+            </button>
+        </div>
+    </div>
+
+    <!-- NOUVEAU : Popup de commande -->
+    <div class="order-popup" id="orderPopup">
+        <h2>📋 Finaliser <span>Commande</span></h2>
+        
+        <div class="client-form">
+            <div class="form-group">
+                <label>👤 Votre Nom</label>
+                <input type="text" id="clientName" class="form-control" placeholder="Votre nom complet" required>
+            </div>
+            <div class="form-group">
+                <label>📞 Votre Téléphone</label>
+                <input type="tel" id="clientPhone" class="form-control" placeholder="06 12 34 56 78" required>
+            </div>
+            
+            <!-- ADRESSE SIMPLIFIÉE -->
+            <div class="form-group">
+                <label>📍 Votre Adresse Complète</label>
+                <textarea id="clientAddress" class="form-control" placeholder="Exemple: 15 Rue de la République, 13001 Marseille..." required rows="3"></textarea>
+            </div>
+        </div>
+
+        <!-- TEMPS DE LIVRAISON SIMPLE -->
+        <div class="delivery-time" id="deliveryTime">
+            <strong>🚗 Livraison estimée: <span id="deliveryMinutes">15-25</span> minutes</strong>
+            <p>✅ Livraison GRATUITE</p>
+        </div>
+        
+        <div class="order-buttons">
+            <button class="order-btn generate-btn" id="generateBtn">
+                🛒 Générer la commande
+            </button>
+            <button class="order-btn close-order-btn" id="closeOrderBtn">
+                ✖️ Fermer
             </button>
         </div>
     </div>
@@ -1004,57 +1013,63 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
             e.preventDefault();
         });
 
-        // ========== PRODUITS PRINCIPAUX ==========
-        const products = [
-            {
-                id: 1,
-                name: "Skunk 0,75g",
-                description: "Qualité, effet glace intense",
-                price: 30.00,
-                image: "🌨️",
-                emoji: "🌨️"
-            },
-            {
-                id: 2,
-                name: "Skunk 1,5g",
-                description: "Qualité , effet glacé intense",
-                price: 50.00,
-                image: "🌨️",
-                emoji: "🌨️"
-            },
-            {
-                id: 3,
-                name: "Régine",
-                description: "Résine, texture éponge premium",
-                price: 30.00,
-                image: "🍫",
-                emoji: "🍫"
-            },
-            {
-                id: 4,
-                name: "Régine ",
-                description: "Résine qualité, texture premium",
-                price: 50.00,
-                image: "🍫",
-                emoji: "🍫"
-            },
-            {
-                id: 5,
-                name: "l'Hollandaise",
-                description: "Fleurs hollandaise, qualité terroir",
-                price: 30.00,
-                image: "🍁",
-                emoji: "🍁"
-            },
-            {
-                id: 6,
-                name: "l'Hollandaise",
-                description: "Fleurs hollandaise, qualité terroir",
-                price: 60.00,
-                image: "🍁",
-                emoji: "🍁"
-            }
-        ];
+        // ========== PRODUITS PAR CATÉGORIES ==========
+        const productCategories = {
+            skunk: [
+                {
+                    id: 1,
+                    name: "Skunk 0,75g",
+                    description: "Qualité, effet glace intense",
+                    price: 30.00,
+                    image: "🌨️",
+                    emoji: "🌨️"
+                },
+                {
+                    id: 2,
+                    name: "Skunk 1,5g",
+                    description: "Qualité , effet glacé intense",
+                    price: 50.00,
+                    image: "🌨️",
+                    emoji: "🌨️"
+                }
+            ],
+            resine: [
+                {
+                    id: 3,
+                    name: "Régine",
+                    description: "Résine, texture éponge premium",
+                    price: 30.00,
+                    image: "🍫",
+                    emoji: "🍫"
+                },
+                {
+                    id: 4,
+                    name: "Régine ",
+                    description: "Résine qualité, texture premium",
+                    price: 50.00,
+                    image: "🍫",
+                    emoji: "🍫"
+                }
+            ],
+            fleurs: [
+                {
+                    id: 5,
+                    name: "l'Hollandaise",
+                    description: "Fleurs hollandaise, qualité terroir",
+                    price: 30.00,
+                    image: "🍁",
+                    emoji: "🍁"
+                },
+                {
+                    id: 6,
+                    name: "l'Hollandaise",
+                    description: "Fleurs hollandaise, qualité terroir",
+                    price: 60.00,
+                    image: "🍁",
+                    emoji: "🍁"
+                }
+            ]
+        };
 
         // ========== PRODUITS ÉPICERIE AVEC VRAIES IMAGES ==========
         const epicerieProducts = [
@@ -1109,22 +1124,15 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
         ];
 
         // ========== ÉLÉMENTS DOM ==========
-        const productsGrid = document.getElementById('productsGrid');
+        const skunkGrid = document.getElementById('skunkGrid');
+        const resineGrid = document.getElementById('resineGrid');
+        const fleursGrid = document.getElementById('fleursGrid');
         const epicerieGrid = document.getElementById('epicerieGrid');
         const epicerieSection = document.getElementById('epicerieSection');
         const epicerieBtn = document.getElementById('epicerieBtn');
         const cartIcon = document.getElementById('cartIcon');
         const cartCount = document.getElementById('cartCount');
         const viewCodeBtn = document.getElementById('viewCodeBtn');
-        const copyMessage = document.getElementById('copyMessage');
-        const copyBtn = document.getElementById('copyBtn');
-        const generateBtn = document.getElementById('generateBtn');
-        const autoTelegramBtn = document.getElementById('autoTelegramBtn');
-        const clientName = document.getElementById('clientName');
-        const clientPhone = document.getElementById('clientPhone');
-        const clientAddress = document.getElementById('clientAddress');
-        const deliveryTime = document.getElementById('deliveryTime');
-        const deliveryMinutes = document.getElementById('deliveryMinutes');
         const checkoutBtn = document.getElementById('checkoutBtn');
         const cartModal = document.getElementById('cartModal');
         const closeCart = document.getElementById('closeCart');
@@ -1132,12 +1140,22 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
         const cartTotal = document.getElementById('cartTotal');
         const overlay = document.getElementById('overlay');
         
-        // NOUVEAUX ÉLÉMENTS POPUP
+        // Éléments du popup de finalisation
         const finalPopup = document.getElementById('finalPopup');
         const popupCode = document.getElementById('popupCode');
         const popupTelegramBtn = document.getElementById('popupTelegramBtn');
         const popupCopyBtn = document.getElementById('popupCopyBtn');
         const popupCloseBtn = document.getElementById('popupCloseBtn');
+
+        // Éléments du popup de commande
+        const orderPopup = document.getElementById('orderPopup');
+        const clientName = document.getElementById('clientName');
+        const clientPhone = document.getElementById('clientPhone');
+        const clientAddress = document.getElementById('clientAddress');
+        const deliveryTime = document.getElementById('deliveryTime');
+        const deliveryMinutes = document.getElementById('deliveryMinutes');
+        const generateBtn = document.getElementById('generateBtn');
+        const closeOrderBtn = document.getElementById('closeOrderBtn');
 
         // ========== CONFIGURATION ==========
         let cart = [];
@@ -1171,16 +1189,30 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
             return false;
         }
 
-        // ========== AFFICHAGE DES PRODUITS ==========
+        // ========== AFFICHAGE DES PRODUITS PAR CATÉGORIE ==========
         function displayProducts() {
-            // Produits principaux
-            productsGrid.innerHTML = '';
-            products.forEach(product => {
+            // Afficher les produits Skunk
+            skunkGrid.innerHTML = '';
+            productCategories.skunk.forEach(product => {
                 const productCard = createProductCard(product, false);
-                productsGrid.appendChild(productCard);
+                skunkGrid.appendChild(productCard);
             });
 
-            // Produits épicerie
+            // Afficher les produits Résine
+            resineGrid.innerHTML = '';
+            productCategories.resine.forEach(product => {
+                const productCard = createProductCard(product, false);
+                resineGrid.appendChild(productCard);
+            });
+
+            // Afficher les produits Fleurs
+            fleursGrid.innerHTML = '';
+            productCategories.fleurs.forEach(product => {
+                const productCard = createProductCard(product, false);
+                fleursGrid.appendChild(productCard);
+            });
+
+            // Afficher les produits épicerie
             epicerieGrid.innerHTML = '';
             epicerieProducts.forEach(product => {
                 const productCard = createProductCard(product, true);
@@ -1216,17 +1248,27 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
         // ========== BASCULEMENT ENTRE SECTIONS ==========
         epicerieBtn.addEventListener('click', function() {
             if (currentSection === 'produits') {
-                // Afficher épicerie
+                // Afficher épicerie et scroller vers elle
                 document.getElementById('produits').style.display = 'none';
                 epicerieSection.style.display = 'block';
                 currentSection = 'epicerie';
                 epicerieBtn.innerHTML = '💨 Produits';
+                
+                // Scroller vers l'épicerie
+                setTimeout(() => {
+                    epicerieSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
             } else {
-                // Afficher produits
+                // Afficher produits et scroller vers eux
                 document.getElementById('produits').style.display = 'block';
                 epicerieSection.style.display = 'none';
                 currentSection = 'produits';
                 epicerieBtn.innerHTML = '🛒 Épicerie';
+                
+                // Scroller vers les produits
+                setTimeout(() => {
+                    document.getElementById('produits').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
             }
         });
 
@@ -1234,7 +1276,18 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
             const productId = parseInt(e.target.getAttribute('data-id'));
             
             // Chercher dans tous les produits
-            let product = products.find(p => p.id === productId);
+            let product = null;
+            
+            // Chercher dans les catégories principales
+            for (const category in productCategories) {
+                const found = productCategories[category].find(p => p.id === productId);
+                if (found) {
+                    product = found;
+                    break;
+                }
+            }
+            
+              // Si pas trouvé, chercher dans l'épicerie
             if (!product) {
                 product = epicerieProducts.find(p => p.id === productId);
             }
@@ -1277,7 +1330,7 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
                 const cartItem = document.createElement('div');
                 cartItem.className = 'cart-item';
                 
-                  // Utiliser image ou emoji selon le produit
+                // Utiliser image ou emoji selon le produit
                 const imageContent = item.image.startsWith('http') ? 
                     `<img src="${item.image}" alt="${item.name}">` : 
                     item.image;
@@ -1392,35 +1445,22 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
             return message;
         }
 
-        // ========== FONCTION TOUT-EN-UN ==========
-        function generateAndOpenTelegram() {
-            currentOrderMessage = generateOrderMessage();
-            
-            if (currentOrderMessage.startsWith('❌')) {
-                showNotification(currentOrderMessage);
-                return;
-            }
-            
-            // Copier automatiquement
-            navigator.clipboard.writeText(currentOrderMessage).then(() => {
-                showNotification('✅ Commande copiée ! Ouverture de Telegram...');
-                
-                // Ouvrir Telegram après un court délai
-                setTimeout(() => {
-                    window.open('https://t.me/+3Puv4NligoE3MDQ8', '_blank');
-                }, 1000);
-                
-            }).catch(err => {
-                showNotification('❌ Erreur de copie - Ouvrez Telegram manuellement');
-            });
+        // ========== FONCTIONS POPUP ==========
+        function showOrderPopup() {
+            orderPopup.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
-        // ========== NOUVELLE FONCTION : OUVIR POPUP FINAL ==========
+        function closeOrderPopup() {
+            orderPopup.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
         function showFinalPopup() {
             popupCode.textContent = confirmationNumber;
             finalPopup.classList.add('active');
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
             
             // Copier automatiquement la commande
             navigator.clipboard.writeText(currentOrderMessage).then(() => {
@@ -1470,36 +1510,29 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
                 return;
             }
             
-            copyMessage.textContent = currentOrderMessage;
-            copyBtn.style.display = 'flex';
-            autoTelegramBtn.style.display = 'flex';
-            generateBtn.textContent = '🔄 Regénérer';
-            
             saveToLocalStorage();
-            showFinalPopup(); // NOUVEAU : Utiliser le popup amélioré
+            closeOrderPopup();
+            showFinalPopup();
             viewCodeBtn.style.display = 'block';
+            
+            showNotification('✅ Commande générée !');
         });
 
-        // Bouton tout-en-un
-        autoTelegramBtn.addEventListener('click', generateAndOpenTelegram);
-
-        copyBtn.addEventListener('click', function() {
-            if (!currentOrderMessage) {
-                showNotification('Générez d\'abord une commande');
+        // Bouton de commande dans le panier
+        checkoutBtn.addEventListener('click', function() {
+            if (cart.length === 0) {
+                showNotification('Votre panier est vide 🛒');
                 return;
             }
             
-            navigator.clipboard.writeText(currentOrderMessage).then(() => {
-                showNotification('✅ Commande copiée ! Collez-la sur Telegram');
-            }).catch(err => {
-                showNotification('❌ Erreur de copie');
-            });
+            closeCartModal();
+            showOrderPopup();
         });
 
         // Vérification de l'adresse en temps réel
         clientAddress.addEventListener('input', verifyAddress);
 
-        // NOUVEAUX ÉVÉNEMENTS POPUP
+        // Événements popup de finalisation
         popupTelegramBtn.addEventListener('click', function() {
             window.open('https://t.me/+3Puv4NligoE3MDQ8', '_blank');
             showNotification('📱 Telegram ouvert ! Collez votre commande');
@@ -1512,6 +1545,9 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
         });
 
         popupCloseBtn.addEventListener('click', closeFinalPopup);
+
+        // Événements popup de commande
+        closeOrderBtn.addEventListener('click', closeOrderPopup);
 
         // Événements existants
         viewCodeBtn.addEventListener('click', function() {
@@ -1529,19 +1565,7 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
         overlay.addEventListener('click', function() {
             closeCartModal();
             closeFinalPopup();
-        });
-        
-        checkoutBtn.addEventListener('click', function() {
-            if (cart.length === 0) {
-                showNotification('Votre panier est vide 🛒');
-                return;
-            }
-            
-            closeCartModal();
-            document.getElementById('commander').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-            });
+            closeOrderPopup();
         });
 
         function openCartModal() {
@@ -1566,9 +1590,6 @@ Remplissez le formulaire et cliquez sur "Générer la commande"
                 addToCart(e);
             }
         });
-        
-        copyBtn.style.display = 'none';
-        autoTelegramBtn.style.display = 'none';
         
         loadFromLocalStorage();
 
