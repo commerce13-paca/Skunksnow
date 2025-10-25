@@ -30,7 +30,6 @@
             --primary-color: #1a1a1a;
             --secondary-color: #333;
             --accent-color: #8a2be2;
-            --epicerie-color: #00b894;
             --text-color: #fff;
             --light-gray: #f0f0f0;
             --dark-gray: #444;
@@ -122,20 +121,6 @@
             cursor: pointer;
         }
 
-        .epicerie-icon {
-            position: relative;
-            background: var(--epicerie-color);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 10px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            cursor: pointer;
-        }
-
         .cart-count {
             position: absolute;
             top: -6px;
@@ -205,10 +190,6 @@
             color: var(--accent-color);
         }
 
-        .epicerie-title span {
-            color: var(--epicerie-color);
-        }
-
         /* Styles pour les catégories */
         .product-category {
             margin-bottom: 3rem;
@@ -244,41 +225,29 @@
             border: 1px solid var(--dark-gray);
         }
 
-        .epicerie-card {
-            border: 1px solid var(--epicerie-color);
-        }
-
         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             border-color: var(--accent-color);
         }
 
-        .epicerie-card:hover {
-            border-color: var(--epicerie-color);
+        .product-image {
+            height: 250px;
+            background-color: var(--dark-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+            overflow: hidden;
         }
 
-        .product-image {
-    height: 250px; /* Augmenté la hauteur */
-    background-color: var(--dark-gray);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-color);
-    font-weight: bold;
-    font-size: 1.5rem;
-    overflow: hidden;
-}
-
-.product-image img {
-    width: auto; /* Largeur automatique */
-    height: 100%; /* Prend toute la hauteur */
-    object-fit: cover; /* Recadre l'image pour remplir */
-}
-
-.epicerie-image {
-    background: linear-gradient(135deg, var(--epicerie-color), #00a085);
-            }
+        .product-image img {
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+        }
 
         .product-info {
             padding: 1.5rem;
@@ -305,10 +274,6 @@
             margin-bottom: 1rem;
         }
 
-        .epicerie-price {
-            color: var(--epicerie-color);
-        }
-
         .add-to-cart {
             width: 100%;
             background-color: var(--accent-color);
@@ -322,16 +287,8 @@
             font-size: 1rem;
         }
 
-        .epicerie-btn {
-            background-color: var(--epicerie-color);
-        }
-
         .add-to-cart:hover {
             background-color: #6a1cb3;
-        }
-
-        .epicerie-btn:hover {
-            background-color: #00a085;
         }
 
         /* Cart Modal */
@@ -502,7 +459,7 @@
             gap: 8px;
         }
 
-        /* NOUVEAU : Popup de finalisation COMPACT */
+        /* Popup de finalisation COMPACT */
         .final-popup {
             position: fixed;
             top: 50%;
@@ -585,7 +542,7 @@
             color: white;
         }
 
-        /* NOUVEAU : Popup de commande */
+        /* Popup de commande */
         .order-popup {
             position: fixed;
             top: 50%;
@@ -810,7 +767,7 @@
     </style>
 </head>
 <body>
-    <!-- Header avec logo -->
+     <!-- Header avec logo -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -821,9 +778,6 @@
                 <div class="header-actions">
                     <button class="view-code-btn" id="viewCodeBtn">
                         📋 Voir mon code
-                    </button>
-                    <button class="epicerie-icon" id="epicerieBtn">
-                        🛒 Épicerie
                     </button>
                     <div class="cart-icon" id="cartIcon">
                         🛒
@@ -883,16 +837,6 @@
         </div>
     </section>
 
-    <!-- Section Épicerie (cachée par défaut) -->
-    <section class="products" id="epicerieSection" style="display: none;">
-        <div class="container">
-            <h2 class="section-title epicerie-title">🛒 <span>Épicerie</span> & Boissons</h2>
-            <div class="products-grid" id="epicerieGrid">
-                <!-- Les produits d'épicerie seront ajoutés dynamiquement -->
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -947,7 +891,7 @@
         </div>
     </div>
 
-    <!-- NOUVEAU : Popup de commande -->
+    <!-- Popup de commande -->
     <div class="order-popup" id="orderPopup">
         <h2>📋 Finaliser <span>Commande</span></h2>
         
@@ -1071,65 +1015,10 @@
             ]
         };
 
-        // ========== PRODUITS ÉPICERIE AVEC VRAIES IMAGES ==========
-        const epicerieProducts = [
-            {
-                id: 100,
-                name: "Coca-Cola",
-                description: "Canette 33cl bien fraîche",
-                price: 2.00,
-                image: "https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/d312f37a-77f9-3d87-36bd-ecd4a716522d.jpg",
-                emoji: "🥤"
-            },
-            {
-                id: 101,
-                name: "Chips",
-                description: "Sachet de chips 200g",
-                price: 3.50,
-                image: "https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/f3c4c3c9-1459-a313-4bf6-0401ce901c7a.jpg",
-                emoji: "🍟"
-            },
-            {
-                id: 102,
-                name: "Red Bull",
-                description: "Boisson énergisante 250ml",
-                price: 3.00,
-                image: "https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/95637164-272f-bf76-4624-2c486f266cf1.jpg",
-                emoji: "🔴🧋🫧"
-            },
-            {
-                id: 103,
-                name: "Eau Minérale",
-                description: "Bouteille 1,5L cristalline",
-                price: 1.50,
-                image: "https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/e9db01a6-d92c-a293-22c7-419ecbb4dd16.jpg",
-                emoji: "💧"
-            },
-            {
-                id: 104,
-                name: "Chocolat",
-                description: "Tablette de chocolat Dubaï",
-                price: 8.00,
-                image: "https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/1ef19c1b-5d93-e7d2-654c-fdddb65961f0.jpg",
-                emoji: "🍫"
-            },
-            {
-                id: 105,
-                name: "Vodka",
-                description: "flash de vodka + Red bull",
-                price: 10,
-                image: "https://mcusercontent.com/6ce25ea8296b12e3b67c52a85/images/408b3b05-22a4-9bc4-55b8-7f263b26b82a.jpg",
-                emoji: "🍾"
-            }
-        ];
-
         // ========== ÉLÉMENTS DOM ==========
         const skunkGrid = document.getElementById('skunkGrid');
         const resineGrid = document.getElementById('resineGrid');
         const fleursGrid = document.getElementById('fleursGrid');
-        const epicerieGrid = document.getElementById('epicerieGrid');
-        const epicerieSection = document.getElementById('epicerieSection');
-        const epicerieBtn = document.getElementById('epicerieBtn');
         const cartIcon = document.getElementById('cartIcon');
         const cartCount = document.getElementById('cartCount');
         const viewCodeBtn = document.getElementById('viewCodeBtn');
@@ -1162,7 +1051,6 @@
         let currentOrderMessage = "";
         let confirmationNumber = "";
         let deliveryTimeMinutes = "15-25";
-        let currentSection = 'produits';
 
         // ========== STOCKAGE LOCAL ==========
         function saveToLocalStorage() {
@@ -1194,83 +1082,44 @@
             // Afficher les produits Skunk
             skunkGrid.innerHTML = '';
             productCategories.skunk.forEach(product => {
-                const productCard = createProductCard(product, false);
+                const productCard = createProductCard(product);
                 skunkGrid.appendChild(productCard);
             });
 
             // Afficher les produits Résine
             resineGrid.innerHTML = '';
             productCategories.resine.forEach(product => {
-                const productCard = createProductCard(product, false);
+                const productCard = createProductCard(product);
                 resineGrid.appendChild(productCard);
             });
 
             // Afficher les produits Fleurs
             fleursGrid.innerHTML = '';
             productCategories.fleurs.forEach(product => {
-                const productCard = createProductCard(product, false);
+                const productCard = createProductCard(product);
                 fleursGrid.appendChild(productCard);
-            });
-
-            // Afficher les produits épicerie
-            epicerieGrid.innerHTML = '';
-            epicerieProducts.forEach(product => {
-                const productCard = createProductCard(product, true);
-                epicerieGrid.appendChild(productCard);
             });
         }
 
-        function createProductCard(product, isEpicerie) {
+        function createProductCard(product) {
             const productCard = document.createElement('div');
-            productCard.className = `product-card ${isEpicerie ? 'epicerie-card' : ''}`;
-            
-            // Utiliser une image réelle pour l'épicerie, emoji pour les produits principaux
-            const imageContent = isEpicerie ? 
-                `<img src="${product.image}" alt="${product.name}">` : 
-                `${product.image} ${product.emoji}`;
+            productCard.className = 'product-card';
             
             productCard.innerHTML = `
-                <div class="product-image ${isEpicerie ? 'epicerie-image' : ''}">
-                    ${imageContent}
+                <div class="product-image">
+                    ${product.image} ${product.emoji}
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">${product.name} ${product.emoji}</h3>
                     <p class="product-description">${product.description}</p>
-                    <div class="product-price ${isEpicerie ? 'epicerie-price' : ''}">${product.price.toFixed(2)} €</div>
-                    <button class="add-to-cart ${isEpicerie ? 'epicerie-btn' : ''}" data-id="${product.id}">
+                    <div class="product-price">${product.price.toFixed(2)} €</div>
+                    <button class="add-to-cart" data-id="${product.id}">
                         🛒 AJOUTER
                     </button>
                 </div>
             `;
             return productCard;
         }
-
-        // ========== BASCULEMENT ENTRE SECTIONS ==========
-        epicerieBtn.addEventListener('click', function() {
-            if (currentSection === 'produits') {
-                // Afficher épicerie et scroller vers elle
-                document.getElementById('produits').style.display = 'none';
-                epicerieSection.style.display = 'block';
-                currentSection = 'epicerie';
-                epicerieBtn.innerHTML = '💨 Produits';
-                
-                // Scroller vers l'épicerie
-                setTimeout(() => {
-                    epicerieSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100);
-            } else {
-                // Afficher produits et scroller vers eux
-                document.getElementById('produits').style.display = 'block';
-                epicerieSection.style.display = 'none';
-                currentSection = 'produits';
-                epicerieBtn.innerHTML = '🛒 Épicerie';
-                
-                // Scroller vers les produits
-                setTimeout(() => {
-                    document.getElementById('produits').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100);
-            }
-        });
 
         function addToCart(e) {
             const productId = parseInt(e.target.getAttribute('data-id'));
@@ -1285,11 +1134,6 @@
                     product = found;
                     break;
                 }
-            }
-            
-              // Si pas trouvé, chercher dans l'épicerie
-            if (!product) {
-                product = epicerieProducts.find(p => p.id === productId);
             }
             
             if (!product) return;
@@ -1330,13 +1174,8 @@
                 const cartItem = document.createElement('div');
                 cartItem.className = 'cart-item';
                 
-                // Utiliser image ou emoji selon le produit
-                const imageContent = item.image.startsWith('http') ? 
-                    `<img src="${item.image}" alt="${item.name}">` : 
-                    item.image;
-                
                 cartItem.innerHTML = `
-                    <div class="cart-item-image">${imageContent}</div>
+                    <div class="cart-item-image">${item.image}</div>
                     <div class="cart-item-details">
                         <div class="cart-item-title">${item.name}</div>
                         <div class="cart-item-price">${item.price.toFixed(2)} €</div>
@@ -1445,7 +1284,7 @@
             return message;
         }
 
-        // ========== FONCTIONS POPUP ==========
+         // ========== FONCTIONS POPUP ==========
         function showOrderPopup() {
             orderPopup.classList.add('active');
             overlay.classList.add('active');
